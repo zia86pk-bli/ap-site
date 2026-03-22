@@ -1,0 +1,935 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>APUSH Practice</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<style>
+:root {
+  --bg: #0d0d0f;
+  --surface: #16161a;
+  --surface2: #1e1e24;
+  --border: #2a2a35;
+  --red: #e63946;
+  --red-dim: #7a1c23;
+  --gold: #f4a261;
+  --gold-dim: #7a4f1e;
+  --blue: #4895ef;
+  --green: #06d6a0;
+  --green-dim: #04614a;
+  --text: #f0eff4;
+  --muted: #8b8b9e;
+  --radius: 10px;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'DM Sans', sans-serif;
+  min-height: 100vh;
+}
+nav {
+  position: sticky; top: 0; z-index: 100;
+  background: rgba(13,13,15,0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  display: flex; align-items: center; gap: 0;
+  padding: 0 2rem;
+  height: 60px;
+}
+.nav-logo {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.6rem;
+  letter-spacing: 2px;
+  color: var(--red);
+  margin-right: 2rem;
+  text-decoration: none;
+}
+.nav-logo span { color: var(--text); }
+.nav-tab {
+  padding: 0 1.1rem;
+  height: 60px;
+  display: flex; align-items: center;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--muted);
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+  user-select: none;
+  letter-spacing: 0.5px;
+}
+.nav-tab:hover { color: var(--text); }
+.nav-tab.active { color: var(--red); border-bottom-color: var(--red); }
+.hero {
+  background: linear-gradient(135deg, #0d0d0f 0%, #1a0a0c 50%, #0d0d0f 100%);
+  border-bottom: 1px solid var(--border);
+  padding: 3.5rem 2rem 3rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: 'APUSH';
+  position: absolute;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 18rem;
+  color: rgba(230,57,70,0.04);
+  top: 50%; left: 50%;
+  transform: translate(-50%,-50%);
+  pointer-events: none;
+  white-space: nowrap;
+}
+.hero h1 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(2.8rem, 6vw, 4.5rem);
+  letter-spacing: 3px;
+  line-height: 1;
+  margin-bottom: 0.6rem;
+}
+.hero h1 span { color: var(--red); }
+.hero p {
+  color: var(--muted);
+  font-size: 1rem;
+  max-width: 480px;
+  margin: 0 auto 2rem;
+  line-height: 1.6;
+}
+.hero-cards {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.hero-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1rem 1.4rem;
+  font-size: 0.82rem;
+  color: var(--muted);
+  cursor: pointer;
+  transition: border-color 0.15s, color 0.15s, transform 0.15s;
+  display: flex; align-items: center; gap: 0.5rem;
+}
+.hero-card:hover { border-color: var(--red); color: var(--text); transform: translateY(-2px); }
+.hero-card .icon { font-size: 1.2rem; }
+.page { display: none; max-width: 900px; margin: 0 auto; padding: 2.5rem 1.5rem 5rem; }
+.page.active { display: block; }
+.section-header { margin-bottom: 2rem; }
+.section-header h2 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2rem;
+  letter-spacing: 2px;
+  color: var(--text);
+  margin-bottom: 0.3rem;
+}
+.section-header h2 span { color: var(--red); }
+.section-header p { color: var(--muted); font-size: 0.9rem; }
+.btn {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  padding: 0.7rem 1.5rem;
+  border-radius: var(--radius);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: all 0.15s;
+  letter-spacing: 0.3px;
+}
+.btn-primary { background: var(--red); color: #fff; }
+.btn-primary:hover { background: #c1121f; transform: translateY(-1px); }
+.btn-primary:active { transform: scale(0.98); }
+.btn-primary:disabled { background: var(--red-dim); cursor: not-allowed; transform: none; }
+.btn-outline { background: transparent; border: 1px solid var(--border); color: var(--text); }
+.btn-outline:hover { border-color: var(--muted); background: var(--surface2); }
+.btn-ghost { background: var(--surface2); color: var(--muted); }
+.btn-ghost:hover { color: var(--text); background: var(--border); }
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  margin-bottom: 1.2rem;
+}
+.card-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1rem;
+  letter-spacing: 1.5px;
+  color: var(--muted);
+  margin-bottom: 0.8rem;
+  text-transform: uppercase;
+}
+textarea {
+  width: 100%;
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.9rem;
+  padding: 0.8rem 1rem;
+  resize: vertical;
+  min-height: 120px;
+  outline: none;
+  transition: border-color 0.15s;
+  line-height: 1.6;
+}
+textarea:focus { border-color: var(--red); }
+textarea::placeholder { color: var(--muted); }
+select, input[type="text"] {
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.9rem;
+  padding: 0.65rem 1rem;
+  outline: none;
+  transition: border-color 0.15s;
+}
+select:focus, input[type="text"]:focus { border-color: var(--red); }
+label {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--muted);
+  margin-bottom: 0.4rem;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+.badge {
+  display: inline-block;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.75rem;
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  font-weight: 500;
+}
+.badge-red { background: rgba(230,57,70,0.15); color: var(--red); }
+.badge-gold { background: rgba(244,162,97,0.15); color: var(--gold); }
+.badge-green { background: rgba(6,214,160,0.12); color: var(--green); }
+.badge-blue { background: rgba(72,149,239,0.15); color: var(--blue); }
+.badge-gray { background: var(--surface2); color: var(--muted); }
+.loading-wrap {
+  display: flex; flex-direction: column; align-items: center;
+  gap: 1rem; padding: 4rem 2rem; text-align: center;
+}
+.spinner {
+  width: 40px; height: 40px;
+  border: 3px solid var(--border);
+  border-top-color: var(--red);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+.loading-wrap p { color: var(--muted); font-size: 0.9rem; }
+.error-box {
+  background: rgba(230,57,70,0.08);
+  border: 1px solid rgba(230,57,70,0.3);
+  border-radius: var(--radius);
+  padding: 1rem 1.2rem;
+  color: var(--red);
+  font-size: 0.88rem;
+  margin-bottom: 1.2rem;
+  display: none;
+}
+.error-box.show { display: block; }
+.mcq-question {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.4rem;
+  margin-bottom: 1rem;
+  transition: border-color 0.15s;
+}
+.mcq-question.answered-correct { border-left: 3px solid var(--green); }
+.mcq-question.answered-wrong { border-left: 3px solid var(--red); }
+.mcq-num { font-family: 'DM Mono', monospace; font-size: 0.75rem; color: var(--muted); margin-bottom: 0.5rem; }
+.mcq-text { font-size: 0.95rem; line-height: 1.6; margin-bottom: 1rem; }
+.mcq-choices { display: flex; flex-direction: column; gap: 0.5rem; }
+.mcq-choice {
+  display: flex; align-items: flex-start; gap: 0.7rem;
+  padding: 0.65rem 0.9rem;
+  border-radius: 7px;
+  border: 1px solid var(--border);
+  cursor: pointer;
+  font-size: 0.88rem;
+  line-height: 1.5;
+  background: var(--surface2);
+  transition: all 0.12s;
+  user-select: none;
+}
+.mcq-choice:hover:not(.locked) { border-color: var(--blue); background: rgba(72,149,239,0.06); }
+.mcq-choice .letter {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--muted);
+  min-width: 18px;
+  padding-top: 1px;
+}
+.mcq-choice.selected { border-color: var(--blue); background: rgba(72,149,239,0.1); }
+.mcq-choice.selected .letter { color: var(--blue); }
+.mcq-choice.correct { border-color: var(--green); background: rgba(6,214,160,0.08); }
+.mcq-choice.correct .letter { color: var(--green); }
+.mcq-choice.wrong { border-color: var(--red); background: rgba(230,57,70,0.08); }
+.mcq-choice.wrong .letter { color: var(--red); }
+.mcq-choice.locked { cursor: default; }
+.mcq-explanation {
+  margin-top: 0.9rem;
+  padding: 0.8rem 1rem;
+  background: var(--surface2);
+  border-radius: 7px;
+  font-size: 0.85rem;
+  color: var(--muted);
+  display: none;
+  line-height: 1.6;
+  border-left: 3px solid var(--border);
+}
+.mcq-explanation.show { display: block; }
+.progress-bar-wrap { background: var(--surface2); border-radius: 4px; height: 6px; overflow: hidden; margin-bottom: 0.4rem; }
+.progress-bar-fill { height: 100%; background: var(--red); border-radius: 4px; transition: width 0.4s ease; }
+.score-big { font-family: 'Bebas Neue', sans-serif; font-size: 4rem; line-height: 1; color: var(--text); }
+.score-big .denom { font-size: 2rem; color: var(--muted); }
+.rubric-row {
+  display: grid; grid-template-columns: 1fr 80px;
+  gap: 0.5rem; padding: 0.7rem 0;
+  border-bottom: 1px solid var(--border); align-items: start;
+}
+.rubric-row:last-child { border-bottom: none; }
+.rubric-cat { font-size: 0.88rem; font-weight: 600; margin-bottom: 0.2rem; }
+.rubric-comment { font-size: 0.82rem; color: var(--muted); line-height: 1.5; }
+.rubric-score { text-align: right; font-family: 'DM Mono', monospace; font-size: 0.9rem; font-weight: 600; color: var(--gold); }
+.saq-part { margin-bottom: 1.5rem; }
+.saq-part-label { font-family: 'Bebas Neue', sans-serif; font-size: 0.9rem; letter-spacing: 1.5px; color: var(--red); margin-bottom: 0.3rem; }
+.saq-stimulus {
+  background: var(--surface2);
+  border-left: 3px solid var(--gold);
+  border-radius: 0 7px 7px 0;
+  padding: 0.9rem 1rem;
+  font-size: 0.88rem;
+  line-height: 1.7;
+  color: var(--muted);
+  margin-bottom: 1rem;
+  font-style: italic;
+}
+.doc-card { background: var(--surface2); border: 1px solid var(--border); border-radius: var(--radius); padding: 1rem 1.2rem; margin-bottom: 0.8rem; }
+.doc-title { font-weight: 600; font-size: 0.88rem; margin-bottom: 0.2rem; }
+.doc-source { font-size: 0.78rem; color: var(--gold); margin-bottom: 0.5rem; font-family: 'DM Mono', monospace; }
+.doc-content { font-size: 0.85rem; line-height: 1.7; color: var(--muted); }
+.page-tabs { display: flex; gap: 0; border-bottom: 1px solid var(--border); margin-bottom: 2rem; }
+.page-tab {
+  padding: 0.65rem 1.2rem;
+  font-size: 0.85rem; font-weight: 500;
+  color: var(--muted); cursor: pointer;
+  border-bottom: 2px solid transparent; margin-bottom: -1px; transition: all 0.15s;
+}
+.page-tab:hover { color: var(--text); }
+.page-tab.active { color: var(--red); border-bottom-color: var(--red); }
+.result-header {
+  display: flex; justify-content: space-between; align-items: flex-start;
+  flex-wrap: wrap; gap: 1rem; padding: 1.5rem;
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius); margin-bottom: 1.5rem;
+}
+.feedback-list { list-style: none; display: flex; flex-direction: column; gap: 0.45rem; }
+.feedback-list li { display: flex; gap: 0.6rem; align-items: flex-start; font-size: 0.88rem; line-height: 1.5; }
+.feedback-list li::before { content: '→'; font-family: 'DM Mono', monospace; font-size: 0.8rem; padding-top: 2px; flex-shrink: 0; }
+.feedback-list.strengths li::before { color: var(--green); }
+.feedback-list.improvements li::before { color: var(--gold); }
+.mcq-score-bar { display: flex; gap: 0.5rem; align-items: center; flex-wrap: wrap; margin-bottom: 1rem; }
+.sticky-bar {
+  position: sticky; bottom: 0;
+  background: rgba(13,13,15,0.95);
+  backdrop-filter: blur(10px);
+  border-top: 1px solid var(--border);
+  padding: 0.9rem 1.5rem;
+  display: flex; justify-content: flex-end; gap: 0.8rem;
+  align-items: center; z-index: 50;
+}
+.sticky-bar .status { font-size: 0.85rem; color: var(--muted); flex: 1; }
+@media (max-width: 600px) {
+  nav { padding: 0 1rem; }
+  .nav-logo { margin-right: 1rem; }
+  .page { padding: 1.5rem 1rem 5rem; }
+  .hero { padding: 2.5rem 1rem 2rem; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <span class="nav-logo">AP<span>USH</span></span>
+  <div class="nav-tab active" onclick="showPage('home',this)">Home</div>
+  <div class="nav-tab" onclick="showPage('exam',this)">Practice Exam</div>
+  <div class="nav-tab" onclick="showPage('grade',this)">Grade Writing</div>
+</nav>
+
+<!-- HOME -->
+<div id="page-home" class="page active">
+  <div class="hero" style="max-width:none;margin:0 -1.5rem 2.5rem;border-radius:0;">
+    <h1>ACE THE <span>APUSH</span> EXAM</h1>
+    <p>Generate full practice exams, answer MCQs, and get AI-powered grading on your SAQs, DBQs, and LEQs.</p>
+    <div class="hero-cards">
+      <div class="hero-card" onclick="showPage('exam', document.querySelectorAll('.nav-tab')[1])">
+        <span class="icon">📝</span> Generate Practice Exam
+      </div>
+      <div class="hero-card" onclick="showPage('grade', document.querySelectorAll('.nav-tab')[2]); setGradeTab('dbq')">
+        <span class="icon">✍️</span> Grade My DBQ
+      </div>
+      <div class="hero-card" onclick="showPage('grade', document.querySelectorAll('.nav-tab')[2]); setGradeTab('leq')">
+        <span class="icon">📜</span> Grade My LEQ
+      </div>
+    </div>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem;margin-bottom:2rem;">
+    <div class="card">
+      <div class="card-title">Full Exam Generation</div>
+      <p style="font-size:0.9rem;color:var(--muted);line-height:1.6;">30 MCQs, 3 SAQs with stimulus, 1 DBQ with documents, 1 LEQ — all generated by AI, historically accurate.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">Instant MCQ Feedback</div>
+      <p style="font-size:0.9rem;color:var(--muted);line-height:1.6;">Click to answer. See explanations instantly. Track your score as you go.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">AP-Style Rubric Grading</div>
+      <p style="font-size:0.9rem;color:var(--muted);line-height:1.6;">Get graded on Thesis, Contextualization, Evidence, and Analysis — same categories as the real AP exam.</p>
+    </div>
+  </div>
+</div>
+
+<!-- EXAM PAGE -->
+<div id="page-exam" class="page">
+  <div class="section-header">
+    <h2>PRACTICE <span>EXAM</span></h2>
+    <p>Generate a full AP-style exam and answer each section.</p>
+  </div>
+  <div id="exam-idle">
+    <div class="card" style="text-align:center;padding:3rem 2rem;">
+      <div style="font-size:3rem;margin-bottom:1rem;">🏛️</div>
+      <h3 style="font-family:'Bebas Neue',sans-serif;font-size:1.6rem;letter-spacing:2px;margin-bottom:0.5rem;">GENERATE YOUR EXAM</h3>
+      <p style="color:var(--muted);font-size:0.9rem;margin-bottom:1.5rem;">Creates 30 MCQs, 3 SAQs, 1 DBQ, and 1 LEQ — mixed periods, medium to hard difficulty.</p>
+      <div id="exam-error" class="error-box"></div>
+      <button class="btn btn-primary" onclick="generateExam()" id="gen-btn">⚡ Generate Exam</button>
+    </div>
+  </div>
+  <div id="exam-loading" style="display:none;">
+    <div class="loading-wrap">
+      <div class="spinner"></div>
+      <p>Generating your exam… this takes about 30–60 seconds.</p>
+    </div>
+  </div>
+  <div id="exam-content" style="display:none;">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1.5rem;flex-wrap:wrap;gap:0.8rem;">
+      <h3 id="exam-title" style="font-family:'Bebas Neue',sans-serif;font-size:1.4rem;letter-spacing:1.5px;"></h3>
+      <button class="btn btn-ghost" onclick="resetExam()" style="font-size:0.8rem;">↩ New Exam</button>
+    </div>
+    <div class="page-tabs">
+      <div class="page-tab active" id="etab-mcq" onclick="setExamTab('mcq')">MCQ <span class="badge badge-gray" id="mcq-badge">30</span></div>
+      <div class="page-tab" id="etab-saq" onclick="setExamTab('saq')">SAQ</div>
+      <div class="page-tab" id="etab-dbq" onclick="setExamTab('dbq')">DBQ</div>
+      <div class="page-tab" id="etab-leq" onclick="setExamTab('leq')">LEQ</div>
+    </div>
+    <div id="etab-content-mcq">
+      <div id="mcq-score-display" style="margin-bottom:1.2rem;display:none;">
+        <div class="mcq-score-bar">
+          <span style="font-family:'DM Mono',monospace;font-size:0.85rem;color:var(--muted);">Score:</span>
+          <span id="mcq-score-text" style="font-family:'DM Mono',monospace;font-size:0.9rem;font-weight:600;color:var(--text);"></span>
+          <span id="mcq-pct-badge" class="badge"></span>
+        </div>
+        <div class="progress-bar-wrap"><div class="progress-bar-fill" id="mcq-progress-fill" style="width:0%"></div></div>
+        <div style="font-size:0.78rem;color:var(--muted);" id="mcq-answered-count"></div>
+      </div>
+      <div id="mcq-list"></div>
+    </div>
+    <div id="etab-content-saq" style="display:none;">
+      <div id="saq-content"></div>
+      <div class="sticky-bar" id="saq-sticky" style="display:none;">
+        <span class="status" id="saq-status"></span>
+        <button class="btn btn-primary" onclick="submitSaq()" id="saq-submit-btn">Grade SAQs</button>
+      </div>
+    </div>
+    <div id="etab-content-dbq" style="display:none;">
+      <div id="dbq-content"></div>
+      <div class="sticky-bar" id="dbq-sticky" style="display:none;">
+        <span class="status"></span>
+        <button class="btn btn-primary" onclick="submitWriting('DBQ')" id="dbq-submit-btn">Grade DBQ</button>
+      </div>
+    </div>
+    <div id="etab-content-leq" style="display:none;">
+      <div id="leq-content"></div>
+      <div class="sticky-bar" id="leq-sticky" style="display:none;">
+        <span class="status"></span>
+        <button class="btn btn-primary" onclick="submitWriting('LEQ')" id="leq-submit-btn">Grade LEQ</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- GRADE WRITING PAGE -->
+<div id="page-grade" class="page">
+  <div class="section-header">
+    <h2>GRADE <span>WRITING</span></h2>
+    <p>Paste your own DBQ or LEQ prompt and response for AI grading.</p>
+  </div>
+  <div class="page-tabs">
+    <div class="page-tab active" id="gtab-dbq" onclick="setGradeTab('dbq')">DBQ</div>
+    <div class="page-tab" id="gtab-leq" onclick="setGradeTab('leq')">LEQ</div>
+  </div>
+  <div id="gtab-content-dbq">
+    <div id="grade-dbq-form">
+      <div class="card">
+        <label>DBQ Prompt</label>
+        <textarea id="g-dbq-prompt" placeholder="Paste the DBQ prompt here…" rows="3"></textarea>
+      </div>
+      <div class="card">
+        <div class="card-title" style="margin-bottom:1rem;">Documents <span style="color:var(--muted);font-size:0.8rem;font-weight:400;">(add 5–7)</span></div>
+        <div id="g-dbq-docs"></div>
+        <button class="btn btn-ghost" onclick="addDocField()" style="margin-top:0.5rem;font-size:0.82rem;">+ Add Document</button>
+      </div>
+      <div class="card">
+        <label>Your Essay Response</label>
+        <textarea id="g-dbq-response" placeholder="Paste your essay here…" rows="10"></textarea>
+      </div>
+      <div id="grade-dbq-error" class="error-box"></div>
+      <button class="btn btn-primary" onclick="gradeWritingCustom('DBQ')" id="g-dbq-btn">Grade My DBQ</button>
+    </div>
+    <div id="grade-dbq-loading" style="display:none;"><div class="loading-wrap"><div class="spinner"></div><p>Grading your DBQ…</p></div></div>
+    <div id="grade-dbq-result" style="display:none;"></div>
+  </div>
+  <div id="gtab-content-leq" style="display:none;">
+    <div id="grade-leq-form">
+      <div class="card">
+        <label>LEQ Prompt</label>
+        <textarea id="g-leq-prompt" placeholder="Paste the LEQ prompt here…" rows="3"></textarea>
+      </div>
+      <div class="card">
+        <label>Your Essay Response</label>
+        <textarea id="g-leq-response" placeholder="Paste your essay here…" rows="10"></textarea>
+      </div>
+      <div id="grade-leq-error" class="error-box"></div>
+      <button class="btn btn-primary" onclick="gradeWritingCustom('LEQ')" id="g-leq-btn">Grade My LEQ</button>
+    </div>
+    <div id="grade-leq-loading" style="display:none;"><div class="loading-wrap"><div class="spinner"></div><p>Grading your LEQ…</p></div></div>
+    <div id="grade-leq-result" style="display:none;"></div>
+  </div>
+</div>
+
+<script>
+// API calls go through Netlify function — key never exposed to browser
+async function callOpenAI({ systemPrompt, userPrompt, schema, schemaName }) {
+  const body = {
+    model: "gpt-4.1-mini",
+    input: [
+      { role: "developer", content: [{ type: "input_text", text: systemPrompt }] },
+      { role: "user", content: [{ type: "input_text", text: userPrompt }] }
+    ],
+    text: {
+      format: { type: "json_schema", name: schemaName, schema: schema, strict: true }
+    }
+  };
+
+  const res = await fetch("/api/openai", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(body)
+  });
+
+  if (!res.ok) {
+    const err = await res.json().catch(() => ({}));
+    throw new Error(err?.error?.message || `Server error ${res.status}`);
+  }
+
+  const data = await res.json();
+  const text = data.output_text;
+  if (!text) throw new Error("Model returned empty response.");
+  return JSON.parse(text);
+}
+
+// ── SCHEMAS ──────────────────────────────────────────────────────────────────
+function writingSchema() {
+  return {
+    type:"object",additionalProperties:false,
+    properties:{
+      scoreTotal:{type:"integer"},maxScore:{type:"integer"},
+      rubric:{type:"array",items:{type:"object",additionalProperties:false,
+        properties:{category:{type:"string"},score:{type:"integer"},maxScore:{type:"integer"},comment:{type:"string"}},
+        required:["category","score","maxScore","comment"]}},
+      strengths:{type:"array",items:{type:"string"}},
+      improvements:{type:"array",items:{type:"string"}},
+      summaryFeedback:{type:"string"}
+    },
+    required:["scoreTotal","maxScore","rubric","strengths","improvements","summaryFeedback"]
+  };
+}
+function examSchema() {
+  return {
+    type:"object",additionalProperties:false,
+    properties:{
+      title:{type:"string"},
+      mcq:{type:"array",minItems:30,maxItems:30,items:{type:"object",additionalProperties:false,
+        properties:{id:{type:"integer"},question:{type:"string"},
+          choices:{type:"object",additionalProperties:false,properties:{A:{type:"string"},B:{type:"string"},C:{type:"string"},D:{type:"string"}},required:["A","B","C","D"]},
+          correctAnswer:{type:"string",enum:["A","B","C","D"]},explanation:{type:"string"}},
+        required:["id","question","choices","correctAnswer","explanation"]}},
+      saq:{type:"array",minItems:3,maxItems:3,items:{type:"object",additionalProperties:false,
+        properties:{id:{type:"integer"},stimulus:{anyOf:[{type:"string"},{type:"null"}]},a:{type:"string"},b:{type:"string"},c:{type:"string"}},
+        required:["id","stimulus","a","b","c"]}},
+      dbq:{type:"object",additionalProperties:false,
+        properties:{prompt:{type:"string"},docs:{type:"array",minItems:5,maxItems:7,items:{type:"object",additionalProperties:false,
+          properties:{id:{type:"integer"},title:{type:"string"},source:{type:"string"},content:{type:"string"}},
+          required:["id","title","source","content"]}}},
+        required:["prompt","docs"]},
+      leq:{type:"object",additionalProperties:false,properties:{prompt:{type:"string"}},required:["prompt"]}
+    },
+    required:["title","mcq","saq","dbq","leq"]
+  };
+}
+function saqGradeSchema() {
+  return {
+    type:"object",additionalProperties:false,
+    properties:{
+      totalScore:{type:"integer"},maxScore:{type:"integer"},
+      results:{type:"array",items:{type:"object",additionalProperties:false,
+        properties:{id:{type:"integer"},score:{type:"integer"},maxScore:{type:"integer"},feedback:{type:"string"},
+          strengths:{type:"array",items:{type:"string"}},improvements:{type:"array",items:{type:"string"}}},
+        required:["id","score","maxScore","feedback","strengths","improvements"]}}
+    },
+    required:["totalScore","maxScore","results"]
+  };
+}
+
+// ── PROMPTS ───────────────────────────────────────────────────────────────────
+function examPrompt() {
+  return `Create one APUSH practice exam. Requirements:
+- 30 MCQs, mixed APUSH periods, medium-hard difficulty, 4 choices each with correctAnswer and explanation
+- 3 SAQs: SAQ1 stimulus-based (non-null stimulus), SAQ2 comparison (null stimulus), SAQ3 causation/CCOT (null stimulus)
+- Each SAQ has parts a, b, c
+- 1 DBQ with 5-7 document excerpts (80-180 words each), each with id, title, source, content
+- 1 LEQ prompt
+- Historically accurate. Return valid JSON only, no markdown.`;
+}
+function writingPrompt({ essayType, prompt, documents, studentResponse }) {
+  const isDbq = essayType === "DBQ";
+  const cats = isDbq
+    ? "1. Thesis/Claim (max 1)\n2. Contextualization (max 1)\n3. Evidence (max 3)\n4. Analysis and Reasoning (max 2)"
+    : "1. Thesis/Claim (max 1)\n2. Contextualization (max 1)\n3. Evidence (max 2)\n4. Analysis and Reasoning (max 2)";
+  const docs = isDbq && Array.isArray(documents) && documents.length
+    ? "Documents:\n" + documents.map(d=>`Document ${d.id}\nTitle: ${d.title}\nSource: ${d.source}\nContent: ${d.content}`).join("\n\n")
+    : "";
+  return `You are a strict AP United States History essay grader.
+Grade the student's ${essayType}. Be fair but strict. Score only what is written. maxScore must be ${isDbq?7:6}.
+Rubric categories:\n${cats}\nPrompt:\n${prompt}\n${docs}\nStudent Response:\n${studentResponse}`;
+}
+function saqGradingPrompt(saqAnswers) {
+  return `You are a strict AP US History SAQ grader. Each SAQ has 3 parts worth 0-1 each. maxScore must be ${saqAnswers.length*3}.
+${saqAnswers.map((item,idx)=>`SAQ ${idx+1}\nID: ${item.id}\nStimulus: ${item.stimulus||"None"}\nPart A: ${item.a}\nResponse A: ${item.responseA||""}\nPart B: ${item.b}\nResponse B: ${item.responseB||""}\nPart C: ${item.c}\nResponse C: ${item.responseC||""}`).join("\n\n")}`;
+}
+
+// ── STATE ─────────────────────────────────────────────────────────────────────
+let examData = null, mcqAnswers = {}, mcqLocked = {};
+
+// ── NAV ───────────────────────────────────────────────────────────────────────
+function showPage(id, tabEl) {
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.getElementById('page-'+id).classList.add('active');
+  document.querySelectorAll('.nav-tab').forEach(t=>t.classList.remove('active'));
+  if (tabEl) tabEl.classList.add('active');
+}
+
+// ── EXAM ──────────────────────────────────────────────────────────────────────
+async function generateExam() {
+  document.getElementById('exam-idle').style.display='none';
+  document.getElementById('exam-loading').style.display='block';
+  try {
+    examData = await callOpenAI({
+      systemPrompt:"You are an AP US History exam generator. Return only valid JSON matching the provided schema.",
+      userPrompt:examPrompt(), schema:examSchema(), schemaName:"apush_exam"
+    });
+    mcqAnswers={}; mcqLocked={};
+    renderExam();
+  } catch(e) {
+    document.getElementById('exam-loading').style.display='none';
+    document.getElementById('exam-idle').style.display='block';
+    showError('exam-error',e.message);
+  }
+}
+function resetExam() {
+  examData=null; mcqAnswers={}; mcqLocked={};
+  document.getElementById('exam-content').style.display='none';
+  document.getElementById('exam-idle').style.display='block';
+  document.getElementById('exam-loading').style.display='none';
+}
+function renderExam() {
+  document.getElementById('exam-loading').style.display='none';
+  document.getElementById('exam-content').style.display='block';
+  document.getElementById('exam-title').textContent=examData.title;
+  renderMcq(); renderSaq(); renderDbq(); renderLeq();
+  setExamTab('mcq');
+}
+
+// ── MCQ ───────────────────────────────────────────────────────────────────────
+function renderMcq() {
+  document.getElementById('mcq-list').innerHTML = examData.mcq.map((q,i)=>`
+    <div class="mcq-question" id="mcq-${q.id}">
+      <div class="mcq-num">Question ${i+1} of 30</div>
+      <div class="mcq-text">${q.question}</div>
+      <div class="mcq-choices">
+        ${['A','B','C','D'].map(l=>`
+          <div class="mcq-choice" id="mc-${q.id}-${l}" onclick="selectMcq(${q.id},'${l}','${q.correctAnswer}')">
+            <span class="letter">${l}</span><span>${q.choices[l]}</span>
+          </div>`).join('')}
+      </div>
+      <div class="mcq-explanation" id="exp-${q.id}">${q.explanation}</div>
+    </div>`).join('');
+}
+function selectMcq(id, chosen, correct) {
+  if (mcqLocked[id]) return;
+  mcqLocked[id]=true; mcqAnswers[id]=chosen;
+  const qEl=document.getElementById('mcq-'+id);
+  ['A','B','C','D'].forEach(l=>{
+    const el=document.getElementById(`mc-${id}-${l}`);
+    el.classList.add('locked');
+    if(l===correct) el.classList.add('correct');
+    else if(l===chosen&&chosen!==correct) el.classList.add('wrong');
+  });
+  qEl.classList.add(chosen===correct?'answered-correct':'answered-wrong');
+  document.getElementById('exp-'+id).classList.add('show');
+  updateMcqScore();
+}
+function updateMcqScore() {
+  const total=examData.mcq.length, answered=Object.keys(mcqAnswers).length;
+  const correct=examData.mcq.filter(q=>mcqAnswers[q.id]===q.correctAnswer).length;
+  const pct=Math.round((correct/total)*100);
+  document.getElementById('mcq-score-display').style.display='block';
+  document.getElementById('mcq-score-text').textContent=`${correct} / ${total}`;
+  document.getElementById('mcq-answered-count').textContent=`${answered} of ${total} answered`;
+  document.getElementById('mcq-progress-fill').style.width=(answered/total*100)+'%';
+  const badge=document.getElementById('mcq-pct-badge');
+  badge.textContent=pct+'%';
+  badge.className='badge '+(pct>=70?'badge-green':pct>=50?'badge-gold':'badge-red');
+  document.getElementById('mcq-badge').textContent=answered+'/'+total;
+}
+
+// ── SAQ ───────────────────────────────────────────────────────────────────────
+function renderSaq() {
+  document.getElementById('saq-content').innerHTML = examData.saq.map((q,i)=>`
+    <div class="card" style="margin-bottom:1.5rem;">
+      <div class="card-title">Short Answer Question ${i+1}</div>
+      ${q.stimulus?`<div class="saq-stimulus">${q.stimulus}</div>`:''}
+      <div class="saq-part"><div class="saq-part-label">PART A</div>
+        <p style="font-size:0.9rem;margin-bottom:0.6rem;line-height:1.6;">${q.a}</p>
+        <textarea id="saq-${q.id}-a" placeholder="Your answer to Part A…" rows="4"></textarea></div>
+      <div class="saq-part"><div class="saq-part-label">PART B</div>
+        <p style="font-size:0.9rem;margin-bottom:0.6rem;line-height:1.6;">${q.b}</p>
+        <textarea id="saq-${q.id}-b" placeholder="Your answer to Part B…" rows="4"></textarea></div>
+      <div class="saq-part"><div class="saq-part-label">PART C</div>
+        <p style="font-size:0.9rem;margin-bottom:0.6rem;line-height:1.6;">${q.c}</p>
+        <textarea id="saq-${q.id}-c" placeholder="Your answer to Part C…" rows="4"></textarea></div>
+    </div>`).join('');
+  document.getElementById('saq-sticky').style.display='flex';
+  document.getElementById('saq-status').textContent='3 SAQs — each part worth 1 point';
+}
+let saqGraded=false;
+async function submitSaq() {
+  if(saqGraded) return;
+  const answers=examData.saq.map(q=>({
+    id:q.id,stimulus:q.stimulus,a:q.a,b:q.b,c:q.c,
+    responseA:document.getElementById(`saq-${q.id}-a`)?.value||'',
+    responseB:document.getElementById(`saq-${q.id}-b`)?.value||'',
+    responseC:document.getElementById(`saq-${q.id}-c`)?.value||''
+  }));
+  if(answers.some(a=>!a.responseA.trim()||!a.responseB.trim()||!a.responseC.trim()))
+    return alert('Please answer all parts before submitting.');
+  const btn=document.getElementById('saq-submit-btn');
+  btn.disabled=true; btn.textContent='Grading…';
+  try {
+    const result=await callOpenAI({
+      systemPrompt:"You are an AP US History SAQ grader. Return only valid JSON matching the provided schema.",
+      userPrompt:saqGradingPrompt(answers),schema:saqGradeSchema(),schemaName:"saq_grade"
+    });
+    saqGraded=true;
+    renderSaqResults(result,answers);
+    btn.textContent='✓ Graded';
+  } catch(e) { btn.disabled=false; btn.textContent='Grade SAQs'; alert('Error: '+e.message); }
+}
+function renderSaqResults(result,answers) {
+  const pct=Math.round((result.totalScore/result.maxScore)*100);
+  let html=`<div class="result-header">
+    <div><div style="font-size:0.8rem;color:var(--muted);margin-bottom:0.3rem;text-transform:uppercase;letter-spacing:1px;">SAQ Total Score</div>
+    <div class="score-big">${result.totalScore}<span class="denom"> / ${result.maxScore}</span></div></div>
+    <span class="badge ${pct>=70?'badge-green':pct>=50?'badge-gold':'badge-red'}" style="font-size:1rem;padding:0.3rem 0.8rem;">${pct}%</span>
+  </div>`;
+  result.results.forEach((r,i)=>{
+    const pctQ=Math.round((r.score/r.maxScore)*100);
+    html+=`<div class="card" style="margin-bottom:1.2rem;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem;">
+        <div class="card-title" style="margin:0;">SAQ ${i+1}</div>
+        <span class="badge ${pctQ>=70?'badge-green':pctQ>=50?'badge-gold':'badge-red'}">${r.score}/${r.maxScore}</span>
+      </div>
+      <p style="font-size:0.88rem;color:var(--muted);line-height:1.6;margin-bottom:1rem;">${r.feedback}</p>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
+        <div><div style="font-size:0.78rem;font-weight:600;color:var(--green);text-transform:uppercase;letter-spacing:1px;margin-bottom:0.5rem;">Strengths</div>
+          <ul class="feedback-list strengths">${r.strengths.map(s=>`<li>${s}</li>`).join('')}</ul></div>
+        <div><div style="font-size:0.78rem;font-weight:600;color:var(--gold);text-transform:uppercase;letter-spacing:1px;margin-bottom:0.5rem;">Improvements</div>
+          <ul class="feedback-list improvements">${r.improvements.map(s=>`<li>${s}</li>`).join('')}</ul></div>
+      </div></div>`;
+  });
+  document.getElementById('saq-content').innerHTML=html;
+}
+
+// ── DBQ / LEQ RENDER ──────────────────────────────────────────────────────────
+function renderDbq() {
+  document.getElementById('dbq-content').innerHTML=`
+    <div class="card" style="margin-bottom:1.5rem;"><div class="card-title">DBQ Prompt</div>
+      <p style="font-size:0.95rem;line-height:1.7;">${examData.dbq.prompt}</p></div>
+    <div class="card" style="margin-bottom:1.5rem;"><div class="card-title">Documents</div>
+      ${examData.dbq.docs.map(d=>`<div class="doc-card">
+        <div class="doc-title">Document ${d.id}: ${d.title}</div>
+        <div class="doc-source">${d.source}</div>
+        <div class="doc-content">${d.content}</div></div>`).join('')}
+    </div>
+    <div class="card"><label>Your DBQ Response</label>
+      <textarea id="dbq-response" placeholder="Write your DBQ essay here…" rows="14"></textarea></div>`;
+  document.getElementById('dbq-sticky').style.display='flex';
+}
+function renderLeq() {
+  document.getElementById('leq-content').innerHTML=`
+    <div class="card" style="margin-bottom:1.5rem;"><div class="card-title">LEQ Prompt</div>
+      <p style="font-size:0.95rem;line-height:1.7;">${examData.leq.prompt}</p></div>
+    <div class="card"><label>Your LEQ Response</label>
+      <textarea id="leq-response" placeholder="Write your LEQ essay here…" rows="14"></textarea></div>`;
+  document.getElementById('leq-sticky').style.display='flex';
+}
+
+// ── SUBMIT WRITING (exam tab) ─────────────────────────────────────────────────
+async function submitWriting(type) {
+  const isDbq=type==='DBQ';
+  const response=document.getElementById(isDbq?'dbq-response':'leq-response')?.value?.trim();
+  if(!response) return alert('Please write your essay before grading.');
+  const btnId=isDbq?'dbq-submit-btn':'leq-submit-btn';
+  const contId=isDbq?'dbq-content':'leq-content';
+  const btn=document.getElementById(btnId);
+  btn.disabled=true; btn.textContent='Grading…';
+  const essayData=isDbq
+    ?{essayType:'DBQ',prompt:examData.dbq.prompt,documents:examData.dbq.docs,studentResponse:response}
+    :{essayType:'LEQ',prompt:examData.leq.prompt,documents:[],studentResponse:response};
+  try {
+    const result=await callOpenAI({
+      systemPrompt:"You are an AP US History grader. Return only valid JSON matching the provided schema.",
+      userPrompt:writingPrompt(essayData),schema:writingSchema(),schemaName:isDbq?'dbq_grade':'leq_grade'
+    });
+    renderWritingResult(result,document.getElementById(contId),response,essayData.prompt,isDbq?examData.dbq.docs:[]);
+    btn.textContent='✓ Graded';
+  } catch(e) { btn.disabled=false; btn.textContent=`Grade ${type}`; alert('Error: '+e.message); }
+}
+
+// ── WRITING RESULT ────────────────────────────────────────────────────────────
+function renderWritingResult(result,container,studentResponse,prompt,docs) {
+  const pct=Math.round((result.scoreTotal/result.maxScore)*100);
+  let html=`<div class="result-header">
+    <div><div style="font-size:0.8rem;color:var(--muted);margin-bottom:0.3rem;text-transform:uppercase;letter-spacing:1px;">Essay Score</div>
+    <div class="score-big">${result.scoreTotal}<span class="denom"> / ${result.maxScore}</span></div></div>
+    <span class="badge ${pct>=70?'badge-green':pct>=50?'badge-gold':'badge-red'}" style="font-size:1rem;padding:0.3rem 0.8rem;">${pct}%</span>
+  </div>
+  <div class="card" style="margin-bottom:1.2rem;"><div class="card-title">Rubric Breakdown</div>
+    ${result.rubric.map(r=>`<div class="rubric-row">
+      <div><div class="rubric-cat">${r.category}</div><div class="rubric-comment">${r.comment}</div></div>
+      <div class="rubric-score">${r.score}/${r.maxScore}</div></div>`).join('')}
+  </div>
+  <div class="card" style="margin-bottom:1.2rem;"><div class="card-title">Overall Feedback</div>
+    <p style="font-size:0.9rem;line-height:1.7;color:var(--muted);">${result.summaryFeedback}</p></div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1.2rem;">
+    <div class="card"><div style="font-size:0.78rem;font-weight:600;color:var(--green);text-transform:uppercase;letter-spacing:1px;margin-bottom:0.7rem;">Strengths</div>
+      <ul class="feedback-list strengths">${result.strengths.map(s=>`<li>${s}</li>`).join('')}</ul></div>
+    <div class="card"><div style="font-size:0.78rem;font-weight:600;color:var(--gold);text-transform:uppercase;letter-spacing:1px;margin-bottom:0.7rem;">Areas to Improve</div>
+      <ul class="feedback-list improvements">${result.improvements.map(s=>`<li>${s}</li>`).join('')}</ul></div>
+  </div>`;
+  if(docs&&docs.length) html+=`<details style="margin-bottom:1.2rem;"><summary style="cursor:pointer;font-size:0.85rem;color:var(--muted);padding:0.5rem 0;">View Documents</summary>
+    <div style="margin-top:0.8rem;">${docs.map(d=>`<div class="doc-card"><div class="doc-title">Doc ${d.id}: ${d.title}</div><div class="doc-source">${d.source}</div><div class="doc-content">${d.content}</div></div>`).join('')}</div></details>`;
+  html+=`<details><summary style="cursor:pointer;font-size:0.85rem;color:var(--muted);padding:0.5rem 0;">View Your Response</summary>
+    <div class="card" style="margin-top:0.8rem;"><p style="font-size:0.88rem;line-height:1.8;color:var(--muted);white-space:pre-wrap;">${studentResponse}</p></div></details>`;
+  container.innerHTML=html;
+}
+
+// ── EXAM TAB ──────────────────────────────────────────────────────────────────
+function setExamTab(tab) {
+  ['mcq','saq','dbq','leq'].forEach(t=>{
+    document.getElementById('etab-'+t).classList.toggle('active',t===tab);
+    document.getElementById('etab-content-'+t).style.display=t===tab?'block':'none';
+  });
+}
+
+// ── GRADE TAB ─────────────────────────────────────────────────────────────────
+function setGradeTab(tab) {
+  ['dbq','leq'].forEach(t=>{
+    document.getElementById('gtab-'+t).classList.toggle('active',t===tab);
+    document.getElementById('gtab-content-'+t).style.display=t===tab?'block':'none';
+  });
+}
+
+// ── GRADE CUSTOM WRITING ──────────────────────────────────────────────────────
+let docCount=0;
+window.addEventListener('DOMContentLoaded',()=>{ for(let i=0;i<5;i++) addDocField(); });
+function addDocField() {
+  docCount++;
+  const wrap=document.getElementById('g-dbq-docs');
+  const div=document.createElement('div');
+  div.setAttribute('data-doc',docCount);
+  div.style.cssText='background:var(--surface2);border:1px solid var(--border);border-radius:8px;padding:1rem;margin-bottom:0.8rem;';
+  div.innerHTML=`<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.8rem;">
+    <span style="font-size:0.78rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:1px;">Document ${docCount}</span>
+    <button style="background:none;border:none;color:var(--muted);cursor:pointer;font-size:1.1rem;">×</button></div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.6rem;margin-bottom:0.6rem;">
+    <div><label>Title</label><input type="text" placeholder="Document title" style="width:100%;"/></div>
+    <div><label>Source</label><input type="text" placeholder="Author, date, context" style="width:100%;"/></div>
+  </div>
+  <label>Content</label>
+  <textarea placeholder="Document excerpt (80-180 words)…" rows="4" style="min-height:80px;"></textarea>`;
+  div.querySelector('button').onclick=()=>div.remove();
+  wrap.appendChild(div);
+}
+async function gradeWritingCustom(type) {
+  const isDbq=type==='DBQ';
+  const promptEl=document.getElementById(isDbq?'g-dbq-prompt':'g-leq-prompt');
+  const responseEl=document.getElementById(isDbq?'g-dbq-response':'g-leq-response');
+  const errId=isDbq?'grade-dbq-error':'grade-leq-error';
+  const formEl=document.getElementById(isDbq?'grade-dbq-form':'grade-leq-form');
+  const loadEl=document.getElementById(isDbq?'grade-dbq-loading':'grade-leq-loading');
+  const resultEl=document.getElementById(isDbq?'grade-dbq-result':'grade-leq-result');
+  const btnEl=document.getElementById(isDbq?'g-dbq-btn':'g-leq-btn');
+  hideError(errId);
+  const prompt=promptEl.value.trim(), studentResponse=responseEl.value.trim();
+  if(!prompt||!studentResponse) return showError(errId,'Prompt and response are required.');
+  let documents=[];
+  if(isDbq) {
+    document.querySelectorAll('#g-dbq-docs [data-doc]').forEach((div,i)=>{
+      const inputs=div.querySelectorAll('input'), ta=div.querySelector('textarea');
+      if(inputs[0]?.value.trim()) documents.push({id:i+1,title:inputs[0].value.trim(),source:inputs[1]?.value.trim()||'',content:ta?.value.trim()||''});
+    });
+  }
+  formEl.style.display='none'; loadEl.style.display='block'; resultEl.style.display='none';
+  try {
+    const result=await callOpenAI({
+      systemPrompt:"You are an AP US History grader. Return only valid JSON matching the provided schema.",
+      userPrompt:writingPrompt({essayType:type,prompt,documents,studentResponse}),
+      schema:writingSchema(),schemaName:isDbq?'dbq_grade':'leq_grade'
+    });
+    loadEl.style.display='none'; resultEl.style.display='block';
+    renderWritingResult(result,resultEl,studentResponse,prompt,documents);
+    const retry=document.createElement('button');
+    retry.className='btn btn-outline'; retry.textContent='↩ Grade Another'; retry.style.marginTop='1rem';
+    retry.onclick=()=>{ resultEl.style.display='none'; formEl.style.display='block'; btnEl.disabled=false; };
+    resultEl.appendChild(retry);
+  } catch(e) {
+    loadEl.style.display='none'; formEl.style.display='block'; showError(errId,e.message);
+  }
+}
+function showError(id,msg) { const el=document.getElementById(id); if(el){el.textContent=msg;el.classList.add('show');} }
+function hideError(id) { const el=document.getElementById(id); if(el) el.classList.remove('show'); }
+</script>
+</body>
+</html>
