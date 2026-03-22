@@ -378,7 +378,6 @@ label {
   <span class="nav-logo">AP<span>USH</span></span>
   <div class="nav-tab active" onclick="showPage('home',this)">Home</div>
   <div class="nav-tab" onclick="showPage('exam',this)">Practice Exam</div>
-  <div class="nav-tab" onclick="showPage('grade',this)">Grade Writing</div>
 </nav>
 
 <!-- HOME -->
@@ -390,11 +389,11 @@ label {
       <div class="hero-card" onclick="showPage('exam', document.querySelectorAll('.nav-tab')[1])">
         <span class="icon">📝</span> Generate Practice Exam
       </div>
-      <div class="hero-card" onclick="showPage('grade', document.querySelectorAll('.nav-tab')[2]); setGradeTab('dbq')">
-        <span class="icon">✍️</span> Grade My DBQ
+      <div class="hero-card" onclick="showPage('exam', document.querySelectorAll('.nav-tab')[1]); setExamTab('dbq')">
+        <span class="icon">✍️</span> Practice DBQ
       </div>
-      <div class="hero-card" onclick="showPage('grade', document.querySelectorAll('.nav-tab')[2]); setGradeTab('leq')">
-        <span class="icon">📜</span> Grade My LEQ
+      <div class="hero-card" onclick="showPage('exam', document.querySelectorAll('.nav-tab')[1]); setExamTab('leq')">
+        <span class="icon">📜</span> Practice LEQ
       </div>
     </div>
   </div>
@@ -547,54 +546,7 @@ label {
   </div>
 </div>
 
-<!-- GRADE WRITING PAGE -->
-<div id="page-grade" class="page">
-  <div class="section-header">
-    <h2>GRADE <span>WRITING</span></h2>
-    <p>Paste your own DBQ or LEQ prompt and response for AI grading.</p>
-  </div>
-  <div class="page-tabs">
-    <div class="page-tab active" id="gtab-dbq" onclick="setGradeTab('dbq')">DBQ</div>
-    <div class="page-tab" id="gtab-leq" onclick="setGradeTab('leq')">LEQ</div>
-  </div>
-  <div id="gtab-content-dbq">
-    <div id="grade-dbq-form">
-      <div class="card">
-        <label>DBQ Prompt</label>
-        <textarea id="g-dbq-prompt" placeholder="Paste the DBQ prompt here…" rows="3"></textarea>
-      </div>
-      <div class="card">
-        <div class="card-title" style="margin-bottom:1rem;">Documents <span style="color:var(--muted);font-size:0.8rem;font-weight:400;">(add 5–7)</span></div>
-        <div id="g-dbq-docs"></div>
-        <button class="btn btn-ghost" onclick="addDocField()" style="margin-top:0.5rem;font-size:0.82rem;">+ Add Document</button>
-      </div>
-      <div class="card">
-        <label>Your Essay Response</label>
-        <textarea id="g-dbq-response" placeholder="Paste your essay here…" rows="10"></textarea>
-      </div>
-      <div id="grade-dbq-error" class="error-box"></div>
-      <button class="btn btn-primary" onclick="gradeWritingCustom('DBQ')" id="g-dbq-btn">Grade My DBQ</button>
-    </div>
-    <div id="grade-dbq-loading" style="display:none;"><div class="loading-wrap"><div class="spinner"></div><p>Grading your DBQ…</p></div></div>
-    <div id="grade-dbq-result" style="display:none;"></div>
-  </div>
-  <div id="gtab-content-leq" style="display:none;">
-    <div id="grade-leq-form">
-      <div class="card">
-        <label>LEQ Prompt</label>
-        <textarea id="g-leq-prompt" placeholder="Paste the LEQ prompt here…" rows="3"></textarea>
-      </div>
-      <div class="card">
-        <label>Your Essay Response</label>
-        <textarea id="g-leq-response" placeholder="Paste your essay here…" rows="10"></textarea>
-      </div>
-      <div id="grade-leq-error" class="error-box"></div>
-      <button class="btn btn-primary" onclick="gradeWritingCustom('LEQ')" id="g-leq-btn">Grade My LEQ</button>
-    </div>
-    <div id="grade-leq-loading" style="display:none;"><div class="loading-wrap"><div class="spinner"></div><p>Grading your LEQ…</p></div></div>
-    <div id="grade-leq-result" style="display:none;"></div>
-  </div>
-</div>
+
 
 <script>
 // API calls go through Netlify function — key never exposed to browser
@@ -1128,70 +1080,6 @@ async function submitWriting(type) {
   } catch(e) { btn.disabled=false; btn.textContent=`Grade ${type}`; alert('Error: '+e.message); }
 }
 
-// ── GRADE TAB ─────────────────────────────────────────────────────────────────
-function setGradeTab(tab) {
-  ['dbq','leq'].forEach(t=>{
-    document.getElementById('gtab-'+t).classList.toggle('active',t===tab);
-    document.getElementById('gtab-content-'+t).style.display=t===tab?'block':'none';
-  });
-}
-
-// ── GRADE CUSTOM WRITING ──────────────────────────────────────────────────────
-let docCount=0;
-window.addEventListener('DOMContentLoaded',()=>{ for(let i=0;i<5;i++) addDocField(); });
-function addDocField() {
-  docCount++;
-  const wrap=document.getElementById('g-dbq-docs');
-  const div=document.createElement('div');
-  div.setAttribute('data-doc',docCount);
-  div.style.cssText='background:var(--surface2);border:1px solid var(--border);border-radius:8px;padding:1rem;margin-bottom:0.8rem;';
-  div.innerHTML=`<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.8rem;">
-    <span style="font-size:0.78rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:1px;">Document ${docCount}</span>
-    <button style="background:none;border:none;color:var(--muted);cursor:pointer;font-size:1.1rem;">×</button></div>
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.6rem;margin-bottom:0.6rem;">
-    <div><label>Title</label><input type="text" placeholder="Document title" style="width:100%;"/></div>
-    <div><label>Source</label><input type="text" placeholder="Author, date, context" style="width:100%;"/></div>
-  </div>
-  <label>Content</label>
-  <textarea placeholder="Document excerpt (80-180 words)…" rows="4" style="min-height:80px;"></textarea>`;
-  div.querySelector('button').onclick=()=>div.remove();
-  wrap.appendChild(div);
-}
-async function gradeWritingCustom(type) {
-  const isDbq=type==='DBQ';
-  const promptEl=document.getElementById(isDbq?'g-dbq-prompt':'g-leq-prompt');
-  const responseEl=document.getElementById(isDbq?'g-dbq-response':'g-leq-response');
-  const errId=isDbq?'grade-dbq-error':'grade-leq-error';
-  const formEl=document.getElementById(isDbq?'grade-dbq-form':'grade-leq-form');
-  const loadEl=document.getElementById(isDbq?'grade-dbq-loading':'grade-leq-loading');
-  const resultEl=document.getElementById(isDbq?'grade-dbq-result':'grade-leq-result');
-  const btnEl=document.getElementById(isDbq?'g-dbq-btn':'g-leq-btn');
-  hideError(errId);
-  const prompt=promptEl.value.trim(), studentResponse=responseEl.value.trim();
-  if(!prompt||!studentResponse) return showError(errId,'Prompt and response are required.');
-  let documents=[];
-  if(isDbq) {
-    document.querySelectorAll('#g-dbq-docs [data-doc]').forEach((div,i)=>{
-      const inputs=div.querySelectorAll('input'), ta=div.querySelector('textarea');
-      if(inputs[0]?.value.trim()) documents.push({id:i+1,title:inputs[0].value.trim(),source:inputs[1]?.value.trim()||'',content:ta?.value.trim()||''});
-    });
-  }
-  formEl.style.display='none'; loadEl.style.display='block'; resultEl.style.display='none';
-  try {
-    const result=await callOpenAI({
-      systemPrompt:"You are an AP US History essay grader. You must return only a valid JSON object. No markdown, no explanation, no code fences.",
-      userPrompt:writingPrompt({essayType:type,prompt,documents,studentResponse}),
-    });
-    loadEl.style.display='none'; resultEl.style.display='block';
-    renderWritingResult(result,resultEl,studentResponse,prompt,documents);
-    const retry=document.createElement('button');
-    retry.className='btn btn-outline'; retry.textContent='↩ Grade Another'; retry.style.marginTop='1rem';
-    retry.onclick=()=>{ resultEl.style.display='none'; formEl.style.display='block'; btnEl.disabled=false; };
-    resultEl.appendChild(retry);
-  } catch(e) {
-    loadEl.style.display='none'; formEl.style.display='block'; showError(errId,e.message);
-  }
-}
 function showError(id,msg) { const el=document.getElementById(id); if(el){el.textContent=typeof msg==='string'?msg:(msg?.message||JSON.stringify(msg)||'Unknown error');el.classList.add('show');} }
 function hideError(id) { const el=document.getElementById(id); if(el) el.classList.remove('show'); }
 </script>
