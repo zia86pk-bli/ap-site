@@ -162,6 +162,19 @@ nav {
   margin-bottom: 0.8rem;
   text-transform: uppercase;
 }
+.section-generate-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.8rem 1.5rem;
+  display: flex; align-items: flex-start; gap: 1.2rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+}
+.sgc-icon { font-size: 2.2rem; flex-shrink: 0; padding-top: 2px; }
+.sgc-info { flex: 1; min-width: 180px; }
+.sgc-title { font-family: 'Bebas Neue', sans-serif; font-size: 1.2rem; letter-spacing: 1.5px; margin-bottom: 0.4rem; }
+.sgc-desc { font-size: 0.87rem; color: var(--muted); line-height: 1.6; }
 textarea {
   width: 100%;
   background: var(--surface2);
@@ -405,63 +418,127 @@ label {
 <div id="page-exam" class="page">
   <div class="section-header">
     <h2>PRACTICE <span>EXAM</span></h2>
-    <p>Generate a full AP-style exam and answer each section.</p>
+    <p>Generate each section independently. Each one takes about 15–20 seconds.</p>
   </div>
-  <div id="exam-idle">
-    <div class="card" style="text-align:center;padding:3rem 2rem;">
-      <div style="font-size:3rem;margin-bottom:1rem;">🏛️</div>
-      <h3 style="font-family:'Bebas Neue',sans-serif;font-size:1.6rem;letter-spacing:2px;margin-bottom:0.5rem;">GENERATE YOUR EXAM</h3>
-      <p style="color:var(--muted);font-size:0.9rem;margin-bottom:1.5rem;">Creates 30 MCQs, 3 SAQs, 1 DBQ, and 1 LEQ — mixed periods, medium to hard difficulty.</p>
-      <div id="exam-error" class="error-box"></div>
-      <button class="btn btn-primary" onclick="generateExam()" id="gen-btn">⚡ Generate Exam</button>
-    </div>
+
+  <div class="page-tabs">
+    <div class="page-tab active" id="etab-mcq" onclick="setExamTab('mcq')">MCQ <span class="badge badge-gray" id="mcq-tab-badge"></span></div>
+    <div class="page-tab" id="etab-saq" onclick="setExamTab('saq')">SAQ <span class="badge badge-gray" id="saq-tab-badge"></span></div>
+    <div class="page-tab" id="etab-dbq" onclick="setExamTab('dbq')">DBQ <span class="badge badge-gray" id="dbq-tab-badge"></span></div>
+    <div class="page-tab" id="etab-leq" onclick="setExamTab('leq')">LEQ <span class="badge badge-gray" id="leq-tab-badge"></span></div>
   </div>
-  <div id="exam-loading" style="display:none;">
-    <div class="loading-wrap">
-      <div class="spinner"></div>
-      <p>Generating your exam… this takes about 30–60 seconds.</p>
-    </div>
-  </div>
-  <div id="exam-content" style="display:none;">
-    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1.5rem;flex-wrap:wrap;gap:0.8rem;">
-      <h3 id="exam-title" style="font-family:'Bebas Neue',sans-serif;font-size:1.4rem;letter-spacing:1.5px;"></h3>
-      <button class="btn btn-ghost" onclick="resetExam()" style="font-size:0.8rem;">↩ New Exam</button>
-    </div>
-    <div class="page-tabs">
-      <div class="page-tab active" id="etab-mcq" onclick="setExamTab('mcq')">MCQ <span class="badge badge-gray" id="mcq-badge">30</span></div>
-      <div class="page-tab" id="etab-saq" onclick="setExamTab('saq')">SAQ</div>
-      <div class="page-tab" id="etab-dbq" onclick="setExamTab('dbq')">DBQ</div>
-      <div class="page-tab" id="etab-leq" onclick="setExamTab('leq')">LEQ</div>
-    </div>
-    <div id="etab-content-mcq">
-      <div id="mcq-score-display" style="margin-bottom:1.2rem;display:none;">
-        <div class="mcq-score-bar">
-          <span style="font-family:'DM Mono',monospace;font-size:0.85rem;color:var(--muted);">Score:</span>
-          <span id="mcq-score-text" style="font-family:'DM Mono',monospace;font-size:0.9rem;font-weight:600;color:var(--text);"></span>
-          <span id="mcq-pct-badge" class="badge"></span>
+
+  <!-- MCQ SECTION -->
+  <div id="etab-content-mcq">
+    <div id="mcq-idle">
+      <div class="section-generate-card">
+        <div class="sgc-icon">📝</div>
+        <div class="sgc-info">
+          <div class="sgc-title">Multiple Choice</div>
+          <div class="sgc-desc">30 questions, mixed APUSH periods, medium–hard difficulty. Click each answer to see instant feedback and explanation.</div>
         </div>
-        <div class="progress-bar-wrap"><div class="progress-bar-fill" id="mcq-progress-fill" style="width:0%"></div></div>
-        <div style="font-size:0.78rem;color:var(--muted);" id="mcq-answered-count"></div>
+        <div style="flex-shrink:0;">
+          <div id="mcq-error" class="error-box" style="margin-bottom:0.8rem;"></div>
+          <button class="btn btn-primary" onclick="generateMcq()" id="mcq-gen-btn">⚡ Generate MCQs</button>
+        </div>
+      </div>
+    </div>
+    <div id="mcq-loading" style="display:none;"><div class="loading-wrap"><div class="spinner"></div><p>Generating 30 MCQs…</p></div></div>
+    <div id="mcq-section" style="display:none;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1.2rem;flex-wrap:wrap;gap:0.8rem;">
+        <div id="mcq-score-display">
+          <div class="mcq-score-bar">
+            <span style="font-family:'DM Mono',monospace;font-size:0.85rem;color:var(--muted);">Score:</span>
+            <span id="mcq-score-text" style="font-family:'DM Mono',monospace;font-size:0.9rem;font-weight:600;color:var(--text);"></span>
+            <span id="mcq-pct-badge" class="badge"></span>
+          </div>
+          <div class="progress-bar-wrap"><div class="progress-bar-fill" id="mcq-progress-fill" style="width:0%"></div></div>
+          <div style="font-size:0.78rem;color:var(--muted);" id="mcq-answered-count"></div>
+        </div>
+        <button class="btn btn-ghost" onclick="resetSection('mcq')" style="font-size:0.8rem;">↩ Regenerate</button>
       </div>
       <div id="mcq-list"></div>
     </div>
-    <div id="etab-content-saq" style="display:none;">
+  </div>
+
+  <!-- SAQ SECTION -->
+  <div id="etab-content-saq" style="display:none;">
+    <div id="saq-idle">
+      <div class="section-generate-card">
+        <div class="sgc-icon">✍️</div>
+        <div class="sgc-info">
+          <div class="sgc-title">Short Answer Questions</div>
+          <div class="sgc-desc">3 SAQs following the official AP structure — stimulus-based, comparison, and causation/CCOT. Each part is worth 1 point.</div>
+        </div>
+        <div style="flex-shrink:0;">
+          <div id="saq-error" class="error-box" style="margin-bottom:0.8rem;"></div>
+          <button class="btn btn-primary" onclick="generateSaq()" id="saq-gen-btn">⚡ Generate SAQs</button>
+        </div>
+      </div>
+    </div>
+    <div id="saq-loading" style="display:none;"><div class="loading-wrap"><div class="spinner"></div><p>Generating SAQs…</p></div></div>
+    <div id="saq-section" style="display:none;">
+      <div style="display:flex;justify-content:flex-end;margin-bottom:1rem;">
+        <button class="btn btn-ghost" onclick="resetSection('saq')" style="font-size:0.8rem;">↩ Regenerate</button>
+      </div>
       <div id="saq-content"></div>
-      <div class="sticky-bar" id="saq-sticky" style="display:none;">
-        <span class="status" id="saq-status"></span>
+      <div class="sticky-bar" id="saq-sticky">
+        <span class="status" id="saq-status">3 SAQs — each part worth 1 point</span>
         <button class="btn btn-primary" onclick="submitSaq()" id="saq-submit-btn">Grade SAQs</button>
       </div>
     </div>
-    <div id="etab-content-dbq" style="display:none;">
+  </div>
+
+  <!-- DBQ SECTION -->
+  <div id="etab-content-dbq" style="display:none;">
+    <div id="dbq-idle">
+      <div class="section-generate-card">
+        <div class="sgc-icon">🗂️</div>
+        <div class="sgc-info">
+          <div class="sgc-title">Document-Based Question</div>
+          <div class="sgc-desc">A DBQ prompt with 5–7 primary source documents (80–180 words each). Write your essay response and get graded on the AP rubric.</div>
+        </div>
+        <div style="flex-shrink:0;">
+          <div id="dbq-error" class="error-box" style="margin-bottom:0.8rem;"></div>
+          <button class="btn btn-primary" onclick="generateDbq()" id="dbq-gen-btn">⚡ Generate DBQ</button>
+        </div>
+      </div>
+    </div>
+    <div id="dbq-loading" style="display:none;"><div class="loading-wrap"><div class="spinner"></div><p>Generating DBQ and documents…</p></div></div>
+    <div id="dbq-section" style="display:none;">
+      <div style="display:flex;justify-content:flex-end;margin-bottom:1rem;">
+        <button class="btn btn-ghost" onclick="resetSection('dbq')" style="font-size:0.8rem;">↩ Regenerate</button>
+      </div>
       <div id="dbq-content"></div>
-      <div class="sticky-bar" id="dbq-sticky" style="display:none;">
+      <div class="sticky-bar" id="dbq-sticky">
         <span class="status"></span>
         <button class="btn btn-primary" onclick="submitWriting('DBQ')" id="dbq-submit-btn">Grade DBQ</button>
       </div>
     </div>
-    <div id="etab-content-leq" style="display:none;">
+  </div>
+
+  <!-- LEQ SECTION -->
+  <div id="etab-content-leq" style="display:none;">
+    <div id="leq-idle">
+      <div class="section-generate-card">
+        <div class="sgc-icon">📜</div>
+        <div class="sgc-info">
+          <div class="sgc-title">Long Essay Question</div>
+          <div class="sgc-desc">A single LEQ prompt. Write your essay and get graded on Thesis, Contextualization, Evidence, and Analysis — worth up to 6 points.</div>
+        </div>
+        <div style="flex-shrink:0;">
+          <div id="leq-error" class="error-box" style="margin-bottom:0.8rem;"></div>
+          <button class="btn btn-primary" onclick="generateLeq()" id="leq-gen-btn">⚡ Generate LEQ</button>
+        </div>
+      </div>
+    </div>
+    <div id="leq-loading" style="display:none;"><div class="loading-wrap"><div class="spinner"></div><p>Generating LEQ…</p></div></div>
+    <div id="leq-section" style="display:none;">
+      <div style="display:flex;justify-content:flex-end;margin-bottom:1rem;">
+        <button class="btn btn-ghost" onclick="resetSection('leq')" style="font-size:0.8rem;">↩ Regenerate</button>
+      </div>
       <div id="leq-content"></div>
-      <div class="sticky-bar" id="leq-sticky" style="display:none;">
+      <div class="sticky-bar" id="leq-sticky">
         <span class="status"></span>
         <button class="btn btn-primary" onclick="submitWriting('LEQ')" id="leq-submit-btn">Grade LEQ</button>
       </div>
@@ -565,67 +642,7 @@ function writingSchema() {
     required:["scoreTotal","maxScore","rubric","strengths","improvements","summaryFeedback"]
   };
 }
-function examSchemaPart1() {
-  return {
-    type:"object",additionalProperties:false,
-    properties:{
-      mcq:{type:"array",minItems:30,maxItems:30,items:{type:"object",additionalProperties:false,
-        properties:{id:{type:"integer"},question:{type:"string"},
-          choices:{type:"object",additionalProperties:false,properties:{A:{type:"string"},B:{type:"string"},C:{type:"string"},D:{type:"string"}},required:["A","B","C","D"]},
-          correctAnswer:{type:"string",enum:["A","B","C","D"]},explanation:{type:"string"}},
-        required:["id","question","choices","correctAnswer","explanation"]}},
-      saq:{type:"array",minItems:3,maxItems:3,items:{type:"object",additionalProperties:false,
-        properties:{id:{type:"integer"},stimulus:{anyOf:[{type:"string"},{type:"null"}]},a:{type:"string"},b:{type:"string"},c:{type:"string"}},
-        required:["id","stimulus","a","b","c"]}}
-    },
-    required:["mcq","saq"]
-  };
-}
-function examSchemaPart2() {
-  return {
-    type:"object",additionalProperties:false,
-    properties:{
-      title:{type:"string"},
-      dbq:{type:"object",additionalProperties:false,
-        properties:{prompt:{type:"string"},docs:{type:"array",minItems:5,maxItems:7,items:{type:"object",additionalProperties:false,
-          properties:{id:{type:"integer"},title:{type:"string"},source:{type:"string"},content:{type:"string"}},
-          required:["id","title","source","content"]}}},
-        required:["prompt","docs"]},
-      leq:{type:"object",additionalProperties:false,properties:{prompt:{type:"string"}},required:["prompt"]}
-    },
-    required:["title","dbq","leq"]
-  };
-}
-function saqGradeSchema() {
-  return {
-    type:"object",additionalProperties:false,
-    properties:{
-      totalScore:{type:"integer"},maxScore:{type:"integer"},
-      results:{type:"array",items:{type:"object",additionalProperties:false,
-        properties:{id:{type:"integer"},score:{type:"integer"},maxScore:{type:"integer"},feedback:{type:"string"},
-          strengths:{type:"array",items:{type:"string"}},improvements:{type:"array",items:{type:"string"}}},
-        required:["id","score","maxScore","feedback","strengths","improvements"]}}
-    },
-    required:["totalScore","maxScore","results"]
-  };
-}
-
 // ── PROMPTS ───────────────────────────────────────────────────────────────────
-function examPromptPart1() {
-  return `Create part 1 of an APUSH practice exam.
-- Exactly 30 MCQs, mixed APUSH periods, medium-hard difficulty, 4 choices each with correctAnswer and explanation
-- Exactly 3 SAQs: SAQ1 has a non-null stimulus (a real primary source excerpt), SAQ2 is a comparison question (null stimulus), SAQ3 is causation or CCOT (null stimulus)
-- Each SAQ has id, stimulus, a, b, c parts
-- Historically accurate. Return valid JSON only, no markdown.`;
-}
-function examPromptPart2() {
-  return `Create part 2 of an APUSH practice exam.
-- A creative exam title string
-- 1 DBQ with a prompt and 5-7 document excerpts (80-180 words each), each with id, title, source, content
-- 1 LEQ with a single prompt string
-- Pick an interesting, varied historical topic (Colonial era, Reconstruction, Gilded Age, Progressive Era, WWII homefront, Cold War, Civil Rights, etc.)
-- Historically accurate. Return valid JSON only, no markdown.`;
-}
 function writingPrompt({ essayType, prompt, documents, studentResponse }) {
   const isDbq = essayType === "DBQ";
   const cats = isDbq
@@ -644,7 +661,10 @@ ${saqAnswers.map((item,idx)=>`SAQ ${idx+1}\nID: ${item.id}\nStimulus: ${item.sti
 }
 
 // ── STATE ─────────────────────────────────────────────────────────────────────
-let examData = null, mcqAnswers = {}, mcqLocked = {};
+let mcqData = null, mcqAnswers = {}, mcqLocked = {};
+let saqData = null, saqGraded = false;
+let dbqData = null;
+let leqData = null;
 
 // ── NAV ───────────────────────────────────────────────────────────────────────
 function showPage(id, tabEl) {
@@ -654,47 +674,84 @@ function showPage(id, tabEl) {
   if (tabEl) tabEl.classList.add('active');
 }
 
-// ── EXAM ──────────────────────────────────────────────────────────────────────
-async function generateExam() {
-  document.getElementById('exam-idle').style.display='none';
-  document.getElementById('exam-loading').style.display='block';
-  // Update loading message to show progress
-  const loadingP = document.querySelector('#exam-loading p');
-  if (loadingP) loadingP.textContent = 'Generating MCQs and SAQs…';
-  try {
-    const sys = "You are an AP US History exam generator. Return only valid JSON matching the provided schema.";
-    // Run both halves in parallel — each is well under the timeout limit
-    const [part1, part2] = await Promise.all([
-      callOpenAI({ systemPrompt:sys, userPrompt:examPromptPart1(), schema:examSchemaPart1(), schemaName:"apush_exam_p1" }),
-      callOpenAI({ systemPrompt:sys, userPrompt:examPromptPart2(), schema:examSchemaPart2(), schemaName:"apush_exam_p2" })
-    ]);
-    // Merge into a single exam object
-    examData = { title: part2.title, mcq: part1.mcq, saq: part1.saq, dbq: part2.dbq, leq: part2.leq };
-    mcqAnswers={}; mcqLocked={};
-    renderExam();
-  } catch(e) {
-    document.getElementById('exam-loading').style.display='none';
-    document.getElementById('exam-idle').style.display='block';
-    showError('exam-error',e.message);
-  }
-}
-function resetExam() {
-  examData=null; mcqAnswers={}; mcqLocked={};
-  document.getElementById('exam-content').style.display='none';
-  document.getElementById('exam-idle').style.display='block';
-  document.getElementById('exam-loading').style.display='none';
-}
-function renderExam() {
-  document.getElementById('exam-loading').style.display='none';
-  document.getElementById('exam-content').style.display='block';
-  document.getElementById('exam-title').textContent=examData.title;
-  renderMcq(); renderSaq(); renderDbq(); renderLeq();
-  setExamTab('mcq');
+// ── EXAM TAB SWITCHER ─────────────────────────────────────────────────────────
+function setExamTab(tab) {
+  ['mcq','saq','dbq','leq'].forEach(t=>{
+    document.getElementById('etab-'+t).classList.toggle('active',t===tab);
+    document.getElementById('etab-content-'+t).style.display=t===tab?'block':'none';
+  });
 }
 
-// ── MCQ ───────────────────────────────────────────────────────────────────────
+function resetSection(type) {
+  if (type==='mcq') { mcqData=null; mcqAnswers={}; mcqLocked={};
+    document.getElementById('mcq-section').style.display='none';
+    document.getElementById('mcq-idle').style.display='block';
+    document.getElementById('mcq-tab-badge').textContent='';
+  } else if (type==='saq') { saqData=null; saqGraded=false;
+    document.getElementById('saq-section').style.display='none';
+    document.getElementById('saq-idle').style.display='block';
+    document.getElementById('saq-tab-badge').textContent='';
+    document.getElementById('saq-submit-btn').disabled=false;
+    document.getElementById('saq-submit-btn').textContent='Grade SAQs';
+  } else if (type==='dbq') { dbqData=null;
+    document.getElementById('dbq-section').style.display='none';
+    document.getElementById('dbq-idle').style.display='block';
+    document.getElementById('dbq-tab-badge').textContent='';
+    document.getElementById('dbq-submit-btn').disabled=false;
+    document.getElementById('dbq-submit-btn').textContent='Grade DBQ';
+  } else if (type==='leq') { leqData=null;
+    document.getElementById('leq-section').style.display='none';
+    document.getElementById('leq-idle').style.display='block';
+    document.getElementById('leq-tab-badge').textContent='';
+    document.getElementById('leq-submit-btn').disabled=false;
+    document.getElementById('leq-submit-btn').textContent='Grade LEQ';
+  }
+}
+
+// ── MCQ GENERATOR ─────────────────────────────────────────────────────────────
+const mcqSchema = {
+  type:"object",additionalProperties:false,
+  properties:{
+    mcq:{type:"array",minItems:30,maxItems:30,items:{type:"object",additionalProperties:false,
+      properties:{id:{type:"integer"},question:{type:"string"},
+        choices:{type:"object",additionalProperties:false,
+          properties:{A:{type:"string"},B:{type:"string"},C:{type:"string"},D:{type:"string"}},
+          required:["A","B","C","D"]},
+        correctAnswer:{type:"string",enum:["A","B","C","D"]},explanation:{type:"string"}},
+      required:["id","question","choices","correctAnswer","explanation"]}}
+  },
+  required:["mcq"]
+};
+
+async function generateMcq() {
+  const btn=document.getElementById('mcq-gen-btn');
+  btn.disabled=true; btn.textContent='Generating…';
+  hideError('mcq-error');
+  document.getElementById('mcq-idle').style.display='none';
+  document.getElementById('mcq-loading').style.display='block';
+  try {
+    const result = await callOpenAI({
+      systemPrompt:"You are an AP US History exam generator. Return only valid JSON.",
+      userPrompt:`Generate exactly 30 APUSH multiple-choice questions. Mix topics across all APUSH periods (Colonial through modern). Medium to hard difficulty. Each needs id, question, choices (A/B/C/D), correctAnswer, and explanation. Historically accurate. Return valid JSON only.`,
+      schema: mcqSchema, schemaName:"apush_mcq"
+    });
+    mcqData = result.mcq;
+    mcqAnswers={}; mcqLocked={};
+    document.getElementById('mcq-loading').style.display='none';
+    document.getElementById('mcq-section').style.display='block';
+    document.getElementById('mcq-tab-badge').textContent='30';
+    document.getElementById('mcq-tab-badge').className='badge badge-green';
+    renderMcq();
+  } catch(e) {
+    document.getElementById('mcq-loading').style.display='none';
+    document.getElementById('mcq-idle').style.display='block';
+    btn.disabled=false; btn.textContent='⚡ Generate MCQs';
+    showError('mcq-error', e.message);
+  }
+}
+
 function renderMcq() {
-  document.getElementById('mcq-list').innerHTML = examData.mcq.map((q,i)=>`
+  document.getElementById('mcq-list').innerHTML = mcqData.map((q,i)=>`
     <div class="mcq-question" id="mcq-${q.id}">
       <div class="mcq-num">Question ${i+1} of 30</div>
       <div class="mcq-text">${q.question}</div>
@@ -707,6 +764,7 @@ function renderMcq() {
       <div class="mcq-explanation" id="exp-${q.id}">${q.explanation}</div>
     </div>`).join('');
 }
+
 function selectMcq(id, chosen, correct) {
   if (mcqLocked[id]) return;
   mcqLocked[id]=true; mcqAnswers[id]=chosen;
@@ -721,23 +779,59 @@ function selectMcq(id, chosen, correct) {
   document.getElementById('exp-'+id).classList.add('show');
   updateMcqScore();
 }
+
 function updateMcqScore() {
-  const total=examData.mcq.length, answered=Object.keys(mcqAnswers).length;
-  const correct=examData.mcq.filter(q=>mcqAnswers[q.id]===q.correctAnswer).length;
+  const total=mcqData.length, answered=Object.keys(mcqAnswers).length;
+  const correct=mcqData.filter(q=>mcqAnswers[q.id]===q.correctAnswer).length;
   const pct=Math.round((correct/total)*100);
-  document.getElementById('mcq-score-display').style.display='block';
   document.getElementById('mcq-score-text').textContent=`${correct} / ${total}`;
   document.getElementById('mcq-answered-count').textContent=`${answered} of ${total} answered`;
   document.getElementById('mcq-progress-fill').style.width=(answered/total*100)+'%';
   const badge=document.getElementById('mcq-pct-badge');
   badge.textContent=pct+'%';
   badge.className='badge '+(pct>=70?'badge-green':pct>=50?'badge-gold':'badge-red');
-  document.getElementById('mcq-badge').textContent=answered+'/'+total;
 }
 
-// ── SAQ ───────────────────────────────────────────────────────────────────────
+// ── SAQ GENERATOR ─────────────────────────────────────────────────────────────
+const saqSchema = {
+  type:"object",additionalProperties:false,
+  properties:{
+    saq:{type:"array",minItems:3,maxItems:3,items:{type:"object",additionalProperties:false,
+      properties:{id:{type:"integer"},stimulus:{anyOf:[{type:"string"},{type:"null"}]},
+        a:{type:"string"},b:{type:"string"},c:{type:"string"}},
+      required:["id","stimulus","a","b","c"]}}
+  },
+  required:["saq"]
+};
+
+async function generateSaq() {
+  const btn=document.getElementById('saq-gen-btn');
+  btn.disabled=true; btn.textContent='Generating…';
+  hideError('saq-error');
+  document.getElementById('saq-idle').style.display='none';
+  document.getElementById('saq-loading').style.display='block';
+  try {
+    const result = await callOpenAI({
+      systemPrompt:"You are an AP US History exam generator. Return only valid JSON.",
+      userPrompt:`Generate exactly 3 APUSH Short Answer Questions. SAQ 1: stimulus-based with a real primary source excerpt as the stimulus field. SAQ 2: comparison question, stimulus is null. SAQ 3: causation or continuity-and-change-over-time, stimulus is null. Each SAQ has id, stimulus, a, b, c parts. Parts should be answerable in 1-3 sentences. Historically accurate. Return valid JSON only.`,
+      schema: saqSchema, schemaName:"apush_saq"
+    });
+    saqData = result.saq;
+    document.getElementById('saq-loading').style.display='none';
+    document.getElementById('saq-section').style.display='block';
+    document.getElementById('saq-tab-badge').textContent='3';
+    document.getElementById('saq-tab-badge').className='badge badge-green';
+    renderSaq();
+  } catch(e) {
+    document.getElementById('saq-loading').style.display='none';
+    document.getElementById('saq-idle').style.display='block';
+    btn.disabled=false; btn.textContent='⚡ Generate SAQs';
+    showError('saq-error', e.message);
+  }
+}
+
 function renderSaq() {
-  document.getElementById('saq-content').innerHTML = examData.saq.map((q,i)=>`
+  document.getElementById('saq-content').innerHTML = saqData.map((q,i)=>`
     <div class="card" style="margin-bottom:1.5rem;">
       <div class="card-title">Short Answer Question ${i+1}</div>
       ${q.stimulus?`<div class="saq-stimulus">${q.stimulus}</div>`:''}
@@ -751,13 +845,11 @@ function renderSaq() {
         <p style="font-size:0.9rem;margin-bottom:0.6rem;line-height:1.6;">${q.c}</p>
         <textarea id="saq-${q.id}-c" placeholder="Your answer to Part C…" rows="4"></textarea></div>
     </div>`).join('');
-  document.getElementById('saq-sticky').style.display='flex';
-  document.getElementById('saq-status').textContent='3 SAQs — each part worth 1 point';
 }
-let saqGraded=false;
+
 async function submitSaq() {
   if(saqGraded) return;
-  const answers=examData.saq.map(q=>({
+  const answers=saqData.map(q=>({
     id:q.id,stimulus:q.stimulus,a:q.a,b:q.b,c:q.c,
     responseA:document.getElementById(`saq-${q.id}-a`)?.value||'',
     responseB:document.getElementById(`saq-${q.id}-b`)?.value||'',
@@ -777,6 +869,7 @@ async function submitSaq() {
     btn.textContent='✓ Graded';
   } catch(e) { btn.disabled=false; btn.textContent='Grade SAQs'; alert('Error: '+e.message); }
 }
+
 function renderSaqResults(result,answers) {
   const pct=Math.round((result.totalScore/result.maxScore)*100);
   let html=`<div class="result-header">
@@ -802,31 +895,105 @@ function renderSaqResults(result,answers) {
   document.getElementById('saq-content').innerHTML=html;
 }
 
-// ── DBQ / LEQ RENDER ──────────────────────────────────────────────────────────
+// ── DBQ GENERATOR ─────────────────────────────────────────────────────────────
+const dbqSchema = {
+  type:"object",additionalProperties:false,
+  properties:{
+    dbq:{type:"object",additionalProperties:false,
+      properties:{prompt:{type:"string"},
+        docs:{type:"array",minItems:5,maxItems:7,items:{type:"object",additionalProperties:false,
+          properties:{id:{type:"integer"},title:{type:"string"},source:{type:"string"},content:{type:"string"}},
+          required:["id","title","source","content"]}}},
+      required:["prompt","docs"]}
+  },
+  required:["dbq"]
+};
+
+async function generateDbq() {
+  const btn=document.getElementById('dbq-gen-btn');
+  btn.disabled=true; btn.textContent='Generating…';
+  hideError('dbq-error');
+  document.getElementById('dbq-idle').style.display='none';
+  document.getElementById('dbq-loading').style.display='block';
+  try {
+    const result = await callOpenAI({
+      systemPrompt:"You are an AP US History exam generator. Return only valid JSON.",
+      userPrompt:`Generate one APUSH Document-Based Question. Include a prompt and 5-7 historical document excerpts (each 80-180 words). Each document needs id, title, source (author/date/context), and content. Choose an interesting era (Reconstruction, Gilded Age, Progressive Era, WWII, Cold War, Civil Rights, etc.). Historically accurate. Return valid JSON only.`,
+      schema: dbqSchema, schemaName:"apush_dbq"
+    });
+    dbqData = result.dbq;
+    document.getElementById('dbq-loading').style.display='none';
+    document.getElementById('dbq-section').style.display='block';
+    document.getElementById('dbq-tab-badge').textContent='Ready';
+    document.getElementById('dbq-tab-badge').className='badge badge-green';
+    renderDbq();
+  } catch(e) {
+    document.getElementById('dbq-loading').style.display='none';
+    document.getElementById('dbq-idle').style.display='block';
+    btn.disabled=false; btn.textContent='⚡ Generate DBQ';
+    showError('dbq-error', e.message);
+  }
+}
+
 function renderDbq() {
   document.getElementById('dbq-content').innerHTML=`
     <div class="card" style="margin-bottom:1.5rem;"><div class="card-title">DBQ Prompt</div>
-      <p style="font-size:0.95rem;line-height:1.7;">${examData.dbq.prompt}</p></div>
+      <p style="font-size:0.95rem;line-height:1.7;">${dbqData.prompt}</p></div>
     <div class="card" style="margin-bottom:1.5rem;"><div class="card-title">Documents</div>
-      ${examData.dbq.docs.map(d=>`<div class="doc-card">
+      ${dbqData.docs.map(d=>`<div class="doc-card">
         <div class="doc-title">Document ${d.id}: ${d.title}</div>
         <div class="doc-source">${d.source}</div>
         <div class="doc-content">${d.content}</div></div>`).join('')}
     </div>
     <div class="card"><label>Your DBQ Response</label>
       <textarea id="dbq-response" placeholder="Write your DBQ essay here…" rows="14"></textarea></div>`;
-  document.getElementById('dbq-sticky').style.display='flex';
 }
+
+// ── LEQ GENERATOR ─────────────────────────────────────────────────────────────
+const leqSchema = {
+  type:"object",additionalProperties:false,
+  properties:{
+    leq:{type:"object",additionalProperties:false,
+      properties:{prompt:{type:"string"}},required:["prompt"]}
+  },
+  required:["leq"]
+};
+
+async function generateLeq() {
+  const btn=document.getElementById('leq-gen-btn');
+  btn.disabled=true; btn.textContent='Generating…';
+  hideError('leq-error');
+  document.getElementById('leq-idle').style.display='none';
+  document.getElementById('leq-loading').style.display='block';
+  try {
+    const result = await callOpenAI({
+      systemPrompt:"You are an AP US History exam generator. Return only valid JSON.",
+      userPrompt:`Generate one APUSH Long Essay Question prompt. It should require students to construct an argument using historical evidence. Include a time period and ask for causation, comparison, or continuity and change over time. Choose from Colonial, Revolutionary, Antebellum, Civil War, Reconstruction, Gilded Age, Progressive Era, WWI, Great Depression, WWII, Cold War, or Civil Rights eras. Return valid JSON only.`,
+      schema: leqSchema, schemaName:"apush_leq"
+    });
+    leqData = result.leq;
+    document.getElementById('leq-loading').style.display='none';
+    document.getElementById('leq-section').style.display='block';
+    document.getElementById('leq-tab-badge').textContent='Ready';
+    document.getElementById('leq-tab-badge').className='badge badge-green';
+    renderLeq();
+  } catch(e) {
+    document.getElementById('leq-loading').style.display='none';
+    document.getElementById('leq-idle').style.display='block';
+    btn.disabled=false; btn.textContent='⚡ Generate LEQ';
+    showError('leq-error', e.message);
+  }
+}
+
 function renderLeq() {
   document.getElementById('leq-content').innerHTML=`
     <div class="card" style="margin-bottom:1.5rem;"><div class="card-title">LEQ Prompt</div>
-      <p style="font-size:0.95rem;line-height:1.7;">${examData.leq.prompt}</p></div>
+      <p style="font-size:0.95rem;line-height:1.7;">${leqData.prompt}</p></div>
     <div class="card"><label>Your LEQ Response</label>
       <textarea id="leq-response" placeholder="Write your LEQ essay here…" rows="14"></textarea></div>`;
-  document.getElementById('leq-sticky').style.display='flex';
 }
 
-// ── SUBMIT WRITING (exam tab) ─────────────────────────────────────────────────
+// ── SUBMIT WRITING ────────────────────────────────────────────────────────────
 async function submitWriting(type) {
   const isDbq=type==='DBQ';
   const response=document.getElementById(isDbq?'dbq-response':'leq-response')?.value?.trim();
@@ -835,53 +1002,17 @@ async function submitWriting(type) {
   const contId=isDbq?'dbq-content':'leq-content';
   const btn=document.getElementById(btnId);
   btn.disabled=true; btn.textContent='Grading…';
-  const essayData=isDbq
-    ?{essayType:'DBQ',prompt:examData.dbq.prompt,documents:examData.dbq.docs,studentResponse:response}
-    :{essayType:'LEQ',prompt:examData.leq.prompt,documents:[],studentResponse:response};
+  const data=isDbq
+    ?{essayType:'DBQ',prompt:dbqData.prompt,documents:dbqData.docs,studentResponse:response}
+    :{essayType:'LEQ',prompt:leqData.prompt,documents:[],studentResponse:response};
   try {
     const result=await callOpenAI({
       systemPrompt:"You are an AP US History grader. Return only valid JSON matching the provided schema.",
-      userPrompt:writingPrompt(essayData),schema:writingSchema(),schemaName:isDbq?'dbq_grade':'leq_grade'
+      userPrompt:writingPrompt(data),schema:writingSchema(),schemaName:isDbq?'dbq_grade':'leq_grade'
     });
-    renderWritingResult(result,document.getElementById(contId),response,essayData.prompt,isDbq?examData.dbq.docs:[]);
+    renderWritingResult(result,document.getElementById(contId),response,data.prompt,isDbq?dbqData.docs:[]);
     btn.textContent='✓ Graded';
   } catch(e) { btn.disabled=false; btn.textContent=`Grade ${type}`; alert('Error: '+e.message); }
-}
-
-// ── WRITING RESULT ────────────────────────────────────────────────────────────
-function renderWritingResult(result,container,studentResponse,prompt,docs) {
-  const pct=Math.round((result.scoreTotal/result.maxScore)*100);
-  let html=`<div class="result-header">
-    <div><div style="font-size:0.8rem;color:var(--muted);margin-bottom:0.3rem;text-transform:uppercase;letter-spacing:1px;">Essay Score</div>
-    <div class="score-big">${result.scoreTotal}<span class="denom"> / ${result.maxScore}</span></div></div>
-    <span class="badge ${pct>=70?'badge-green':pct>=50?'badge-gold':'badge-red'}" style="font-size:1rem;padding:0.3rem 0.8rem;">${pct}%</span>
-  </div>
-  <div class="card" style="margin-bottom:1.2rem;"><div class="card-title">Rubric Breakdown</div>
-    ${result.rubric.map(r=>`<div class="rubric-row">
-      <div><div class="rubric-cat">${r.category}</div><div class="rubric-comment">${r.comment}</div></div>
-      <div class="rubric-score">${r.score}/${r.maxScore}</div></div>`).join('')}
-  </div>
-  <div class="card" style="margin-bottom:1.2rem;"><div class="card-title">Overall Feedback</div>
-    <p style="font-size:0.9rem;line-height:1.7;color:var(--muted);">${result.summaryFeedback}</p></div>
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1.2rem;">
-    <div class="card"><div style="font-size:0.78rem;font-weight:600;color:var(--green);text-transform:uppercase;letter-spacing:1px;margin-bottom:0.7rem;">Strengths</div>
-      <ul class="feedback-list strengths">${result.strengths.map(s=>`<li>${s}</li>`).join('')}</ul></div>
-    <div class="card"><div style="font-size:0.78rem;font-weight:600;color:var(--gold);text-transform:uppercase;letter-spacing:1px;margin-bottom:0.7rem;">Areas to Improve</div>
-      <ul class="feedback-list improvements">${result.improvements.map(s=>`<li>${s}</li>`).join('')}</ul></div>
-  </div>`;
-  if(docs&&docs.length) html+=`<details style="margin-bottom:1.2rem;"><summary style="cursor:pointer;font-size:0.85rem;color:var(--muted);padding:0.5rem 0;">View Documents</summary>
-    <div style="margin-top:0.8rem;">${docs.map(d=>`<div class="doc-card"><div class="doc-title">Doc ${d.id}: ${d.title}</div><div class="doc-source">${d.source}</div><div class="doc-content">${d.content}</div></div>`).join('')}</div></details>`;
-  html+=`<details><summary style="cursor:pointer;font-size:0.85rem;color:var(--muted);padding:0.5rem 0;">View Your Response</summary>
-    <div class="card" style="margin-top:0.8rem;"><p style="font-size:0.88rem;line-height:1.8;color:var(--muted);white-space:pre-wrap;">${studentResponse}</p></div></details>`;
-  container.innerHTML=html;
-}
-
-// ── EXAM TAB ──────────────────────────────────────────────────────────────────
-function setExamTab(tab) {
-  ['mcq','saq','dbq','leq'].forEach(t=>{
-    document.getElementById('etab-'+t).classList.toggle('active',t===tab);
-    document.getElementById('etab-content-'+t).style.display=t===tab?'block':'none';
-  });
 }
 
 // ── GRADE TAB ─────────────────────────────────────────────────────────────────
