@@ -1053,6 +1053,59 @@ function renderLeq() {
       <textarea id="leq-response" placeholder="Write your LEQ essay here…" rows="14"></textarea></div>`;
 }
 
+// ── WRITING RESULT RENDERER ──────────────────────────────────────────────────
+function renderWritingResult(result, container, studentResponse, prompt, docs) {
+  const pct = Math.round((result.scoreTotal / result.maxScore) * 100);
+  let html = `
+    <div class="result-header">
+      <div>
+        <div style="font-size:0.8rem;color:var(--muted);margin-bottom:0.3rem;text-transform:uppercase;letter-spacing:1px;">Essay Score</div>
+        <div class="score-big">${result.scoreTotal}<span class="denom"> / ${result.maxScore}</span></div>
+      </div>
+      <span class="badge ${pct>=70?'badge-green':pct>=50?'badge-gold':'badge-red'}" style="font-size:1rem;padding:0.3rem 0.8rem;">${pct}%</span>
+    </div>
+    <div class="card" style="margin-bottom:1.2rem;">
+      <div class="card-title">Rubric Breakdown</div>
+      ${result.rubric.map(r=>`
+        <div class="rubric-row">
+          <div><div class="rubric-cat">${r.category}</div><div class="rubric-comment">${r.comment}</div></div>
+          <div class="rubric-score">${r.score}/${r.maxScore}</div>
+        </div>`).join('')}
+    </div>
+    <div class="card" style="margin-bottom:1.2rem;">
+      <div class="card-title">Overall Feedback</div>
+      <p style="font-size:0.9rem;line-height:1.7;color:var(--muted);">${result.summaryFeedback}</p>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1.2rem;">
+      <div class="card">
+        <div style="font-size:0.78rem;font-weight:600;color:var(--green);text-transform:uppercase;letter-spacing:1px;margin-bottom:0.7rem;">Strengths</div>
+        <ul class="feedback-list strengths">${result.strengths.map(s=>`<li>${s}</li>`).join('')}</ul>
+      </div>
+      <div class="card">
+        <div style="font-size:0.78rem;font-weight:600;color:var(--gold);text-transform:uppercase;letter-spacing:1px;margin-bottom:0.7rem;">Areas to Improve</div>
+        <ul class="feedback-list improvements">${result.improvements.map(s=>`<li>${s}</li>`).join('')}</ul>
+      </div>
+    </div>`;
+
+  if (docs && docs.length) {
+    html += `<details style="margin-bottom:1.2rem;">
+      <summary style="cursor:pointer;font-size:0.85rem;color:var(--muted);padding:0.5rem 0;">View Documents</summary>
+      <div style="margin-top:0.8rem;">
+        ${docs.map(d=>`<div class="doc-card"><div class="doc-title">Doc ${d.id}: ${d.title}</div><div class="doc-source">${d.source}</div><div class="doc-content">${d.content}</div></div>`).join('')}
+      </div>
+    </details>`;
+  }
+
+  html += `<details>
+    <summary style="cursor:pointer;font-size:0.85rem;color:var(--muted);padding:0.5rem 0;">View Your Response</summary>
+    <div class="card" style="margin-top:0.8rem;">
+      <p style="font-size:0.88rem;line-height:1.8;color:var(--muted);white-space:pre-wrap;">${studentResponse}</p>
+    </div>
+  </details>`;
+
+  container.innerHTML = html;
+}
+
 // ── SUBMIT WRITING ────────────────────────────────────────────────────────────
 async function submitWriting(type) {
   const isDbq=type==='DBQ';
