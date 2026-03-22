@@ -565,11 +565,10 @@ function writingSchema() {
     required:["scoreTotal","maxScore","rubric","strengths","improvements","summaryFeedback"]
   };
 }
-function examSchema() {
+function examSchemaPart1() {
   return {
     type:"object",additionalProperties:false,
     properties:{
-      title:{type:"string"},
       mcq:{type:"array",minItems:30,maxItems:30,items:{type:"object",additionalProperties:false,
         properties:{id:{type:"integer"},question:{type:"string"},
           choices:{type:"object",additionalProperties:false,properties:{A:{type:"string"},B:{type:"string"},C:{type:"string"},D:{type:"string"}},required:["A","B","C","D"]},
@@ -577,7 +576,16 @@ function examSchema() {
         required:["id","question","choices","correctAnswer","explanation"]}},
       saq:{type:"array",minItems:3,maxItems:3,items:{type:"object",additionalProperties:false,
         properties:{id:{type:"integer"},stimulus:{anyOf:[{type:"string"},{type:"null"}]},a:{type:"string"},b:{type:"string"},c:{type:"string"}},
-        required:["id","stimulus","a","b","c"]}},
+        required:["id","stimulus","a","b","c"]}}
+    },
+    required:["mcq","saq"]
+  };
+}
+function examSchemaPart2() {
+  return {
+    type:"object",additionalProperties:false,
+    properties:{
+      title:{type:"string"},
       dbq:{type:"object",additionalProperties:false,
         properties:{prompt:{type:"string"},docs:{type:"array",minItems:5,maxItems:7,items:{type:"object",additionalProperties:false,
           properties:{id:{type:"integer"},title:{type:"string"},source:{type:"string"},content:{type:"string"}},
@@ -585,7 +593,7 @@ function examSchema() {
         required:["prompt","docs"]},
       leq:{type:"object",additionalProperties:false,properties:{prompt:{type:"string"}},required:["prompt"]}
     },
-    required:["title","mcq","saq","dbq","leq"]
+    required:["title","dbq","leq"]
   };
 }
 function saqGradeSchema() {
@@ -603,13 +611,19 @@ function saqGradeSchema() {
 }
 
 // ── PROMPTS ───────────────────────────────────────────────────────────────────
-function examPrompt() {
-  return `Create one APUSH practice exam. Requirements:
-- 30 MCQs, mixed APUSH periods, medium-hard difficulty, 4 choices each with correctAnswer and explanation
-- 3 SAQs: SAQ1 stimulus-based (non-null stimulus), SAQ2 comparison (null stimulus), SAQ3 causation/CCOT (null stimulus)
-- Each SAQ has parts a, b, c
-- 1 DBQ with 5-7 document excerpts (80-180 words each), each with id, title, source, content
-- 1 LEQ prompt
+function examPromptPart1() {
+  return `Create part 1 of an APUSH practice exam.
+- Exactly 30 MCQs, mixed APUSH periods, medium-hard difficulty, 4 choices each with correctAnswer and explanation
+- Exactly 3 SAQs: SAQ1 has a non-null stimulus (a real primary source excerpt), SAQ2 is a comparison question (null stimulus), SAQ3 is causation or CCOT (null stimulus)
+- Each SAQ has id, stimulus, a, b, c parts
+- Historically accurate. Return valid JSON only, no markdown.`;
+}
+function examPromptPart2() {
+  return `Create part 2 of an APUSH practice exam.
+- A creative exam title string
+- 1 DBQ with a prompt and 5-7 document excerpts (80-180 words each), each with id, title, source, content
+- 1 LEQ with a single prompt string
+- Pick an interesting, varied historical topic (Colonial era, Reconstruction, Gilded Age, Progressive Era, WWII homefront, Cold War, Civil Rights, etc.)
 - Historically accurate. Return valid JSON only, no markdown.`;
 }
 function writingPrompt({ essayType, prompt, documents, studentResponse }) {
@@ -644,11 +658,18 @@ function showPage(id, tabEl) {
 async function generateExam() {
   document.getElementById('exam-idle').style.display='none';
   document.getElementById('exam-loading').style.display='block';
+  // Update loading message to show progress
+  const loadingP = document.querySelector('#exam-loading p');
+  if (loadingP) loadingP.textContent = 'Generating MCQs and SAQs…';
   try {
-    examData = await callOpenAI({
-      systemPrompt:"You are an AP US History exam generator. Return only valid JSON matching the provided schema.",
-      userPrompt:examPrompt(), schema:examSchema(), schemaName:"apush_exam"
-    });
+    const sys = "You are an AP US History exam generator. Return only valid JSON matching the provided schema.";
+    // Run both halves in parallel — each is well under the timeout limit
+    const [part1, part2] = await Promise.all([
+      callOpenAI({ systemPrompt:sys, userPrompt:examPromptPart1(), schema:examSchemaPart1(), schemaName:"apush_exam_p1" }),
+      callOpenAI({ systemPrompt:sys, userPrompt:examPromptPart2(), schema:examSchemaPart2(), schemaName:"apush_exam_p2" })
+    ]);
+    // Merge into a single exam object
+    examData = { title: part2.title, mcq: part1.mcq, saq: part1.saq, dbq: part2.dbq, leq: part2.leq };
     mcqAnswers={}; mcqLocked={};
     renderExam();
   } catch(e) {
