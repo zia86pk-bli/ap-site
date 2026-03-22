@@ -1,0 +1,904 @@
+{
+  "questions": [
+    {
+      "id": 1,
+      "period": "1491-1607",
+      "topic": "Native societies",
+      "difficulty": "medium",
+      "question": "Before European contact, many Native societies in North America were best characterized by",
+      "options": [
+        "uniform political systems and identical religious beliefs",
+        "diverse cultures shaped by different regional environments",
+        "complete isolation from long-distance trade networks",
+        "dependence on European metal tools for farming"
+      ],
+      "answer": 1,
+      "explanation": "Native societies were highly diverse and adapted to different environments, economies, and political systems."
+    },
+    {
+      "id": 2,
+      "period": "1491-1607",
+      "topic": "Columbian Exchange",
+      "difficulty": "easy",
+      "question": "The Columbian Exchange most directly led to",
+      "options": [
+        "the end of Atlantic trade",
+        "the transfer of crops, animals, and diseases between the hemispheres",
+        "the immediate abolition of slavery in the Americas",
+        "equal population growth in Europe and the Americas"
+      ],
+      "answer": 1,
+      "explanation": "The Columbian Exchange involved the movement of plants, animals, diseases, and peoples between the Eastern and Western Hemispheres."
+    },
+    {
+      "id": 3,
+      "period": "1607-1754",
+      "topic": "Jamestown",
+      "difficulty": "easy",
+      "question": "The survival of the Jamestown colony depended most immediately on the cultivation of",
+      "options": [
+        "rice",
+        "indigo",
+        "tobacco",
+        "cotton"
+      ],
+      "answer": 2,
+      "explanation": "Tobacco became Jamestown’s profitable cash crop and supported the colony’s economic survival."
+    },
+    {
+      "id": 4,
+      "period": "1607-1754",
+      "topic": "New England",
+      "difficulty": "medium",
+      "question": "Compared with the Chesapeake colonies, New England colonies developed with more",
+      "options": [
+        "large plantations and cash-crop agriculture",
+        "small farms and town-centered communities",
+        "reliance on enslaved labor in the early years",
+        "support for the Church of England as the established religion"
+      ],
+      "answer": 1,
+      "explanation": "New England’s climate and geography encouraged small farms, town life, and mixed local economies."
+    },
+    {
+      "id": 5,
+      "period": "1607-1754",
+      "topic": "Labor systems",
+      "difficulty": "medium",
+      "question": "Which development most directly encouraged the growth of slavery in the Chesapeake by the late 1600s?",
+      "options": [
+        "declining demand for tobacco",
+        "the increasing cost of indentured servants and demand for labor",
+        "a ban on the Atlantic slave trade",
+        "the spread of industrial factories"
+      ],
+      "answer": 1,
+      "explanation": "As demand for labor remained high and indentured servants became less attractive, planters increasingly turned to slavery."
+    },
+    {
+      "id": 6,
+      "period": "1607-1754",
+      "topic": "Bacon's Rebellion",
+      "difficulty": "medium",
+      "question": "Bacon’s Rebellion revealed tensions in colonial Virginia mainly over",
+      "options": [
+        "relations with Native peoples and access to western lands",
+        "independence from Britain",
+        "abolition of slavery",
+        "religious freedom for Catholics"
+      ],
+      "answer": 0,
+      "explanation": "The rebellion reflected conflict over frontier defense, Native policy, and elite control of land and power."
+    },
+    {
+      "id": 7,
+      "period": "1607-1754",
+      "topic": "Great Awakening",
+      "difficulty": "easy",
+      "question": "The Great Awakening is best understood as a movement that",
+      "options": [
+        "strengthened traditional church authority by limiting emotional preaching",
+        "encouraged personal religious experience and challenged established churches",
+        "created a single national American church",
+        "ended religious diversity in the colonies"
+      ],
+      "answer": 1,
+      "explanation": "The Great Awakening emphasized individual faith and often challenged older religious authorities."
+    },
+    {
+      "id": 8,
+      "period": "1607-1754",
+      "topic": "Salutary neglect",
+      "difficulty": "hard",
+      "question": "Britain’s policy of salutary neglect contributed most directly to the colonies’",
+      "options": [
+        "habit of self-government and resistance to tighter control",
+        "full dependence on Parliament for local lawmaking",
+        "economic decline in Atlantic trade",
+        "rejection of representative assemblies"
+      ],
+      "answer": 0,
+      "explanation": "Years of loose enforcement allowed colonists to build traditions of self-rule that later clashed with British imperial reforms."
+    },
+    {
+      "id": 9,
+      "period": "1754-1800",
+      "topic": "French and Indian War",
+      "difficulty": "easy",
+      "question": "A major effect of the French and Indian War was that Britain",
+      "options": [
+        "gave the colonies representation in Parliament",
+        "reduced taxes on the colonies",
+        "increased efforts to tax and regulate the colonies",
+        "withdrew its military from North America"
+      ],
+      "answer": 2,
+      "explanation": "War debt led Britain to seek more revenue and tighter imperial control over the colonies."
+    },
+    {
+      "id": 10,
+      "period": "1754-1800",
+      "topic": "Proclamation of 1763",
+      "difficulty": "medium",
+      "question": "The Proclamation of 1763 was intended primarily to",
+      "options": [
+        "encourage rapid settlement west of the Appalachians",
+        "reduce conflict with Native peoples by limiting western settlement",
+        "grant western lands to France",
+        "end colonial self-government"
+      ],
+      "answer": 1,
+      "explanation": "Britain tried to stabilize the frontier by restricting colonial settlement west of the Appalachian Mountains."
+    },
+    {
+      "id": 11,
+      "period": "1754-1800",
+      "topic": "Common Sense",
+      "difficulty": "easy",
+      "question": "Thomas Paine’s Common Sense was significant because it",
+      "options": [
+        "persuaded many colonists to support independence",
+        "defended the authority of the king",
+        "called for a stronger Articles of Confederation",
+        "opposed republican government"
+      ],
+      "answer": 0,
+      "explanation": "Paine’s pamphlet used accessible language to popularize the idea of independence."
+    },
+    {
+      "id": 12,
+      "period": "1754-1800",
+      "topic": "Articles of Confederation",
+      "difficulty": "medium",
+      "question": "The Articles of Confederation reflected the revolutionary generation’s fear of",
+      "options": [
+        "weak state governments",
+        "too much centralized power",
+        "western settlement",
+        "popular participation in politics"
+      ],
+      "answer": 1,
+      "explanation": "After resisting British authority, many Americans preferred a weak national government."
+    },
+    {
+      "id": 13,
+      "period": "1754-1800",
+      "topic": "Shays' Rebellion",
+      "difficulty": "medium",
+      "question": "Shays’ Rebellion strengthened calls for",
+      "options": [
+        "a stronger national government",
+        "the abolition of state governments",
+        "an alliance with Britain",
+        "the end of taxation"
+      ],
+      "answer": 0,
+      "explanation": "The rebellion highlighted the weaknesses of the Articles and convinced many leaders that a stronger federal government was needed."
+    },
+    {
+      "id": 14,
+      "period": "1754-1800",
+      "topic": "Federalists vs Anti-Federalists",
+      "difficulty": "medium",
+      "question": "Anti-Federalists opposed ratification of the Constitution mainly because they believed it",
+      "options": [
+        "did not create a strong enough military",
+        "threatened individual liberties and state power",
+        "would eliminate the presidency",
+        "gave too much power to the states"
+      ],
+      "answer": 1,
+      "explanation": "Anti-Federalists feared concentrated federal authority and wanted a bill of rights."
+    },
+    {
+      "id": 15,
+      "period": "1754-1800",
+      "topic": "Bill of Rights",
+      "difficulty": "easy",
+      "question": "The Bill of Rights was added to the Constitution primarily to",
+      "options": [
+        "protect civil liberties",
+        "expand federal taxation",
+        "weaken the judicial branch",
+        "promote industrialization"
+      ],
+      "answer": 0,
+      "explanation": "The first ten amendments were added to protect rights and reassure critics of the Constitution."
+    },
+    {
+      "id": 16,
+      "period": "1754-1800",
+      "topic": "Hamilton's financial plan",
+      "difficulty": "medium",
+      "question": "Alexander Hamilton’s financial program was intended to",
+      "options": [
+        "strengthen the national government and promote economic growth",
+        "reduce ties between government and business",
+        "replace manufacturing with farming",
+        "eliminate tariffs on foreign goods"
+      ],
+      "answer": 0,
+      "explanation": "Hamilton supported assumption, a national bank, and pro-development policies."
+    },
+    {
+      "id": 17,
+      "period": "1754-1800",
+      "topic": "Jeffersonian Republicans",
+      "difficulty": "medium",
+      "question": "Jeffersonian Republicans generally favored",
+      "options": [
+        "a strict interpretation of the Constitution and agrarian interests",
+        "a loose interpretation of the Constitution and banking elites",
+        "close ties with Britain",
+        "a permanent large standing army"
+      ],
+      "answer": 0,
+      "explanation": "Jeffersonians emphasized agriculture, limited federal power, and strict constitutional interpretation."
+    },
+    {
+      "id": 18,
+      "period": "1754-1800",
+      "topic": "Whiskey Rebellion",
+      "difficulty": "medium",
+      "question": "The federal response to the Whiskey Rebellion demonstrated that the new government",
+      "options": [
+        "could not enforce its laws",
+        "had the authority to maintain order",
+        "planned to repeal all taxes",
+        "would allow states to nullify federal law"
+      ],
+      "answer": 1,
+      "explanation": "Washington’s response showed the stronger federal power created by the Constitution."
+    },
+    {
+      "id": 19,
+      "period": "1800-1848",
+      "topic": "Louisiana Purchase",
+      "difficulty": "easy",
+      "question": "The Louisiana Purchase was important because it",
+      "options": [
+        "doubled the size of the United States",
+        "ended sectional conflict",
+        "started the Civil War",
+        "abolished slavery in the territories"
+      ],
+      "answer": 0,
+      "explanation": "The purchase dramatically expanded U.S. territory and encouraged western settlement."
+    },
+    {
+      "id": 20,
+      "period": "1800-1848",
+      "topic": "Marbury v. Madison",
+      "difficulty": "easy",
+      "question": "Marbury v. Madison established the principle of",
+      "options": [
+        "nullification",
+        "judicial review",
+        "popular sovereignty",
+        "executive privilege"
+      ],
+      "answer": 1,
+      "explanation": "The Supreme Court claimed the power to declare acts of Congress unconstitutional."
+    },
+    {
+      "id": 21,
+      "period": "1800-1848",
+      "topic": "War of 1812",
+      "difficulty": "medium",
+      "question": "One major long-term effect of the War of 1812 was the growth of",
+      "options": [
+        "nationalism and domestic manufacturing",
+        "support for the Federalist Party",
+        "British influence in the West",
+        "French control of trade"
+      ],
+      "answer": 0,
+      "explanation": "The war encouraged American manufacturing and increased national pride."
+    },
+    {
+      "id": 22,
+      "period": "1800-1848",
+      "topic": "Market Revolution",
+      "difficulty": "medium",
+      "question": "The Market Revolution was most directly supported by",
+      "options": [
+        "decreased transportation",
+        "improvements in roads, canals, and railroads",
+        "the decline of cotton farming",
+        "the elimination of wage labor"
+      ],
+      "answer": 1,
+      "explanation": "Transportation improvements linked markets and encouraged regional specialization."
+    },
+    {
+      "id": 23,
+      "period": "1800-1848",
+      "topic": "Second Great Awakening",
+      "difficulty": "medium",
+      "question": "The Second Great Awakening contributed most directly to the rise of",
+      "options": [
+        "reform movements such as temperance and abolition",
+        "support for aristocratic politics",
+        "the decline of voluntary associations",
+        "a ban on women’s public activism"
+      ],
+      "answer": 0,
+      "explanation": "Religious revivalism inspired many antebellum reform movements."
+    },
+    {
+      "id": 24,
+      "period": "1800-1848",
+      "topic": "Jacksonian Democracy",
+      "difficulty": "medium",
+      "question": "Jacksonian Democracy is most associated with",
+      "options": [
+        "expanded political participation for white men",
+        "voting rights for women",
+        "the elimination of political parties",
+        "the end of patronage"
+      ],
+      "answer": 0,
+      "explanation": "During the Jacksonian era, suffrage expanded for many white men as property restrictions fell."
+    },
+    {
+      "id": 25,
+      "period": "1800-1848",
+      "topic": "Indian Removal",
+      "difficulty": "medium",
+      "question": "The Indian Removal Act reflected the belief that",
+      "options": [
+        "Native nations should be fully independent states",
+        "westward expansion should take priority over Native land rights",
+        "the Supreme Court had no role in federal policy",
+        "the federal government opposed settlement in the South"
+      ],
+      "answer": 1,
+      "explanation": "Indian removal was tied to white settlement, land hunger, and the expansion of cotton cultivation."
+    },
+    {
+      "id": 26,
+      "period": "1844-1877",
+      "topic": "Manifest Destiny",
+      "difficulty": "easy",
+      "question": "Manifest Destiny was the belief that",
+      "options": [
+        "the United States was justified in expanding across the continent",
+        "the Constitution should be abolished",
+        "immigration should stop completely",
+        "slavery should end immediately everywhere"
+      ],
+      "answer": 0,
+      "explanation": "Manifest Destiny expressed the belief that the U.S. had a mission to expand westward."
+    },
+    {
+      "id": 27,
+      "period": "1844-1877",
+      "topic": "Mexican-American War",
+      "difficulty": "medium",
+      "question": "The Mexican-American War intensified sectional conflict mainly because it raised disputes over",
+      "options": [
+        "protective tariffs",
+        "slavery in the territories",
+        "relations with France",
+        "the national bank"
+      ],
+      "answer": 1,
+      "explanation": "Territorial expansion renewed arguments about whether slavery would extend westward."
+    },
+    {
+      "id": 28,
+      "period": "1844-1877",
+      "topic": "Compromise of 1850",
+      "difficulty": "medium",
+      "question": "The Compromise of 1850 attempted to preserve the Union by",
+      "options": [
+        "ending slavery nationwide",
+        "balancing sectional interests with measures on California and fugitive slaves",
+        "creating two separate nations",
+        "repealing the Missouri Compromise immediately"
+      ],
+      "answer": 1,
+      "explanation": "The compromise admitted California as free while strengthening the Fugitive Slave Act and making other adjustments."
+    },
+    {
+      "id": 29,
+      "period": "1844-1877",
+      "topic": "Kansas-Nebraska Act",
+      "difficulty": "medium",
+      "question": "The Kansas-Nebraska Act was controversial because it",
+      "options": [
+        "ended popular sovereignty",
+        "reopened the issue of slavery in areas once closed to it by the Missouri Compromise",
+        "abolished slavery in Kansas",
+        "forced all territories to enter as free states"
+      ],
+      "answer": 1,
+      "explanation": "By allowing popular sovereignty, the act effectively undermined the Missouri Compromise line."
+    },
+    {
+      "id": 30,
+      "period": "1844-1877",
+      "topic": "Civil War causes",
+      "difficulty": "easy",
+      "question": "The central cause of the Civil War was conflict over",
+      "options": [
+        "slavery and its expansion",
+        "banking policy",
+        "relations with Spain",
+        "the national road"
+      ],
+      "answer": 0,
+      "explanation": "Slavery, especially its expansion into new territories, was the central issue dividing North and South."
+    },
+    {
+      "id": 31,
+      "period": "1844-1877",
+      "topic": "Emancipation Proclamation",
+      "difficulty": "medium",
+      "question": "The Emancipation Proclamation changed the Civil War by",
+      "options": [
+        "freeing all enslaved people everywhere immediately",
+        "making abolition a central Union war aim",
+        "ending the war in 1863",
+        "granting voting rights to women"
+      ],
+      "answer": 1,
+      "explanation": "It transformed the war’s meaning by linking Union victory to emancipation."
+    },
+    {
+      "id": 32,
+      "period": "1844-1877",
+      "topic": "Reconstruction Amendments",
+      "difficulty": "medium",
+      "question": "The 14th Amendment is best known for",
+      "options": [
+        "ending slavery",
+        "granting birthright citizenship and equal protection",
+        "guaranteeing women’s suffrage",
+        "creating federal income taxes"
+      ],
+      "answer": 1,
+      "explanation": "The amendment established citizenship and equal protection under the law."
+    },
+    {
+      "id": 33,
+      "period": "1844-1877",
+      "topic": "End of Reconstruction",
+      "difficulty": "hard",
+      "question": "The end of Reconstruction in 1877 led most directly to the",
+      "options": [
+        "rapid expansion of Black political power in the South",
+        "rise of Jim Crow segregation and disfranchisement",
+        "immediate redistribution of land to freedpeople",
+        "abolition of sharecropping"
+      ],
+      "answer": 1,
+      "explanation": "After Reconstruction ended, white southern governments imposed segregation and voting restrictions."
+    },
+    {
+      "id": 34,
+      "period": "1865-1898",
+      "topic": "Industrialization",
+      "difficulty": "easy",
+      "question": "A major feature of the late 1800s U.S. economy was",
+      "options": [
+        "rapid industrial growth and consolidation of big business",
+        "the decline of railroads",
+        "the end of immigration",
+        "the disappearance of labor conflict"
+      ],
+      "answer": 0,
+      "explanation": "This period saw heavy industrialization, railroad expansion, and large corporations."
+    },
+    {
+      "id": 35,
+      "period": "1865-1898",
+      "topic": "Immigration",
+      "difficulty": "medium",
+      "question": "New immigrants from southern and eastern Europe in the late 1800s often",
+      "options": [
+        "settled mostly on western ranches",
+        "faced nativist hostility in American cities",
+        "were immediately welcomed into elite professions",
+        "avoided industrial jobs"
+      ],
+      "answer": 1,
+      "explanation": "Many immigrants settled in cities and encountered discrimination, nativism, and harsh working conditions."
+    },
+    {
+      "id": 36,
+      "period": "1865-1898",
+      "topic": "Labor unions",
+      "difficulty": "medium",
+      "question": "Labor unions such as the Knights of Labor and the AFL sought to",
+      "options": [
+        "reduce the power of workers in industry",
+        "improve wages, hours, and working conditions",
+        "end all mechanization",
+        "promote laissez-faire labor policy"
+      ],
+      "answer": 1,
+      "explanation": "These unions organized workers to demand better treatment from employers."
+    },
+    {
+      "id": 37,
+      "period": "1865-1898",
+      "topic": "Populists",
+      "difficulty": "hard",
+      "question": "The Populist movement arose largely from the concerns of",
+      "options": [
+        "southern planters and northeastern bankers",
+        "farmers facing debt and economic pressure",
+        "industrial tycoons",
+        "federal judges"
+      ],
+      "answer": 1,
+      "explanation": "Populists represented farmers who wanted inflationary monetary policy, railroad regulation, and political reforms."
+    },
+    {
+      "id": 38,
+      "period": "1890-1945",
+      "topic": "Progressive Era",
+      "difficulty": "easy",
+      "question": "Progressive reformers generally aimed to",
+      "options": [
+        "reduce government involvement in social issues",
+        "address problems caused by industrialization and urbanization",
+        "restore the Articles of Confederation",
+        "end all business regulation"
+      ],
+      "answer": 1,
+      "explanation": "Progressives sought reforms in politics, labor, public health, and business regulation."
+    },
+    {
+      "id": 39,
+      "period": "1890-1945",
+      "topic": "Muckrakers",
+      "difficulty": "medium",
+      "question": "Muckrakers such as Upton Sinclair were important because they",
+      "options": [
+        "exposed social and economic problems to the public",
+        "opposed all reform legislation",
+        "promoted isolationism during World War I",
+        "argued against consumer protections"
+      ],
+      "answer": 0,
+      "explanation": "Investigative journalists helped build support for Progressive reforms."
+    },
+    {
+      "id": 40,
+      "period": "1890-1945",
+      "topic": "Imperialism",
+      "difficulty": "medium",
+      "question": "The Spanish-American War marked a turning point because it",
+      "options": [
+        "ended all U.S. interest in foreign affairs",
+        "expanded U.S. influence overseas",
+        "resulted in U.S. withdrawal from the Caribbean",
+        "gave Britain control of the Philippines"
+      ],
+      "answer": 1,
+      "explanation": "The war led the U.S. to acquire overseas territories and increased its role in world affairs."
+    },
+    {
+      "id": 41,
+      "period": "1890-1945",
+      "topic": "World War I",
+      "difficulty": "medium",
+      "question": "A major reason the United States entered World War I was",
+      "options": [
+        "the Zimmermann Telegram and unrestricted submarine warfare",
+        "a British invasion of Canada",
+        "the attack on Pearl Harbor",
+        "the spread of communism in Eastern Europe"
+      ],
+      "answer": 0,
+      "explanation": "German submarine warfare and the Zimmermann Telegram pushed U.S. opinion toward war."
+    },
+    {
+      "id": 42,
+      "period": "1890-1945",
+      "topic": "1920s",
+      "difficulty": "medium",
+      "question": "The 1920s were marked by both cultural innovation and",
+      "options": [
+        "a complete end to nativism",
+        "social conflict over immigration, race, and modern values",
+        "the elimination of consumer culture",
+        "the collapse of mass media"
+      ],
+      "answer": 1,
+      "explanation": "The decade included tensions over immigration, religion, race, gender roles, and modern culture."
+    },
+    {
+      "id": 43,
+      "period": "1890-1945",
+      "topic": "Great Depression",
+      "difficulty": "easy",
+      "question": "The Great Depression led many Americans to expect the federal government to",
+      "options": [
+        "take a more active role in the economy",
+        "withdraw from economic issues completely",
+        "abolish banks permanently",
+        "end democratic elections"
+      ],
+      "answer": 0,
+      "explanation": "Economic collapse created support for expanded federal intervention and relief."
+    },
+    {
+      "id": 44,
+      "period": "1890-1945",
+      "topic": "New Deal",
+      "difficulty": "medium",
+      "question": "Franklin Roosevelt’s New Deal is best understood as a set of programs intended to",
+      "options": [
+        "restore laissez-faire capitalism without regulation",
+        "provide relief, recovery, and reform during the Depression",
+        "prepare the United States for immediate war with the Soviet Union",
+        "end Social Security"
+      ],
+      "answer": 1,
+      "explanation": "The New Deal sought to relieve suffering, revive the economy, and reform financial systems."
+    },
+    {
+      "id": 45,
+      "period": "1890-1945",
+      "topic": "World War II home front",
+      "difficulty": "medium",
+      "question": "During World War II, the U.S. home front was transformed by",
+      "options": [
+        "declining industrial production",
+        "expanded factory work and migration for defense jobs",
+        "the end of women’s wage labor",
+        "the elimination of racial tensions"
+      ],
+      "answer": 1,
+      "explanation": "War mobilization increased production, moved workers, and created new opportunities and tensions."
+    },
+    {
+      "id": 46,
+      "period": "1945-1980",
+      "topic": "Cold War",
+      "difficulty": "easy",
+      "question": "The policy of containment was designed to",
+      "options": [
+        "spread communism into Latin America",
+        "limit the expansion of Soviet influence",
+        "end all U.S. alliances",
+        "promote isolationism after World War II"
+      ],
+      "answer": 1,
+      "explanation": "Containment sought to stop the spread of communism, especially Soviet-backed expansion."
+    },
+    {
+      "id": 47,
+      "period": "1945-1980",
+      "topic": "Truman Doctrine",
+      "difficulty": "hard",
+      "question": "The Truman Doctrine reflected the broader Cold War goal of",
+      "options": [
+        "supporting nations resisting communist pressure",
+        "eliminating NATO",
+        "ending aid to foreign countries",
+        "promoting colonial empires"
+      ],
+      "answer": 0,
+      "explanation": "The doctrine committed the U.S. to support governments threatened by communism."
+    },
+    {
+      "id": 48,
+      "period": "1945-1980",
+      "topic": "1950s",
+      "difficulty": "medium",
+      "question": "Postwar suburban growth in the 1950s was encouraged by",
+      "options": [
+        "GI Bill benefits and highway construction",
+        "the end of automobile use",
+        "a collapse in homebuilding",
+        "the decline of federal mortgage support"
+      ],
+      "answer": 0,
+      "explanation": "Low-cost mortgages, highways, and postwar prosperity helped fuel suburbanization."
+    },
+    {
+      "id": 49,
+      "period": "1945-1980",
+      "topic": "Civil Rights Movement",
+      "difficulty": "easy",
+      "question": "Brown v. Board of Education was significant because it",
+      "options": [
+        "approved school segregation",
+        "declared school segregation unconstitutional",
+        "guaranteed voting rights for women",
+        "ended the Vietnam War"
+      ],
+      "answer": 1,
+      "explanation": "The Supreme Court ruled that separate educational facilities were inherently unequal."
+    },
+    {
+      "id": 50,
+      "period": "1945-1980",
+      "topic": "Civil Rights strategies",
+      "difficulty": "medium",
+      "question": "A key strategy of early Civil Rights activists in the 1950s and 1960s was",
+      "options": [
+        "armed rebellion against the federal government",
+        "nonviolent protest and civil disobedience",
+        "support for Jim Crow laws",
+        "rejection of court cases"
+      ],
+      "answer": 1,
+      "explanation": "Leaders and activists often used sit-ins, boycotts, marches, and legal challenges."
+    },
+    {
+      "id": 51,
+      "period": "1945-1980",
+      "topic": "Great Society",
+      "difficulty": "medium",
+      "question": "Lyndon Johnson’s Great Society programs aimed most directly to",
+      "options": [
+        "reduce poverty and expand educational and health opportunities",
+        "privatize Social Security",
+        "end federal support for civil rights",
+        "promote isolationism"
+      ],
+      "answer": 0,
+      "explanation": "The Great Society included anti-poverty, education, healthcare, and civil rights initiatives."
+    },
+    {
+      "id": 52,
+      "period": "1945-1980",
+      "topic": "Vietnam War",
+      "difficulty": "medium",
+      "question": "The Vietnam War contributed to",
+      "options": [
+        "rising public trust in government",
+        "greater skepticism toward government policy",
+        "the end of student activism",
+        "a return to complete isolationism"
+      ],
+      "answer": 1,
+      "explanation": "Televised war coverage, the draft, and official credibility issues increased distrust."
+    },
+    {
+      "id": 53,
+      "period": "1980-Present",
+      "topic": "Conservatism",
+      "difficulty": "medium",
+      "question": "The rise of modern conservatism in the late 1900s was closely associated with support for",
+      "options": [
+        "smaller government, lower taxes, and traditional social values",
+        "expanded New Deal liberalism",
+        "full economic nationalization",
+        "the elimination of private enterprise"
+      ],
+      "answer": 0,
+      "explanation": "Conservative politics emphasized limited government, tax cuts, and traditional values."
+    },
+    {
+      "id": 54,
+      "period": "1980-Present",
+      "topic": "Globalization",
+      "difficulty": "medium",
+      "question": "Globalization in the late 20th century most directly affected the U.S. economy by",
+      "options": [
+        "ending all international trade",
+        "increasing global economic interdependence",
+        "eliminating technological innovation",
+        "stopping the movement of jobs across borders"
+      ],
+      "answer": 1,
+      "explanation": "Globalization linked economies more tightly through trade, finance, and production networks."
+    },
+    {
+      "id": 55,
+      "period": "1980-Present",
+      "topic": "Post-Cold War",
+      "difficulty": "hard",
+      "question": "After the Cold War ended, U.S. foreign policy debates often focused on",
+      "options": [
+        "whether the U.S. should act as a global leader or limit overseas intervention",
+        "whether the Constitution should be suspended",
+        "whether the U.S. should restore monarchy",
+        "whether Atlantic trade should end"
+      ],
+      "answer": 0,
+      "explanation": "Post-Cold War debates often centered on intervention, multilateralism, and America’s role in the world."
+    },
+    {
+      "id": 56,
+      "period": "1607-1754",
+      "topic": "Middle Colonies",
+      "difficulty": "medium",
+      "question": "The Middle Colonies were known for",
+      "options": [
+        "religious and ethnic diversity",
+        "exclusive Puritan rule",
+        "complete dependence on a single crop",
+        "absence of cities"
+      ],
+      "answer": 0,
+      "explanation": "The Middle Colonies had diverse populations, mixed economies, and growing port cities."
+    },
+    {
+      "id": 57,
+      "period": "1754-1800",
+      "topic": "Republican motherhood",
+      "difficulty": "medium",
+      "question": "The idea of republican motherhood suggested that women should",
+      "options": [
+        "avoid all involvement in political culture",
+        "help raise virtuous and informed citizens",
+        "vote in all federal elections immediately",
+        "reject education entirely"
+      ],
+      "answer": 1,
+      "explanation": "Republican motherhood linked women’s roles to civic virtue through education and raising future citizens."
+    },
+    {
+      "id": 58,
+      "period": "1800-1848",
+      "topic": "Cotton economy",
+      "difficulty": "medium",
+      "question": "The cotton gin most directly contributed to the expansion of",
+      "options": [
+        "free labor in the Deep South",
+        "slavery in the South",
+        "textile manufacturing in New England only",
+        "wheat farming in the Midwest"
+      ],
+      "answer": 1,
+      "explanation": "By making cotton more profitable, the cotton gin increased demand for enslaved labor."
+    },
+    {
+      "id": 59,
+      "period": "1865-1898",
+      "topic": "Plessy v. Ferguson",
+      "difficulty": "hard",
+      "question": "Plessy v. Ferguson provided legal support for",
+      "options": [
+        "school desegregation",
+        "the doctrine of 'separate but equal'",
+        "the end of Jim Crow laws",
+        "federal voting protections"
+      ],
+      "answer": 1,
+      "explanation": "The decision upheld segregation and helped legitimize Jim Crow."
+    },
+    {
+      "id": 60,
+      "period": "1890-1945",
+      "topic": "Women’s suffrage",
+      "difficulty": "easy",
+      "question": "The 19th Amendment is most closely associated with",
+      "options": [
+        "the direct election of senators",
+        "women’s right to vote",
+        "prohibition",
+        "the income tax"
+      ],
+      "answer": 1,
+      "explanation": "The 19th Amendment prohibited denying the vote on the basis of sex."
+    }
+  ]
+}
