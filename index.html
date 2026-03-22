@@ -597,33 +597,29 @@ label {
 
 <script>
 // API calls go through Netlify function — key never exposed to browser
-async function callOpenAI({ systemPrompt, userPrompt, schema, schemaName }) {
-  const body = {
-    model: "gpt-4.1-mini",
-    input: [
-      { role: "developer", content: [{ type: "input_text", text: systemPrompt }] },
-      { role: "user", content: [{ type: "input_text", text: userPrompt }] }
-    ],
-    text: {
-      format: { type: "json_schema", name: schemaName, schema: schema, strict: true }
-    }
-  };
-
+async function callOpenAI({ systemPrompt, userPrompt }) {
   const res = await fetch("/api/openai", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(body)
+    body: JSON.stringify({ systemPrompt, userPrompt })
   });
 
-  if (!res.ok) {
-    const err = await res.json().catch(() => ({}));
-    throw new Error(err?.error?.message || `Server error ${res.status}`);
+  const data = await res.json();
+
+  if (!res.ok || data.error) {
+    throw new Error(data.error || `Server error ${res.status}`);
   }
 
-  const data = await res.json();
   const text = data.output_text;
   if (!text) throw new Error("Model returned empty response.");
-  return JSON.parse(text);
+
+  // Strip markdown code fences if model wraps JSON in them
+  const clean = text.replace(/^```(?:json)?\n?/i, "").replace(/\n?```$/,"").trim();
+  try {
+    return JSON.parse(clean);
+  } catch(e) {
+    throw new Error("Could not parse model response as JSON. Try again.");
+  }
 }
 
 // ── SCHEMAS ──────────────────────────────────────────────────────────────────
@@ -645,19 +641,28 @@ function writingSchema() {
 // ── PROMPTS ───────────────────────────────────────────────────────────────────
 function writingPrompt({ essayType, prompt, documents, studentResponse }) {
   const isDbq = essayType === "DBQ";
+  const maxScore = isDbq ? 7 : 6;
   const cats = isDbq
-    ? "1. Thesis/Claim (max 1)\n2. Contextualization (max 1)\n3. Evidence (max 3)\n4. Analysis and Reasoning (max 2)"
-    : "1. Thesis/Claim (max 1)\n2. Contextualization (max 1)\n3. Evidence (max 2)\n4. Analysis and Reasoning (max 2)";
+    ? "Thesis/Claim (max 1), Contextualization (max 1), Evidence (max 3), Analysis and Reasoning (max 2)"
+    : "Thesis/Claim (max 1), Contextualization (max 1), Evidence (max 2), Analysis and Reasoning (max 2)";
   const docs = isDbq && Array.isArray(documents) && documents.length
-    ? "Documents:\n" + documents.map(d=>`Document ${d.id}\nTitle: ${d.title}\nSource: ${d.source}\nContent: ${d.content}`).join("\n\n")
+    ? "\n\nDocuments:\n" + documents.map(d=>`Doc ${d.id} - ${d.title} (${d.source}): ${d.content}`).join("\n\n")
     : "";
-  return `You are a strict AP United States History essay grader.
-Grade the student's ${essayType}. Be fair but strict. Score only what is written. maxScore must be ${isDbq?7:6}.
-Rubric categories:\n${cats}\nPrompt:\n${prompt}\n${docs}\nStudent Response:\n${studentResponse}`;
+  return `You are a strict AP US History grader. Grade this ${essayType}. Score only what is actually written.
+Rubric: ${cats}. Total max: ${maxScore}.
+Return a JSON object with this exact structure:
+{"scoreTotal":0,"maxScore":${maxScore},"rubric":[{"category":"Thesis/Claim","score":0,"maxScore":1,"comment":"..."}],"strengths":["..."],"improvements":["..."],"summaryFeedback":"..."}
+Return only the JSON object, no markdown.
+
+Prompt: ${prompt}${docs}
+
+Student Response: ${studentResponse}`;
 }
 function saqGradingPrompt(saqAnswers) {
-  return `You are a strict AP US History SAQ grader. Each SAQ has 3 parts worth 0-1 each. maxScore must be ${saqAnswers.length*3}.
-${saqAnswers.map((item,idx)=>`SAQ ${idx+1}\nID: ${item.id}\nStimulus: ${item.stimulus||"None"}\nPart A: ${item.a}\nResponse A: ${item.responseA||""}\nPart B: ${item.b}\nResponse B: ${item.responseB||""}\nPart C: ${item.c}\nResponse C: ${item.responseC||""}`).join("\n\n")}`;
+  const items = saqAnswers.map((item,idx)=>`SAQ ${idx+1}\nStimulus: ${item.stimulus||"None"}\nPart A: ${item.a}\nStudent A: ${item.responseA||""}\nPart B: ${item.b}\nStudent B: ${item.responseB||""}\nPart C: ${item.c}\nStudent C: ${item.responseC||""}`).join("\n\n");
+  return `You are a strict AP US History SAQ grader. Each part is worth 0 or 1. Return a JSON object with this exact structure:
+{"totalScore":0,"maxScore":${saqAnswers.length*3},"results":[{"id":1,"score":0,"maxScore":3,"feedback":"...","strengths":["..."],"improvements":["..."]}]}
+Grade these responses. Return only the JSON object, no markdown.\n\n${items}`;
 }
 
 // ── STATE ─────────────────────────────────────────────────────────────────────
@@ -731,9 +736,10 @@ async function generateMcq() {
   document.getElementById('mcq-loading').style.display='block';
   try {
     const result = await callOpenAI({
-      systemPrompt:"You are an AP US History exam generator. Return only valid JSON.",
-      userPrompt:`Generate exactly 30 APUSH multiple-choice questions. Mix topics across all APUSH periods (Colonial through modern). Medium to hard difficulty. Each needs id, question, choices (A/B/C/D), correctAnswer, and explanation. Historically accurate. Return valid JSON only.`,
-      schema: mcqSchema, schemaName:"apush_mcq"
+      systemPrompt:"You are an AP US History exam generator. You must return only a valid JSON object. No markdown, no explanation, no code fences.",
+      userPrompt:`Generate exactly 30 APUSH multiple-choice questions. Mix topics across all APUSH periods. Medium to hard difficulty. Return a JSON object with this exact structure:
+{"mcq":[{"id":1,"question":"...","choices":{"A":"...","B":"...","C":"...","D":"..."},"correctAnswer":"A","explanation":"..."},...]}
+Return only the JSON object, no markdown, no extra text.`,
     });
     mcqData = result.mcq;
     mcqAnswers={}; mcqLocked={};
@@ -812,9 +818,10 @@ async function generateSaq() {
   document.getElementById('saq-loading').style.display='block';
   try {
     const result = await callOpenAI({
-      systemPrompt:"You are an AP US History exam generator. Return only valid JSON.",
-      userPrompt:`Generate exactly 3 APUSH Short Answer Questions. SAQ 1: stimulus-based with a real primary source excerpt as the stimulus field. SAQ 2: comparison question, stimulus is null. SAQ 3: causation or continuity-and-change-over-time, stimulus is null. Each SAQ has id, stimulus, a, b, c parts. Parts should be answerable in 1-3 sentences. Historically accurate. Return valid JSON only.`,
-      schema: saqSchema, schemaName:"apush_saq"
+      systemPrompt:"You are an AP US History exam generator. You must return only a valid JSON object. No markdown, no explanation, no code fences.",
+      userPrompt:`Generate exactly 3 APUSH Short Answer Questions. SAQ 1: stimulus-based with a real primary source excerpt. SAQ 2: comparison (stimulus null). SAQ 3: causation or CCOT (stimulus null). Return a JSON object with this exact structure:
+{"saq":[{"id":1,"stimulus":"primary source text or null","a":"part a question","b":"part b question","c":"part c question"},...]}
+Return only the JSON object, no markdown, no extra text.`,
     });
     saqData = result.saq;
     document.getElementById('saq-loading').style.display='none';
@@ -861,8 +868,8 @@ async function submitSaq() {
   btn.disabled=true; btn.textContent='Grading…';
   try {
     const result=await callOpenAI({
-      systemPrompt:"You are an AP US History SAQ grader. Return only valid JSON matching the provided schema.",
-      userPrompt:saqGradingPrompt(answers),schema:saqGradeSchema(),schemaName:"saq_grade"
+      systemPrompt:"You are an AP US History SAQ grader. You must return only a valid JSON object. No markdown, no explanation, no code fences.",
+      userPrompt:saqGradingPrompt(answers),
     });
     saqGraded=true;
     renderSaqResults(result,answers);
@@ -917,9 +924,10 @@ async function generateDbq() {
   document.getElementById('dbq-loading').style.display='block';
   try {
     const result = await callOpenAI({
-      systemPrompt:"You are an AP US History exam generator. Return only valid JSON.",
-      userPrompt:`Generate one APUSH Document-Based Question. Include a prompt and 5-7 historical document excerpts (each 80-180 words). Each document needs id, title, source (author/date/context), and content. Choose an interesting era (Reconstruction, Gilded Age, Progressive Era, WWII, Cold War, Civil Rights, etc.). Historically accurate. Return valid JSON only.`,
-      schema: dbqSchema, schemaName:"apush_dbq"
+      systemPrompt:"You are an AP US History exam generator. You must return only a valid JSON object. No markdown, no explanation, no code fences.",
+      userPrompt:`Generate one APUSH Document-Based Question. Include 5-7 historical document excerpts (80-180 words each). Choose an interesting era (Reconstruction, Gilded Age, Progressive Era, WWII, Cold War, Civil Rights, etc.). Return a JSON object with this exact structure:
+{"dbq":{"prompt":"essay prompt here","docs":[{"id":1,"title":"doc title","source":"Author, Date, Context","content":"document text here"}]}}
+Return only the JSON object, no markdown, no extra text.`,
     });
     dbqData = result.dbq;
     document.getElementById('dbq-loading').style.display='none';
@@ -967,9 +975,10 @@ async function generateLeq() {
   document.getElementById('leq-loading').style.display='block';
   try {
     const result = await callOpenAI({
-      systemPrompt:"You are an AP US History exam generator. Return only valid JSON.",
-      userPrompt:`Generate one APUSH Long Essay Question prompt. It should require students to construct an argument using historical evidence. Include a time period and ask for causation, comparison, or continuity and change over time. Choose from Colonial, Revolutionary, Antebellum, Civil War, Reconstruction, Gilded Age, Progressive Era, WWI, Great Depression, WWII, Cold War, or Civil Rights eras. Return valid JSON only.`,
-      schema: leqSchema, schemaName:"apush_leq"
+      systemPrompt:"You are an AP US History exam generator. You must return only a valid JSON object. No markdown, no explanation, no code fences.",
+      userPrompt:`Generate one APUSH Long Essay Question prompt requiring an argument with historical evidence (causation, comparison, or CCOT). Return a JSON object with this exact structure:
+{"leq":{"prompt":"the full LEQ prompt here"}}
+Return only the JSON object, no markdown, no extra text.`,
     });
     leqData = result.leq;
     document.getElementById('leq-loading').style.display='none';
@@ -1007,8 +1016,8 @@ async function submitWriting(type) {
     :{essayType:'LEQ',prompt:leqData.prompt,documents:[],studentResponse:response};
   try {
     const result=await callOpenAI({
-      systemPrompt:"You are an AP US History grader. Return only valid JSON matching the provided schema.",
-      userPrompt:writingPrompt(data),schema:writingSchema(),schemaName:isDbq?'dbq_grade':'leq_grade'
+      systemPrompt:"You are an AP US History essay grader. You must return only a valid JSON object. No markdown, no explanation, no code fences.",
+      userPrompt:writingPrompt(data),
     });
     renderWritingResult(result,document.getElementById(contId),response,data.prompt,isDbq?dbqData.docs:[]);
     btn.textContent='✓ Graded';
@@ -1066,9 +1075,8 @@ async function gradeWritingCustom(type) {
   formEl.style.display='none'; loadEl.style.display='block'; resultEl.style.display='none';
   try {
     const result=await callOpenAI({
-      systemPrompt:"You are an AP US History grader. Return only valid JSON matching the provided schema.",
+      systemPrompt:"You are an AP US History essay grader. You must return only a valid JSON object. No markdown, no explanation, no code fences.",
       userPrompt:writingPrompt({essayType:type,prompt,documents,studentResponse}),
-      schema:writingSchema(),schemaName:isDbq?'dbq_grade':'leq_grade'
     });
     loadEl.style.display='none'; resultEl.style.display='block';
     renderWritingResult(result,resultEl,studentResponse,prompt,documents);
