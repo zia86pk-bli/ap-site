@@ -43,4 +43,5 @@ export default async (req, context) => {
 
 export const config = {
   path: "/api/openai",
+  maxDuration: 60,
 };
