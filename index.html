@@ -435,11 +435,12 @@ label {
         <div class="sgc-icon">📝</div>
         <div class="sgc-info">
           <div class="sgc-title">Multiple Choice</div>
-          <div class="sgc-desc">30 questions, mixed APUSH periods, medium–hard difficulty. Click each answer to see instant feedback and explanation.</div>
+          <div class="sgc-desc">30 randomly selected questions from the test bank. Click each answer to see instant feedback and explanation.</div>
+          <div id="mcq-bank-info" style="font-size:0.78rem;color:var(--muted);margin-top:0.4rem;"></div>
         </div>
         <div style="flex-shrink:0;">
           <div id="mcq-error" class="error-box" style="margin-bottom:0.8rem;"></div>
-          <button class="btn btn-primary" onclick="generateMcq()" id="mcq-gen-btn">⚡ Generate MCQs</button>
+          <button class="btn btn-primary" onclick="generateMcq()" id="mcq-gen-btn">⚡ Load Questions</button>
         </div>
       </div>
     </div>
@@ -729,59 +730,93 @@ const mcqSchema = {
   required:["mcq"]
 };
 
+// ── MCQ TEST BANK ─────────────────────────────────────────────────────────────
+// Loads questions.json from your repo.
+// Supports two formats:
+//   Format A (questionBank.js style): {options:["text",...], answer:0}  ← index-based
+//   Format B (questions.json style):  {choices:{A:"text",...}, correctAnswer:"B"}
+const MCQ_BANK_URL = "questions.json";
+
+function normalizeQuestion(q, newId) {
+  // Already in Format B — pass through
+  if (q.choices && q.correctAnswer) {
+    return { ...q, id: newId };
+  }
+  // Format A — convert options array + answer index → choices object + correctAnswer letter
+  const letters = ['A','B','C','D'];
+  const opts = q.options || [];
+  const choices = {};
+  letters.forEach((l, i) => { if (opts[i] !== undefined) choices[l] = opts[i]; });
+  const correctAnswer = letters[typeof q.answer === 'number' ? q.answer : 0];
+  return {
+    id: newId,
+    question: q.question,
+    choices,
+    correctAnswer,
+    explanation: q.explanation || '',
+    // preserve extra fields
+    period: q.period,
+    topic: q.topic,
+    difficulty: q.difficulty,
+  };
+}
+
 async function generateMcq() {
-  const btn=document.getElementById('mcq-gen-btn');
-  btn.disabled=true; btn.textContent='Generating…';
+  const btn = document.getElementById('mcq-gen-btn');
+  btn.disabled = true; btn.textContent = 'Loading…';
   hideError('mcq-error');
-  document.getElementById('mcq-idle').style.display='none';
-  document.getElementById('mcq-loading').style.display='block';
-
+  document.getElementById('mcq-idle').style.display = 'none';
+  document.getElementById('mcq-loading').style.display = 'block';
   const loadingP = document.querySelector('#mcq-loading p');
-  const sys = "You are an AP US History exam generator. You must return only a valid JSON object. No markdown, no explanation, no code fences.";
-
-  const batches = [
-    { ids: "1-10", periods: "Colonial America (1491-1763) and the Revolutionary/Founding era (1763-1800)" },
-    { ids: "11-20", periods: "the Early Republic through Civil War and Reconstruction (1800-1877)" },
-    { ids: "21-30", periods: "Gilded Age, Progressive Era, World Wars, Cold War, and Civil Rights (1877-present)" },
-  ];
+  if (loadingP) loadingP.textContent = 'Loading question bank…';
 
   try {
-    if (loadingP) loadingP.textContent = 'Generating questions 1–10…';
-    const [b1, b2, b3] = await Promise.all(batches.map((b, i) =>
-      callOpenAI({
-        systemPrompt: sys,
-        userPrompt: `Generate exactly 10 APUSH multiple-choice questions covering ${b.periods}. Number them ${b.ids}. Medium to hard difficulty. Return a JSON object with this exact structure:
-{"mcq":[{"id":1,"question":"...","choices":{"A":"...","B":"...","C":"...","D":"..."},"correctAnswer":"A","explanation":"..."}]}
-Return only the JSON object, no markdown, no extra text.`
-      })
-    ));
+    const res = await fetch(MCQ_BANK_URL + '?v=' + Date.now());
+    if (!res.ok) throw new Error(`Could not load questions.json (${res.status}). Make sure the file is in your repo.`);
 
-    // Merge and re-number
-    const all = [...(b1.mcq||[]), ...(b2.mcq||[]), ...(b3.mcq||[])].map((q,i)=>({...q,id:i+1}));
-    if (all.length === 0) throw new Error("No questions returned. Please try again.");
+    const bank = await res.json();
+    // Support {questions:[...]}, {mcq:[...]}, or a bare array
+    const allQ = Array.isArray(bank) ? bank : (bank?.questions || bank?.mcq || []);
 
-    mcqData = all;
-    mcqAnswers={}; mcqLocked={};
-    document.getElementById('mcq-loading').style.display='none';
-    document.getElementById('mcq-section').style.display='block';
-    document.getElementById('mcq-tab-badge').textContent=all.length;
-    document.getElementById('mcq-tab-badge').className='badge badge-green';
+    if (!Array.isArray(allQ) || allQ.length === 0) {
+      throw new Error("questions.json loaded but contains no questions. Check the file format.");
+    }
+
+    // Shuffle and pick up to 30
+    const shuffled = [...allQ].sort(() => Math.random() - 0.5);
+    const selected = shuffled.slice(0, Math.min(30, shuffled.length));
+
+    // Normalize to internal format and re-number
+    mcqData = selected.map((q, i) => normalizeQuestion(q, i + 1));
+    mcqAnswers = {}; mcqLocked = {};
+
+    const info = document.getElementById('mcq-bank-info');
+    if (info) info.textContent = `${allQ.length} questions in bank · showing ${mcqData.length} randomly selected`;
+
+    document.getElementById('mcq-loading').style.display = 'none';
+    document.getElementById('mcq-section').style.display = 'block';
+    document.getElementById('mcq-tab-badge').textContent = mcqData.length;
+    document.getElementById('mcq-tab-badge').className = 'badge badge-green';
     renderMcq();
+
   } catch(e) {
-    document.getElementById('mcq-loading').style.display='none';
-    document.getElementById('mcq-idle').style.display='block';
-    btn.disabled=false; btn.textContent='⚡ Generate MCQs';
-    showError('mcq-error', typeof e==='string' ? e : (e?.message || 'Generation failed. Please try again.'));
+    document.getElementById('mcq-loading').style.display = 'none';
+    document.getElementById('mcq-idle').style.display = 'block';
+    btn.disabled = false; btn.textContent = '⚡ Load Questions';
+    showError('mcq-error', typeof e === 'string' ? e : (e?.message || 'Failed to load questions.'));
   }
 }
 
 function renderMcq() {
   document.getElementById('mcq-list').innerHTML = mcqData.map((q,i)=>`
     <div class="mcq-question" id="mcq-${q.id}">
-      <div class="mcq-num">Question ${i+1} of 30</div>
+      <div class="mcq-num" style="display:flex;justify-content:space-between;align-items:center;">
+        <span>Question ${i+1} of ${mcqData.length}</span>
+        ${q.period ? `<span style="font-size:0.72rem;color:var(--gold);font-family:'DM Mono',monospace;">${q.period}${q.topic ? ' · '+q.topic : ''}</span>` : ''}
+      </div>
       <div class="mcq-text">${q.question}</div>
       <div class="mcq-choices">
-        ${['A','B','C','D'].map(l=>`
+        ${['A','B','C','D'].filter(l=>q.choices[l]).map(l=>`
           <div class="mcq-choice" id="mc-${q.id}-${l}" onclick="selectMcq(${q.id},'${l}','${q.correctAnswer}')">
             <span class="letter">${l}</span><span>${q.choices[l]}</span>
           </div>`).join('')}
@@ -838,9 +873,8 @@ async function generateSaq() {
   try {
     const result = await callOpenAI({
       systemPrompt:"You are an AP US History exam generator. You must return only a valid JSON object. No markdown, no explanation, no code fences.",
-      userPrompt:`Generate exactly 3 APUSH Short Answer Questions. SAQ 1: stimulus-based with a real primary source excerpt. SAQ 2: comparison (stimulus null). SAQ 3: causation or CCOT (stimulus null). Return a JSON object with this exact structure:
-{"saq":[{"id":1,"stimulus":"primary source text or null","a":"part a question","b":"part b question","c":"part c question"},...]}
-Return only the JSON object, no markdown, no extra text.`,
+      userPrompt:`Generate 3 APUSH SAQs. SAQ1: stimulus-based (include a 2-3 sentence primary source as stimulus). SAQ2: comparison (stimulus:null). SAQ3: causation or CCOT (stimulus:null). Keep each part question to 1 sentence.
+Return ONLY this JSON: {"saq":[{"id":1,"stimulus":"text or null","a":"question","b":"question","c":"question"}]}`,
     });
     saqData = result.saq;
     document.getElementById('saq-loading').style.display='none';
@@ -944,9 +978,8 @@ async function generateDbq() {
   try {
     const result = await callOpenAI({
       systemPrompt:"You are an AP US History exam generator. You must return only a valid JSON object. No markdown, no explanation, no code fences.",
-      userPrompt:`Generate one APUSH Document-Based Question. Include 5-7 historical document excerpts (80-180 words each). Choose an interesting era (Reconstruction, Gilded Age, Progressive Era, WWII, Cold War, Civil Rights, etc.). Return a JSON object with this exact structure:
-{"dbq":{"prompt":"essay prompt here","docs":[{"id":1,"title":"doc title","source":"Author, Date, Context","content":"document text here"}]}}
-Return only the JSON object, no markdown, no extra text.`,
+      userPrompt:`Generate one APUSH DBQ. Use exactly 5 documents, each 60-80 words. Choose one era: Reconstruction, Progressive Era, WWII, or Cold War.
+Return ONLY this JSON: {"dbq":{"prompt":"the essay prompt","docs":[{"id":1,"title":"title","source":"Author, Year","content":"60-80 word excerpt"}]}}`,
     });
     dbqData = result.dbq;
     document.getElementById('dbq-loading').style.display='none';
@@ -995,9 +1028,8 @@ async function generateLeq() {
   try {
     const result = await callOpenAI({
       systemPrompt:"You are an AP US History exam generator. You must return only a valid JSON object. No markdown, no explanation, no code fences.",
-      userPrompt:`Generate one APUSH Long Essay Question prompt requiring an argument with historical evidence (causation, comparison, or CCOT). Return a JSON object with this exact structure:
-{"leq":{"prompt":"the full LEQ prompt here"}}
-Return only the JSON object, no markdown, no extra text.`,
+      userPrompt:`Generate one APUSH LEQ prompt (causation, comparison, or CCOT). 2 sentences max.
+Return ONLY this JSON: {"leq":{"prompt":"the prompt here"}}`,
     });
     leqData = result.leq;
     document.getElementById('leq-loading').style.display='none';
