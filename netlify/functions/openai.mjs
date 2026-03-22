@@ -1,5 +1,4 @@
 export default async (req, context) => {
-  // Only allow POST
   if (req.method !== "POST") {
     return new Response(JSON.stringify({ error: "Method not allowed" }), {
       status: 405,
@@ -16,21 +15,45 @@ export default async (req, context) => {
   }
 
   try {
-    const body = await req.json();
+    const { systemPrompt, userPrompt } = await req.json();
 
-    const openaiRes = await fetch("https://api.openai.com/v1/responses", {
+    const openaiRes = await fetch("https://api.openai.com/v1/chat/completions", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
         Authorization: `Bearer ${apiKey}`,
       },
-      body: JSON.stringify(body),
+      body: JSON.stringify({
+        model: "gpt-4o-mini",
+        response_format: { type: "json_object" },
+        messages: [
+          { role: "system", content: systemPrompt },
+          { role: "user", content: userPrompt },
+        ],
+        temperature: 0.7,
+      }),
     });
 
-    const data = await openaiRes.json();
+    if (!openaiRes.ok) {
+      const err = await openaiRes.json().catch(() => ({}));
+      return new Response(
+        JSON.stringify({ error: err?.error?.message || `OpenAI error ${openaiRes.status}` }),
+        { status: openaiRes.status, headers: { "Content-Type": "application/json" } }
+      );
+    }
 
-    return new Response(JSON.stringify(data), {
-      status: openaiRes.status,
+    const data = await openaiRes.json();
+    const text = data?.choices?.[0]?.message?.content;
+
+    if (!text) {
+      return new Response(JSON.stringify({ error: "Model returned empty response." }), {
+        status: 500,
+        headers: { "Content-Type": "application/json" },
+      });
+    }
+
+    return new Response(JSON.stringify({ output_text: text }), {
+      status: 200,
       headers: { "Content-Type": "application/json" },
     });
   } catch (err) {
