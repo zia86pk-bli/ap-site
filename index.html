@@ -607,7 +607,8 @@ async function callOpenAI({ systemPrompt, userPrompt }) {
   const data = await res.json();
 
   if (!res.ok || data.error) {
-    throw new Error(data.error || `Server error ${res.status}`);
+    const msg = typeof data.error === 'string' ? data.error : (data.error?.message || `Server error ${res.status}`);
+    throw new Error(msg);
   }
 
   const text = data.output_text;
@@ -734,25 +735,43 @@ async function generateMcq() {
   hideError('mcq-error');
   document.getElementById('mcq-idle').style.display='none';
   document.getElementById('mcq-loading').style.display='block';
+
+  const loadingP = document.querySelector('#mcq-loading p');
+  const sys = "You are an AP US History exam generator. You must return only a valid JSON object. No markdown, no explanation, no code fences.";
+
+  const batches = [
+    { ids: "1-10", periods: "Colonial America (1491-1763) and the Revolutionary/Founding era (1763-1800)" },
+    { ids: "11-20", periods: "the Early Republic through Civil War and Reconstruction (1800-1877)" },
+    { ids: "21-30", periods: "Gilded Age, Progressive Era, World Wars, Cold War, and Civil Rights (1877-present)" },
+  ];
+
   try {
-    const result = await callOpenAI({
-      systemPrompt:"You are an AP US History exam generator. You must return only a valid JSON object. No markdown, no explanation, no code fences.",
-      userPrompt:`Generate exactly 30 APUSH multiple-choice questions. Mix topics across all APUSH periods. Medium to hard difficulty. Return a JSON object with this exact structure:
-{"mcq":[{"id":1,"question":"...","choices":{"A":"...","B":"...","C":"...","D":"..."},"correctAnswer":"A","explanation":"..."},...]}
-Return only the JSON object, no markdown, no extra text.`,
-    });
-    mcqData = result.mcq;
+    if (loadingP) loadingP.textContent = 'Generating questions 1–10…';
+    const [b1, b2, b3] = await Promise.all(batches.map((b, i) =>
+      callOpenAI({
+        systemPrompt: sys,
+        userPrompt: `Generate exactly 10 APUSH multiple-choice questions covering ${b.periods}. Number them ${b.ids}. Medium to hard difficulty. Return a JSON object with this exact structure:
+{"mcq":[{"id":1,"question":"...","choices":{"A":"...","B":"...","C":"...","D":"..."},"correctAnswer":"A","explanation":"..."}]}
+Return only the JSON object, no markdown, no extra text.`
+      })
+    ));
+
+    // Merge and re-number
+    const all = [...(b1.mcq||[]), ...(b2.mcq||[]), ...(b3.mcq||[])].map((q,i)=>({...q,id:i+1}));
+    if (all.length === 0) throw new Error("No questions returned. Please try again.");
+
+    mcqData = all;
     mcqAnswers={}; mcqLocked={};
     document.getElementById('mcq-loading').style.display='none';
     document.getElementById('mcq-section').style.display='block';
-    document.getElementById('mcq-tab-badge').textContent='30';
+    document.getElementById('mcq-tab-badge').textContent=all.length;
     document.getElementById('mcq-tab-badge').className='badge badge-green';
     renderMcq();
   } catch(e) {
     document.getElementById('mcq-loading').style.display='none';
     document.getElementById('mcq-idle').style.display='block';
     btn.disabled=false; btn.textContent='⚡ Generate MCQs';
-    showError('mcq-error', e.message);
+    showError('mcq-error', typeof e==='string' ? e : (e?.message || 'Generation failed. Please try again.'));
   }
 }
 
@@ -1088,7 +1107,7 @@ async function gradeWritingCustom(type) {
     loadEl.style.display='none'; formEl.style.display='block'; showError(errId,e.message);
   }
 }
-function showError(id,msg) { const el=document.getElementById(id); if(el){el.textContent=msg;el.classList.add('show');} }
+function showError(id,msg) { const el=document.getElementById(id); if(el){el.textContent=typeof msg==='string'?msg:(msg?.message||JSON.stringify(msg)||'Unknown error');el.classList.add('show');} }
 function hideError(id) { const el=document.getElementById(id); if(el) el.classList.remove('show'); }
 </script>
 </body>
