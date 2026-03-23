@@ -519,6 +519,11 @@ label {
     <button class="btn btn-primary" onclick="submitStudentInfo()" style="width:100%;margin-top:0.5rem;justify-content:center;">
       Start Practicing →
     </button>
+    <div style="margin-top:1.2rem;padding-top:1rem;border-top:1px solid var(--border);text-align:center;">
+      <button onclick="teacherBypass()" style="background:none;border:none;color:var(--muted);font-size:0.8rem;cursor:pointer;text-decoration:underline;">
+        I'm a teacher — go to dashboard
+      </button>
+    </div>
   </div>
 </div>
 
@@ -837,9 +842,9 @@ Grade these responses. Return only the JSON object, no markdown.\n\n${items}`;
 
 // ── SUPABASE CONFIG ──────────────────────────────────────────────────────────
 // Replace these with your Supabase project values (safe to expose — row-level security handles auth)
-const SUPABASE_URL = "https://rcydbwejxxwzhtqjtfpy.supabase.co";
-const SUPABASE_ANON_KEY = "sb_publishable_u9aRe-IrDN3C5KTweTyvMw_MMKREoxT";
-const TEACHER_PASSWORD = "Teacher_Password"; // e.g. ""
+const SUPABASE_URL = "YOUR_SUPABASE_URL";
+const SUPABASE_ANON_KEY = "YOUR_SUPABASE_ANON_KEY";
+// Teacher password is stored securely in Netlify environment variables — not here
 
 // ── STUDENT STATE ─────────────────────────────────────────────────────────────
 let studentName = null;
@@ -859,6 +864,17 @@ function submitStudentInfo() {
   document.getElementById('badge-name').textContent = name;
   document.getElementById('badge-period').textContent = period;
   document.getElementById('student-badge').style.display = 'flex';
+}
+
+function teacherBypass() {
+  // Skip student login and go straight to dashboard auth
+  document.getElementById('student-modal').classList.add('hidden');
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.getElementById('page-dashboard').classList.add('active');
+  document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+  document.getElementById('nav-dashboard').classList.add('active');
+  // Focus the password field
+  setTimeout(() => document.getElementById('dash-password')?.focus(), 100);
 }
 
 function switchStudent() {
@@ -928,14 +944,34 @@ function openDashboard() {
   document.getElementById('nav-dashboard').classList.add('active');
 }
 
-function authDashboard() {
-  const pw = document.getElementById('dash-password').value;
+async function authDashboard() {
+  const pw = document.getElementById('dash-password').value.trim();
   const err = document.getElementById('dash-auth-error');
-  if (pw !== TEACHER_PASSWORD) { err.classList.add('show'); return; }
-  err.classList.remove('show');
-  document.getElementById('dash-login').style.display = 'none';
-  document.getElementById('dash-content').style.display = 'block';
-  loadDashboard();
+  const btn = document.querySelector('#dash-login .btn-primary');
+  if (!pw) { err.textContent = 'Please enter a password.'; err.classList.add('show'); return; }
+  btn.disabled = true; btn.textContent = 'Checking…';
+  try {
+    const res = await fetch('/api/auth', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ password: pw })
+    });
+    const data = await res.json();
+    if (!data.ok) {
+      err.textContent = 'Incorrect password.';
+      err.classList.add('show');
+      btn.disabled = false; btn.textContent = 'View Dashboard';
+      return;
+    }
+    err.classList.remove('show');
+    document.getElementById('dash-login').style.display = 'none';
+    document.getElementById('dash-content').style.display = 'block';
+    loadDashboard();
+  } catch(e) {
+    err.textContent = 'Error checking password. Try again.';
+    err.classList.add('show');
+    btn.disabled = false; btn.textContent = 'View Dashboard';
+  }
 }
 
 async function loadDashboard() {
