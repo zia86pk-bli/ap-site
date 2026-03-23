@@ -370,15 +370,231 @@ label {
   .page { padding: 1.5rem 1rem 5rem; }
   .hero { padding: 2.5rem 1rem 2rem; }
 }
+
+/* ── STUDENT MODAL ── */
+.modal-overlay {
+  position: fixed; inset: 0; z-index: 999;
+  background: rgba(0,0,0,0.85);
+  display: flex; align-items: center; justify-content: center;
+  padding: 1rem;
+}
+.modal-overlay.hidden { display: none; }
+.modal-box {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 2.5rem 2rem;
+  width: 100%; max-width: 420px;
+  text-align: center;
+}
+.modal-box h2 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2rem; letter-spacing: 2px;
+  margin-bottom: 0.4rem;
+}
+.modal-box h2 span { color: var(--red); }
+.modal-box p { color: var(--muted); font-size: 0.88rem; margin-bottom: 1.5rem; }
+.modal-field { margin-bottom: 1rem; text-align: left; }
+.modal-field label { margin-bottom: 0.4rem; }
+.modal-field input, .modal-field select {
+  width: 100%;
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.95rem;
+  padding: 0.7rem 1rem;
+  outline: none;
+}
+.modal-field input:focus, .modal-field select:focus { border-color: var(--red); }
+.modal-error { color: var(--red); font-size: 0.82rem; margin-top: 0.4rem; display:none; }
+.modal-error.show { display: block; }
+
+/* ── STUDENT BADGE (nav) ── */
+.student-badge {
+  margin-left: auto;
+  display: flex; align-items: center; gap: 0.5rem;
+  font-size: 0.8rem; color: var(--muted);
+}
+.student-badge .name { color: var(--text); font-weight: 500; }
+.student-badge .period {
+  background: rgba(230,57,70,0.15);
+  color: var(--red);
+  font-size: 0.72rem;
+  font-family: 'DM Mono', monospace;
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+}
+.student-badge button {
+  background: none; border: none; color: var(--muted);
+  cursor: pointer; font-size: 0.75rem; padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+}
+.student-badge button:hover { color: var(--text); background: var(--surface2); }
+
+/* ── TEACHER DASHBOARD ── */
+#page-dashboard .dash-header {
+  display: flex; justify-content: space-between; align-items: center;
+  margin-bottom: 1.5rem; flex-wrap: wrap; gap: 1rem;
+}
+.dash-stats {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(140px,1fr));
+  gap: 0.8rem; margin-bottom: 1.5rem;
+}
+.dash-stat {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1rem;
+}
+.dash-stat-label { font-size: 0.75rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 0.3rem; }
+.dash-stat-val { font-family: 'Bebas Neue', sans-serif; font-size: 1.8rem; line-height: 1; }
+.dash-table-wrap { overflow-x: auto; }
+.dash-table {
+  width: 100%; border-collapse: collapse;
+  font-size: 0.85rem;
+}
+.dash-table th {
+  text-align: left; padding: 0.6rem 0.8rem;
+  font-size: 0.72rem; font-weight: 600; letter-spacing: 0.8px;
+  text-transform: uppercase; color: var(--muted);
+  border-bottom: 1px solid var(--border);
+}
+.dash-table td {
+  padding: 0.65rem 0.8rem;
+  border-bottom: 1px solid var(--border);
+  color: var(--text);
+}
+.dash-table tr:last-child td { border-bottom: none; }
+.dash-table tr:hover td { background: var(--surface2); }
+.dash-filter {
+  display: flex; gap: 0.6rem; flex-wrap: wrap; align-items: center;
+  margin-bottom: 1rem;
+}
+.dash-filter select, .dash-filter input {
+  font-size: 0.82rem; padding: 0.4rem 0.7rem;
+  background: var(--surface2); border: 1px solid var(--border);
+  border-radius: 6px; color: var(--text);
+}
 </style>
 </head>
 <body>
 
 <nav>
   <span class="nav-logo">AP<span>USH</span></span>
-  <div class="nav-tab active" onclick="showPage('home',this)">Home</div>
-  <div class="nav-tab" onclick="showPage('exam',this)">Practice Exam</div>
+  <div class="nav-tab active" onclick="showPage('home',this)" id="nav-home">Home</div>
+  <div class="nav-tab" onclick="showPage('exam',this)" id="nav-exam">Practice Exam</div>
+  <div class="nav-tab" onclick="openDashboard()" id="nav-dashboard" style="display:none;">📊 Dashboard</div>
+  <div class="student-badge" id="student-badge" style="display:none;">
+    <span class="name" id="badge-name"></span>
+    <span class="period" id="badge-period"></span>
+    <button onclick="switchStudent()" title="Switch student">✎</button>
+  </div>
 </nav>
+
+<!-- STUDENT LOGIN MODAL -->
+<div class="modal-overlay" id="student-modal">
+  <div class="modal-box">
+    <h2>WELCOME TO <span>APUSH</span></h2>
+    <p>Enter your info to get started. Your scores will be saved automatically.</p>
+    <div class="modal-field">
+      <label>Your Full Name</label>
+      <input type="text" id="modal-name" placeholder="First Last" autocomplete="name"/>
+    </div>
+    <div class="modal-field">
+      <label>Class Period</label>
+      <select id="modal-period">
+        <option value="">Select period…</option>
+        <option value="Period 1">Period 1</option>
+        <option value="Period 2">Period 2</option>
+        <option value="Period 3">Period 3</option>
+        <option value="Period 4">Period 4</option>
+        <option value="Period 5">Period 5</option>
+        <option value="Period 6">Period 6</option>
+        <option value="Period 7">Period 7</option>
+      </select>
+    </div>
+    <div class="modal-error" id="modal-error">Please enter your name and select a period.</div>
+    <button class="btn btn-primary" onclick="submitStudentInfo()" style="width:100%;margin-top:0.5rem;justify-content:center;">
+      Start Practicing →
+    </button>
+  </div>
+</div>
+
+<!-- TEACHER DASHBOARD PAGE -->
+<div id="page-dashboard" class="page">
+  <div class="dash-header">
+    <div>
+      <div class="section-header" style="margin-bottom:0;">
+        <h2>TEACHER <span>DASHBOARD</span></h2>
+        <p>All student scores and activity.</p>
+      </div>
+    </div>
+    <div style="display:flex;gap:0.6rem;flex-wrap:wrap;">
+      <button class="btn btn-ghost" style="font-size:0.8rem;" onclick="loadDashboard()">↻ Refresh</button>
+      <button class="btn btn-ghost" style="font-size:0.8rem;" onclick="exportCsv()">↓ Export CSV</button>
+    </div>
+  </div>
+
+  <div id="dash-login" class="card" style="max-width:380px;">
+    <div class="card-title">Teacher Access</div>
+    <div class="modal-field">
+      <label>Password</label>
+      <input type="password" id="dash-password" placeholder="Enter teacher password" onkeydown="if(event.key==='Enter')authDashboard()"/>
+    </div>
+    <div class="modal-error" id="dash-auth-error">Incorrect password.</div>
+    <button class="btn btn-primary" onclick="authDashboard()" style="margin-top:0.5rem;">View Dashboard</button>
+  </div>
+
+  <div id="dash-content" style="display:none;">
+    <div class="dash-stats">
+      <div class="dash-stat"><div class="dash-stat-label">Total Students</div><div class="dash-stat-val" id="stat-students">—</div></div>
+      <div class="dash-stat"><div class="dash-stat-label">Total Submissions</div><div class="dash-stat-val" id="stat-submissions">—</div></div>
+      <div class="dash-stat"><div class="dash-stat-label">Avg MCQ Score</div><div class="dash-stat-val" id="stat-mcq">—</div></div>
+      <div class="dash-stat"><div class="dash-stat-label">Avg Essay Score</div><div class="dash-stat-val" id="stat-essay">—</div></div>
+    </div>
+
+    <div class="dash-filter">
+      <select id="filter-period" onchange="renderDashTable()">
+        <option value="">All Periods</option>
+        <option value="Period 1">Period 1</option>
+        <option value="Period 2">Period 2</option>
+        <option value="Period 3">Period 3</option>
+        <option value="Period 4">Period 4</option>
+        <option value="Period 5">Period 5</option>
+        <option value="Period 6">Period 6</option>
+        <option value="Period 7">Period 7</option>
+      </select>
+      <select id="filter-type" onchange="renderDashTable()">
+        <option value="">All Types</option>
+        <option value="MCQ">MCQ</option>
+        <option value="SAQ">SAQ</option>
+        <option value="DBQ">DBQ</option>
+        <option value="LEQ">LEQ</option>
+      </select>
+      <input type="text" id="filter-name" placeholder="Search student…" oninput="renderDashTable()" style="flex:1;min-width:140px;"/>
+    </div>
+
+    <div class="card" style="padding:0;">
+      <div class="dash-table-wrap">
+        <table class="dash-table">
+          <thead>
+            <tr>
+              <th>Student</th>
+              <th>Period</th>
+              <th>Type</th>
+              <th>Score</th>
+              <th>Pct</th>
+              <th>Date</th>
+            </tr>
+          </thead>
+          <tbody id="dash-tbody"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
 
 <!-- HOME -->
 <div id="page-home" class="page active">
@@ -619,6 +835,179 @@ function saqGradingPrompt(saqAnswers) {
 Grade these responses. Return only the JSON object, no markdown.\n\n${items}`;
 }
 
+// ── SUPABASE CONFIG ──────────────────────────────────────────────────────────
+// Replace these with your Supabase project values (safe to expose — row-level security handles auth)
+const SUPABASE_URL = "https://rcydbwejxxwzhtqjtfpy.supabase.co";
+const SUPABASE_ANON_KEY = "sb_publishable_u9aRe-IrDN3C5KTweTyvMw_MMKREoxT";
+const TEACHER_PASSWORD = "YOUR_TEACHER_PASSWORD"; // e.g. "Museebat!23"
+
+// ── STUDENT STATE ─────────────────────────────────────────────────────────────
+let studentName = null;
+let studentPeriod = null;
+
+function submitStudentInfo() {
+  const name = document.getElementById('modal-name').value.trim();
+  const period = document.getElementById('modal-period').value;
+  const err = document.getElementById('modal-error');
+  if (!name || !period) { err.classList.add('show'); return; }
+  err.classList.remove('show');
+  studentName = name;
+  studentPeriod = period;
+  sessionStorage.setItem('apush_name', name);
+  sessionStorage.setItem('apush_period', period);
+  document.getElementById('student-modal').classList.add('hidden');
+  document.getElementById('badge-name').textContent = name;
+  document.getElementById('badge-period').textContent = period;
+  document.getElementById('student-badge').style.display = 'flex';
+}
+
+function switchStudent() {
+  if (!confirm('Switch student? Your current session will end.')) return;
+  studentName = null; studentPeriod = null;
+  sessionStorage.removeItem('apush_name');
+  sessionStorage.removeItem('apush_period');
+  document.getElementById('student-badge').style.display = 'none';
+  document.getElementById('modal-name').value = '';
+  document.getElementById('modal-period').value = '';
+  document.getElementById('student-modal').classList.remove('hidden');
+}
+
+// Restore session on reload
+window.addEventListener('DOMContentLoaded', () => {
+  const n = sessionStorage.getItem('apush_name');
+  const p = sessionStorage.getItem('apush_period');
+  if (n && p) {
+    studentName = n; studentPeriod = p;
+    document.getElementById('modal-name').value = n;
+    document.getElementById('modal-period').value = p;
+    document.getElementById('badge-name').textContent = n;
+    document.getElementById('badge-period').textContent = p;
+    document.getElementById('student-badge').style.display = 'flex';
+    document.getElementById('student-modal').classList.add('hidden');
+  }
+  // Show dashboard link always (teacher can find it)
+  document.getElementById('nav-dashboard').style.display = 'flex';
+  for (let i = 0; i < 5; i++) addDocField();
+});
+
+// ── SUPABASE TRACKING ─────────────────────────────────────────────────────────
+async function saveScore({ type, score, maxScore, details = '' }) {
+  if (!studentName || SUPABASE_URL === 'YOUR_SUPABASE_URL') return;
+  try {
+    await fetch(`${SUPABASE_URL}/rest/v1/scores`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'apikey': SUPABASE_ANON_KEY,
+        'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
+        'Prefer': 'return=minimal'
+      },
+      body: JSON.stringify({
+        student_name: studentName,
+        class_period: studentPeriod,
+        type,
+        score,
+        max_score: maxScore,
+        pct: Math.round((score / maxScore) * 100),
+        details,
+        created_at: new Date().toISOString()
+      })
+    });
+  } catch(e) {
+    console.warn('Score save failed:', e.message);
+  }
+}
+
+// ── TEACHER DASHBOARD ─────────────────────────────────────────────────────────
+let dashData = [];
+
+function openDashboard() {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.getElementById('page-dashboard').classList.add('active');
+  document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+  document.getElementById('nav-dashboard').classList.add('active');
+}
+
+function authDashboard() {
+  const pw = document.getElementById('dash-password').value;
+  const err = document.getElementById('dash-auth-error');
+  if (pw !== TEACHER_PASSWORD) { err.classList.add('show'); return; }
+  err.classList.remove('show');
+  document.getElementById('dash-login').style.display = 'none';
+  document.getElementById('dash-content').style.display = 'block';
+  loadDashboard();
+}
+
+async function loadDashboard() {
+  if (SUPABASE_URL === 'YOUR_SUPABASE_URL') {
+    document.getElementById('dash-tbody').innerHTML = '<tr><td colspan="6" style="color:var(--muted);text-align:center;padding:2rem;">Supabase not configured yet. Add your URL and key.</td></tr>';
+    return;
+  }
+  try {
+    const res = await fetch(`${SUPABASE_URL}/rest/v1/scores?order=created_at.desc&limit=500`, {
+      headers: { 'apikey': SUPABASE_ANON_KEY, 'Authorization': `Bearer ${SUPABASE_ANON_KEY}` }
+    });
+    dashData = await res.json();
+    updateDashStats();
+    renderDashTable();
+  } catch(e) {
+    document.getElementById('dash-tbody').innerHTML = `<tr><td colspan="6" style="color:var(--red);">Error loading data: ${e.message}</td></tr>`;
+  }
+}
+
+function updateDashStats() {
+  const students = new Set(dashData.map(r => r.student_name)).size;
+  const mcqRows = dashData.filter(r => r.type === 'MCQ');
+  const essayRows = dashData.filter(r => r.type === 'DBQ' || r.type === 'LEQ');
+  const avgMcq = mcqRows.length ? Math.round(mcqRows.reduce((s,r) => s + r.pct, 0) / mcqRows.length) : null;
+  const avgEssay = essayRows.length ? Math.round(essayRows.reduce((s,r) => s + r.pct, 0) / essayRows.length) : null;
+  document.getElementById('stat-students').textContent = students;
+  document.getElementById('stat-submissions').textContent = dashData.length;
+  document.getElementById('stat-mcq').textContent = avgMcq !== null ? avgMcq + '%' : '—';
+  document.getElementById('stat-essay').textContent = avgEssay !== null ? avgEssay + '%' : '—';
+}
+
+function renderDashTable() {
+  const period = document.getElementById('filter-period').value;
+  const type = document.getElementById('filter-type').value;
+  const name = document.getElementById('filter-name').value.toLowerCase();
+  const filtered = dashData.filter(r =>
+    (!period || r.class_period === period) &&
+    (!type || r.type === type) &&
+    (!name || r.student_name.toLowerCase().includes(name))
+  );
+  if (!filtered.length) {
+    document.getElementById('dash-tbody').innerHTML = '<tr><td colspan="6" style="color:var(--muted);text-align:center;padding:2rem;">No results found.</td></tr>';
+    return;
+  }
+  document.getElementById('dash-tbody').innerHTML = filtered.map(r => {
+    const pctClass = r.pct >= 70 ? 'badge-green' : r.pct >= 50 ? 'badge-gold' : 'badge-red';
+    const date = new Date(r.created_at).toLocaleDateString('en-US', {month:'short',day:'numeric',hour:'2-digit',minute:'2-digit'});
+    return `<tr>
+      <td style="font-weight:500;">${r.student_name}</td>
+      <td><span class="badge badge-gray">${r.class_period}</span></td>
+      <td><span class="badge badge-blue">${r.type}</span></td>
+      <td style="font-family:'DM Mono',monospace;">${r.score}/${r.max_score}</td>
+      <td><span class="badge ${pctClass}">${r.pct}%</span></td>
+      <td style="color:var(--muted);font-size:0.8rem;">${date}</td>
+    </tr>`;
+  }).join('');
+}
+
+function exportCsv() {
+  if (!dashData.length) return;
+  const headers = ['Student','Period','Type','Score','Max','Pct','Date'];
+  const rows = dashData.map(r => [
+    r.student_name, r.class_period, r.type, r.score, r.max_score, r.pct,
+    new Date(r.created_at).toLocaleString()
+  ]);
+  const csv = [headers, ...rows].map(r => r.map(v => `"${v}"`).join(',')).join('\n');
+  const a = document.createElement('a');
+  a.href = 'data:text/csv;charset=utf-8,' + encodeURIComponent(csv);
+  a.download = 'apush-scores.csv';
+  a.click();
+}
+
 // ── STATE ─────────────────────────────────────────────────────────────────────
 let mcqData = null, mcqAnswers = {}, mcqLocked = {};
 let saqData = null, saqGraded = false;
@@ -802,6 +1191,8 @@ function updateMcqScore() {
   const badge=document.getElementById('mcq-pct-badge');
   badge.textContent=pct+'%';
   badge.className='badge '+(pct>=70?'badge-green':pct>=50?'badge-gold':'badge-red');
+  // Save to Supabase when all questions answered
+  if (answered === total) saveScore({ type:'MCQ', score:correct, maxScore:total });
 }
 
 // ── SAQ GENERATOR ─────────────────────────────────────────────────────────────
@@ -879,6 +1270,7 @@ async function submitSaq() {
     saqGraded=true;
     renderSaqResults(result,answers);
     btn.textContent='✓ Graded';
+    saveScore({ type:'SAQ', score:result.totalScore, maxScore:result.maxScore });
   } catch(e) { btn.disabled=false; btn.textContent='Grade SAQs'; alert('Error: '+e.message); }
 }
 
@@ -1077,6 +1469,7 @@ async function submitWriting(type) {
     });
     renderWritingResult(result,document.getElementById(contId),response,data.prompt,isDbq?dbqData.docs:[]);
     btn.textContent='✓ Graded';
+    saveScore({ type:type, score:result.scoreTotal, maxScore:result.maxScore });
   } catch(e) { btn.disabled=false; btn.textContent=`Grade ${type}`; alert('Error: '+e.message); }
 }
 
