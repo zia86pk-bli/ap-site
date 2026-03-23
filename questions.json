@@ -899,6 +899,1506 @@
       ],
       "answer": 1,
       "explanation": "The 19th Amendment prohibited denying the vote on the basis of sex."
+    },
+    {
+      "id": 61,
+      "period": "1491-1607",
+      "topic": "Native Trade Networks",
+      "difficulty": "medium",
+      "question": "Which of the following best describes pre-Columbian trade networks in North America?",
+      "options": [
+        "Trade was limited to neighboring tribes and did not extend beyond 50 miles",
+        "Long-distance trade networks connected regions from the Gulf Coast to the Great Lakes",
+        "Trade only occurred between tribes with similar languages and cultures",
+        "Pre-Columbian peoples had no concept of trade or exchange"
+      ],
+      "answer": 1,
+      "explanation": "Archaeological evidence shows extensive pre-Columbian trade networks — copper from the Great Lakes, obsidian from the Rockies, and shells from the Gulf Coast moved thousands of miles through exchange networks like the Hopewell and Mississippian cultures."
+    },
+    {
+      "id": 62,
+      "period": "1491-1607",
+      "topic": "Columbian Exchange",
+      "difficulty": "hard",
+      "question": "The most devastating consequence of the Columbian Exchange for Native American populations was",
+      "options": [
+        "the introduction of European firearms",
+        "the spread of Old World diseases to which Native Americans had no immunity",
+        "the destruction of traditional agricultural practices",
+        "the forced conversion to Christianity"
+      ],
+      "answer": 1,
+      "explanation": "Old World diseases — especially smallpox, measles, and typhus — killed an estimated 50-90% of Native American populations within a century of contact, as they had no prior exposure or immunity to these diseases."
+    },
+    {
+      "id": 63,
+      "period": "1491-1607",
+      "topic": "Spanish Colonization",
+      "difficulty": "medium",
+      "question": "The encomienda system established by Spain in the Americas was primarily designed to",
+      "options": [
+        "protect Native Americans from abuse by colonists",
+        "provide Spanish colonists with Native American labor in exchange for Christian instruction",
+        "distribute land equally among Spanish settlers",
+        "create self-governing communities of mixed Spanish and Native peoples"
+      ],
+      "answer": 1,
+      "explanation": "The encomienda granted Spanish colonists the right to compel Native American labor in exchange for supposed Christian instruction. In practice it became a system of brutal forced labor that decimated indigenous populations."
+    },
+    {
+      "id": 64,
+      "period": "1491-1607",
+      "topic": "European Rivalries",
+      "difficulty": "medium",
+      "question": "England's primary motivation for establishing colonies in North America in the late 16th century was",
+      "options": [
+        "to spread Protestant Christianity among Native Americans",
+        "to compete with Spanish power and find new sources of wealth",
+        "to provide a refuge for persecuted religious minorities",
+        "to establish military bases against French expansion"
+      ],
+      "answer": 1,
+      "explanation": "England's colonial ambitions were driven largely by rivalry with Spain, desire for resources and wealth, and the need to find new markets and relieve population pressure — religious motivations became more prominent in the 17th century."
+    },
+    {
+      "id": 65,
+      "period": "1491-1607",
+      "topic": "Aztec and Inca Empires",
+      "difficulty": "hard",
+      "question": "The rapid Spanish conquest of the Aztec and Inca empires in the 1500s was primarily facilitated by",
+      "options": [
+        "the overwhelming numerical superiority of Spanish forces",
+        "a combination of disease, internal divisions, and Native American alliances with the Spanish",
+        "the complete military inferiority of indigenous weapons",
+        "the lack of any organized political structure among indigenous peoples"
+      ],
+      "answer": 1,
+      "explanation": "Spanish conquistadors succeeded through a combination of factors: Old World diseases decimated populations, existing political enemies of the Aztecs and Incas allied with the Spanish, and psychological shock from horses, steel, and firearms gave temporary tactical advantage."
+    },
+    {
+      "id": 66,
+      "period": "1607-1754",
+      "topic": "Chesapeake vs New England",
+      "difficulty": "medium",
+      "question": "Which of the following most accurately describes a key difference between the Chesapeake and New England colonies?",
+      "options": [
+        "New England relied on slave labor while the Chesapeake did not",
+        "The Chesapeake developed around cash-crop plantation agriculture while New England developed diverse mixed economies",
+        "New England had warmer climates that supported tobacco cultivation",
+        "The Chesapeake colonies were founded primarily for religious reasons"
+      ],
+      "answer": 1,
+      "explanation": "The Chesapeake (Virginia, Maryland) economy centered on tobacco plantations and eventually enslaved labor, while New England developed fishing, shipbuilding, small farming, and trade, partly due to climate differences and different founding motivations."
+    },
+    {
+      "id": 67,
+      "period": "1607-1754",
+      "topic": "Bacon's Rebellion",
+      "difficulty": "medium",
+      "question": "Bacon's Rebellion (1676) is historically significant primarily because it",
+      "options": [
+        "led to the immediate abolition of indentured servitude in Virginia",
+        "revealed the dangers of a large class of discontented landless poor and accelerated the shift toward enslaved African labor",
+        "established the precedent of colonial self-governance",
+        "resulted in lasting peace between colonists and Native Americans"
+      ],
+      "answer": 1,
+      "explanation": "Bacon's Rebellion demonstrated to Virginia planters the dangers of relying on discontented, armed indentured servants. This contributed to the rapid expansion of enslaved African labor, which planters considered more controllable."
+    },
+    {
+      "id": 68,
+      "period": "1607-1754",
+      "topic": "Slavery Development",
+      "difficulty": "medium",
+      "question": "The legal foundation for hereditary slavery in Virginia was established when the colonial legislature",
+      "options": [
+        "passed the Virginia Slave Codes of 1705 making slavery permanent and inherited through the mother",
+        "signed a treaty with African kingdoms for perpetual labor contracts",
+        "adopted the principle that Christian conversion freed enslaved people",
+        "applied English common law treating servants and slaves identically"
+      ],
+      "answer": 0,
+      "explanation": "Virginia's Slave Codes formalized racial slavery by making enslaved status permanent and inherited through the mother (partus sequitur ventrem), creating a self-reproducing enslaved population and defining slavery along racial lines."
+    },
+    {
+      "id": 69,
+      "period": "1607-1754",
+      "topic": "Puritan Society",
+      "difficulty": "medium",
+      "question": "The Puritan concept of a 'city upon a hill,' as expressed by John Winthrop, referred to",
+      "options": [
+        "the physical elevation of Boston Harbor that gave the colony strategic advantage",
+        "a model Christian community that would serve as an example to the world",
+        "a fortified settlement designed to defend against Native American attacks",
+        "the hierarchical structure of Puritan church governance"
+      ],
+      "answer": 1,
+      "explanation": "Winthrop's 'city upon a hill' speech articulated the Puritan mission to create a godly society in New England that would serve as a moral example to England and the world — a concept that has influenced American exceptionalism ever since."
+    },
+    {
+      "id": 70,
+      "period": "1607-1754",
+      "topic": "Salutary Neglect",
+      "difficulty": "hard",
+      "question": "The British policy of salutary neglect in the early 18th century resulted most directly in",
+      "options": [
+        "closer economic ties between Britain and the American colonies",
+        "colonial assemblies gaining significant experience in self-governance",
+        "stricter enforcement of the Navigation Acts",
+        "increased British military presence in the colonies"
+      ],
+      "answer": 1,
+      "explanation": "Salutary neglect — Britain's informal policy of loosely enforcing colonial regulations — allowed colonial legislatures like the Virginia House of Burgesses to gain experience governing themselves, creating expectations of autonomy that later fueled revolutionary sentiment."
+    },
+    {
+      "id": 71,
+      "period": "1607-1754",
+      "topic": "The Great Awakening",
+      "difficulty": "medium",
+      "question": "The First Great Awakening of the 1730s and 1740s contributed to the American Revolution primarily by",
+      "options": [
+        "unifying all Protestant denominations into a single American church",
+        "challenging traditional authority structures and encouraging colonists to think independently",
+        "establishing Harvard and Yale as centers of revolutionary thought",
+        "convincing colonists that British rule violated Christian principles"
+      ],
+      "answer": 1,
+      "explanation": "The Great Awakening's message that individuals could access God directly without traditional church hierarchy undermined deference to established authority — a habit of mind that transferred to political authority and primed colonists for revolutionary thinking."
+    },
+    {
+      "id": 72,
+      "period": "1607-1754",
+      "topic": "Colonial Trade",
+      "difficulty": "medium",
+      "question": "The Navigation Acts were primarily intended to",
+      "options": [
+        "protect colonial shipping from piracy",
+        "ensure that colonial trade benefited England by requiring goods to be shipped on English vessels",
+        "prevent colonists from trading with Native Americans",
+        "establish free trade between England and its colonies"
+      ],
+      "answer": 1,
+      "explanation": "The Navigation Acts required colonial goods to be shipped on English ships and routed through English ports, ensuring England (not the Dutch or other competitors) profited from colonial trade — a core principle of mercantilism."
+    },
+    {
+      "id": 73,
+      "period": "1607-1754",
+      "topic": "French and Indian War",
+      "difficulty": "medium",
+      "question": "The French and Indian War (1754–1763) most directly led to the American Revolution because",
+      "options": [
+        "France encouraged American colonists to rebel against Britain",
+        "Britain, deeply in debt from the war, began taxing the colonies to raise revenue",
+        "the war united the colonies under a single military command",
+        "American colonists gained confidence by defeating the British army"
+      ],
+      "answer": 1,
+      "explanation": "Britain emerged from the French and Indian War deeply in debt and maintained expensive troops in North America. Parliament's decision to tax the colonies to offset these costs (Stamp Act, Townshend Acts) sparked colonial resistance and the path to revolution."
+    },
+    {
+      "id": 74,
+      "period": "1754-1800",
+      "topic": "Albany Plan",
+      "difficulty": "hard",
+      "question": "The Albany Plan of Union (1754) is historically significant primarily because",
+      "options": [
+        "it successfully created the first unified colonial government",
+        "it demonstrated that colonial unity was impossible to achieve",
+        "it represented an early attempt at intercolonial cooperation and foreshadowed later federal structure",
+        "it was the first document to call for independence from Britain"
+      ],
+      "answer": 2,
+      "explanation": "Benjamin Franklin's Albany Plan, though rejected by both colonial assemblies and the British Crown, was the first serious proposal for a unified colonial government — demonstrating both the impulse toward unity and its practical difficulty."
+    },
+    {
+      "id": 75,
+      "period": "1754-1800",
+      "topic": "Revolutionary Ideology",
+      "difficulty": "medium",
+      "question": "Thomas Paine's 'Common Sense' (1776) was significant primarily because it",
+      "options": [
+        "outlined the specific grievances against King George III",
+        "argued for reconciliation with Britain through constitutional reform",
+        "made the case for complete independence in plain language accessible to ordinary colonists",
+        "proposed the structure of the future American government"
+      ],
+      "answer": 2,
+      "explanation": "Common Sense broke from cautious calls for reconciliation and made a clear, accessible argument for complete independence and republicanism. Its plain language reached ordinary colonists and dramatically shifted public opinion toward independence."
+    },
+    {
+      "id": 76,
+      "period": "1754-1800",
+      "topic": "Constitutional Convention",
+      "difficulty": "medium",
+      "question": "The Great Compromise at the Constitutional Convention resolved the conflict between large and small states by",
+      "options": [
+        "creating a single legislature where representation was based purely on population",
+        "establishing a bicameral legislature with proportional representation in the House and equal representation in the Senate",
+        "giving all states an equal vote in both houses of Congress",
+        "creating separate legislatures for large and small states"
+      ],
+      "answer": 1,
+      "explanation": "The Great Compromise (Connecticut Compromise) created the bicameral Congress: the House of Representatives with seats proportional to population (favoring large states) and the Senate with two seats per state regardless of size (favoring small states)."
+    },
+    {
+      "id": 77,
+      "period": "1754-1800",
+      "topic": "Three-Fifths Compromise",
+      "difficulty": "medium",
+      "question": "The Three-Fifths Compromise in the Constitution determined that enslaved people would be counted as three-fifths of a person for the purpose of",
+      "options": [
+        "determining citizenship rights",
+        "calculating representation in Congress and direct taxation",
+        "establishing the terms of the slave trade",
+        "deciding voting eligibility in slave states"
+      ],
+      "answer": 1,
+      "explanation": "The Three-Fifths Compromise counted enslaved persons as 3/5 of a free person for determining congressional representation and direct taxes. This gave slave states more political power in the House and Electoral College than their free population alone warranted."
+    },
+    {
+      "id": 78,
+      "period": "1754-1800",
+      "topic": "Federalists vs Anti-Federalists",
+      "difficulty": "medium",
+      "question": "Anti-Federalists opposed ratification of the Constitution primarily because they feared",
+      "options": [
+        "the Constitution gave too much power to state governments",
+        "a strong central government would threaten individual liberties and state sovereignty",
+        "the new government would be too weak to handle foreign threats",
+        "the presidency would not have enough power to govern effectively"
+      ],
+      "answer": 1,
+      "explanation": "Anti-Federalists feared that the Constitution created a dangerously powerful central government that would crush state sovereignty and individual rights. Their pressure led to the addition of the Bill of Rights as a condition of ratification."
+    },
+    {
+      "id": 79,
+      "period": "1754-1800",
+      "topic": "Hamilton's Economic Program",
+      "difficulty": "hard",
+      "question": "Alexander Hamilton's financial program as Secretary of the Treasury was most strongly opposed by Thomas Jefferson and James Madison because",
+      "options": [
+        "it would bankrupt the federal government by assuming too much debt",
+        "it favored commercial and manufacturing interests over agrarian ones and expanded federal power beyond constitutional limits",
+        "it relied too heavily on foreign loans to fund American development",
+        "it proposed raising taxes on southern tobacco planters"
+      ],
+      "answer": 1,
+      "explanation": "Jefferson and Madison believed Hamilton's program — assumption of state debts, a national bank, and protective tariffs — unconstitutionally expanded federal power and favored northern merchants and financiers over the agrarian republican society they envisioned."
+    },
+    {
+      "id": 80,
+      "period": "1754-1800",
+      "topic": "Washington's Farewell Address",
+      "difficulty": "medium",
+      "question": "In his Farewell Address, Washington warned most strongly against",
+      "options": [
+        "the dangers of maintaining a large standing army",
+        "permanent alliances with foreign nations and the divisive effects of political parties",
+        "expanding westward before the eastern seaboard was fully settled",
+        "allowing too many immigrants to enter the new nation"
+      ],
+      "answer": 1,
+      "explanation": "Washington's Farewell Address warned against the 'baneful effects' of political parties (factionalism) and 'permanent alliances' with foreign nations, counseling neutrality in foreign affairs — advice that shaped American foreign policy for over a century."
+    },
+    {
+      "id": 81,
+      "period": "1754-1800",
+      "topic": "XYZ Affair",
+      "difficulty": "hard",
+      "question": "The XYZ Affair (1797–1798) primarily resulted in",
+      "options": [
+        "a formal declaration of war against France",
+        "an undeclared naval war with France and a surge of American nationalism",
+        "a military alliance between the United States and Britain",
+        "the permanent end of American trade with Europe"
+      ],
+      "answer": 1,
+      "explanation": "When French agents (X, Y, Z) demanded bribes before negotiations, American outrage sparked the Quasi-War — an undeclared naval conflict with France — and boosted Federalist popularity while leading to the Alien and Sedition Acts."
+    },
+    {
+      "id": 82,
+      "period": "1800-1848",
+      "topic": "Revolution of 1800",
+      "difficulty": "medium",
+      "question": "The 'Revolution of 1800' was considered revolutionary primarily because",
+      "options": [
+        "it involved violent overthrow of the Federalist government",
+        "it marked the first peaceful transfer of power between opposing political parties in American history",
+        "Thomas Jefferson immediately abolished the national bank and the army",
+        "it permanently ended Federalist influence in American politics"
+      ],
+      "answer": 1,
+      "explanation": "Jefferson's election marked the first peaceful transfer of power from one party to another in a major republic — proving that democratic governments could change leadership without revolution or violence, a powerful example to the world."
+    },
+    {
+      "id": 83,
+      "period": "1800-1848",
+      "topic": "Marbury v. Madison",
+      "difficulty": "medium",
+      "question": "Marbury v. Madison (1803) established the precedent of judicial review, meaning",
+      "options": [
+        "the president must submit all executive orders to the Supreme Court for approval",
+        "the Supreme Court has the authority to strike down laws it finds unconstitutional",
+        "Congress can override Supreme Court decisions with a two-thirds majority",
+        "federal courts can review state court decisions"
+      ],
+      "answer": 1,
+      "explanation": "Chief Justice John Marshall's ruling in Marbury v. Madison established judicial review — the Supreme Court's power to declare acts of Congress unconstitutional — making the Court a co-equal branch of government and the final interpreter of the Constitution."
+    },
+    {
+      "id": 84,
+      "period": "1800-1848",
+      "topic": "Louisiana Purchase",
+      "difficulty": "easy",
+      "question": "Jefferson's decision to purchase Louisiana from France in 1803 was constitutionally controversial because",
+      "options": [
+        "Congress had already voted against the purchase",
+        "the Constitution did not explicitly grant the president power to acquire new territory",
+        "Spain claimed ownership of the territory and threatened war",
+        "the purchase violated existing treaties with Native American nations"
+      ],
+      "answer": 1,
+      "explanation": "Jefferson, a strict constructionist who believed the federal government could only do what the Constitution explicitly permitted, acknowledged the Constitution said nothing about acquiring foreign territory — he purchased Louisiana anyway, acting against his own constitutional philosophy."
+    },
+    {
+      "id": 85,
+      "period": "1800-1848",
+      "topic": "War of 1812",
+      "difficulty": "medium",
+      "question": "The most significant long-term consequence of the War of 1812 was",
+      "options": [
+        "the United States gaining Canada from Britain",
+        "a surge of American nationalism and the beginning of U.S. industrial development",
+        "the permanent end of Native American resistance east of the Mississippi",
+        "Britain's formal recognition of American neutrality rights"
+      ],
+      "answer": 1,
+      "explanation": "Though the war ended in a stalemate territorially, it produced a wave of American nationalism (the 'Era of Good Feelings'), discredited the Federalists, and demonstrated the need for American manufacturing independence — accelerating industrial development."
+    },
+    {
+      "id": 86,
+      "period": "1800-1848",
+      "topic": "Monroe Doctrine",
+      "difficulty": "medium",
+      "question": "The Monroe Doctrine (1823) declared that",
+      "options": [
+        "the United States would seek alliances with European powers to protect the Western Hemisphere",
+        "the Americas were closed to further European colonization and any European attempt to extend power in the hemisphere would be considered a threat",
+        "the United States claimed ownership of all territory in North and South America",
+        "European nations must remove all existing colonies from the Western Hemisphere"
+      ],
+      "answer": 1,
+      "explanation": "The Monroe Doctrine declared the Western Hemisphere off-limits to new European colonization and warned that European attempts to extend political influence in the Americas would be seen as threats to U.S. security — a cornerstone of American foreign policy."
+    },
+    {
+      "id": 87,
+      "period": "1800-1848",
+      "topic": "Jacksonian Democracy",
+      "difficulty": "medium",
+      "question": "Jacksonian Democracy expanded political participation primarily by",
+      "options": [
+        "extending voting rights to women and free Black men",
+        "eliminating property requirements for voting among white men and increasing popular participation in elections",
+        "abolishing the Electoral College in favor of direct popular vote",
+        "creating a system of proportional representation in Congress"
+      ],
+      "answer": 1,
+      "explanation": "The Jacksonian era saw most states eliminate property requirements for white male voters, dramatically expanding the electorate. It also brought more direct democracy through popular election of the president (via Electoral College) and spoils system politics."
+    },
+    {
+      "id": 88,
+      "period": "1800-1848",
+      "topic": "Nullification Crisis",
+      "difficulty": "hard",
+      "question": "The Nullification Crisis of 1832–1833 revealed a fundamental tension between",
+      "options": [
+        "the power of the president versus Congress",
+        "states' rights and federal supremacy that would eventually contribute to the Civil War",
+        "the interests of merchants versus farmers",
+        "free states and slave states over the expansion of slavery"
+      ],
+      "answer": 1,
+      "explanation": "South Carolina's attempt to nullify federal tariff laws — claiming states could void federal legislation — set up a direct confrontation with Jackson over federal supremacy. Though resolved by compromise, the crisis foreshadowed the sectional conflict over slavery and states' rights."
+    },
+    {
+      "id": 89,
+      "period": "1800-1848",
+      "topic": "Second Great Awakening",
+      "difficulty": "medium",
+      "question": "The Second Great Awakening of the early 19th century most directly contributed to",
+      "options": [
+        "a decline in religious participation across the United States",
+        "a wave of reform movements including abolitionism, temperance, and women's rights",
+        "the growth of the Democratic Party under Andrew Jackson",
+        "the expansion of slavery into the southwestern territories"
+      ],
+      "answer": 1,
+      "explanation": "The Second Great Awakening's emphasis on human perfectibility and social responsibility inspired reform movements across antebellum America — abolition, temperance, women's rights, prison reform, and public education all drew on its evangelical energy."
+    },
+    {
+      "id": 90,
+      "period": "1800-1848",
+      "topic": "Seneca Falls",
+      "difficulty": "easy",
+      "question": "The Seneca Falls Convention (1848) was significant primarily because it",
+      "options": [
+        "granted women the right to vote in New York State",
+        "issued the Declaration of Sentiments demanding equal rights for women, launching the organized women's rights movement",
+        "ended the practice of coverture in American law",
+        "resulted in Congress passing the first women's suffrage amendment"
+      ],
+      "answer": 1,
+      "explanation": "The Seneca Falls Convention, organized by Elizabeth Cady Stanton and Lucretia Mott, issued the Declaration of Sentiments (modeled on the Declaration of Independence) demanding women's equal rights and formally launched the American women's rights movement."
+    },
+    {
+      "id": 91,
+      "period": "1800-1848",
+      "topic": "Missouri Compromise",
+      "difficulty": "medium",
+      "question": "The Missouri Compromise of 1820 temporarily resolved the slavery debate by",
+      "options": [
+        "banning slavery in all states admitted after 1820",
+        "admitting Missouri as a slave state and Maine as a free state while prohibiting slavery north of the 36°30' line in the Louisiana Territory",
+        "requiring a national referendum before any new slave state could be admitted",
+        "allowing each new territory to decide the slavery question by popular vote"
+      ],
+      "answer": 1,
+      "explanation": "The Missouri Compromise admitted Missouri as a slave state and Maine as a free state (preserving the balance), and drew a line at 36°30' — slavery was prohibited north of that line in the remaining Louisiana Territory. It held sectional tensions at bay for 30 years."
+    },
+    {
+      "id": 92,
+      "period": "1844-1877",
+      "topic": "Mexican-American War",
+      "difficulty": "medium",
+      "question": "The Mexican-American War (1846–1848) intensified the sectional crisis primarily because",
+      "options": [
+        "it caused massive casualties that turned northern public opinion against the South",
+        "the large territory gained from Mexico immediately raised the question of whether slavery would expand into the new lands",
+        "Mexico threatened to invade southern slave states if slavery was not abolished",
+        "it caused an economic depression that hit the slave states hardest"
+      ],
+      "answer": 1,
+      "explanation": "The vast territory acquired from Mexico (Mexican Cession) immediately reignited the question of slavery's expansion. The Wilmot Proviso's attempt to ban slavery in the new territories revealed the depth of sectional divisions that would ultimately lead to Civil War."
+    },
+    {
+      "id": 93,
+      "period": "1844-1877",
+      "topic": "Kansas-Nebraska Act",
+      "difficulty": "medium",
+      "question": "The Kansas-Nebraska Act (1854) was most significant because it",
+      "options": [
+        "permanently resolved the question of slavery in the territories",
+        "effectively repealed the Missouri Compromise and led to the formation of the Republican Party",
+        "established a clear boundary between free and slave territories",
+        "allowed Native Americans to vote on the slavery question in their territories"
+      ],
+      "answer": 1,
+      "explanation": "The Kansas-Nebraska Act introduced popular sovereignty in territories where the Missouri Compromise had banned slavery, effectively nullifying it. The resulting 'Bleeding Kansas' violence and political outrage directly led to the formation of the Republican Party."
+    },
+    {
+      "id": 94,
+      "period": "1844-1877",
+      "topic": "Dred Scott Decision",
+      "difficulty": "hard",
+      "question": "The Supreme Court's ruling in Dred Scott v. Sandford (1857) intensified the slavery debate by declaring",
+      "options": [
+        "that enslaved people in free states automatically became free",
+        "that African Americans were not citizens, that Congress had no power to ban slavery in territories, and that the Missouri Compromise was unconstitutional",
+        "that slaveholders must be compensated before slaves could be freed",
+        "that the federal government could not interfere with slavery in any state"
+      ],
+      "answer": 1,
+      "explanation": "Chief Justice Taney's ruling declared that Black Americans had no citizenship rights, that enslaved people were property that could not be taken away, and that Congress had never legally had the power to ban slavery in territories — effectively calling for nationwide slavery protection and inflaming the North."
+    },
+    {
+      "id": 95,
+      "period": "1844-1877",
+      "topic": "Lincoln-Douglas Debates",
+      "difficulty": "medium",
+      "question": "The Lincoln-Douglas debates of 1858 are historically significant primarily because",
+      "options": [
+        "they resulted in Lincoln winning the Senate seat from Illinois",
+        "they forced Douglas to articulate the Freeport Doctrine, which alienated southern Democrats and split the Democratic Party",
+        "they convinced the Supreme Court to overturn the Dred Scott decision",
+        "they established the Republican Party's platform for the 1860 election"
+      ],
+      "answer": 1,
+      "explanation": "At Freeport, Lincoln forced Douglas to reconcile popular sovereignty with Dred Scott. Douglas's answer — that territories could exclude slavery through 'unfriendly legislation' — satisfied Illinois voters but outraged the South, fatally dividing the Democratic Party before 1860."
+    },
+    {
+      "id": 96,
+      "period": "1844-1877",
+      "topic": "Emancipation Proclamation",
+      "difficulty": "medium",
+      "question": "The Emancipation Proclamation (1863) was limited in its immediate effect because",
+      "options": [
+        "it was declared unconstitutional by the Supreme Court",
+        "it only freed enslaved people in Confederate states still in rebellion, not in the border states or Union-controlled areas",
+        "Congress refused to approve it as official law",
+        "Lincoln lacked the constitutional authority to issue it"
+      ],
+      "answer": 1,
+      "explanation": "The Emancipation Proclamation applied only to enslaved people in Confederate states still in rebellion — areas where Lincoln had no actual power. It did not apply to border states or Union-controlled Confederate territory, freeing enslaved people where Lincoln couldn't enforce it while preserving slavery where he could."
+    },
+    {
+      "id": 97,
+      "period": "1844-1877",
+      "topic": "Reconstruction Amendments",
+      "difficulty": "medium",
+      "question": "Which of the following correctly matches a Reconstruction Amendment with its primary purpose?",
+      "options": [
+        "13th Amendment — granted citizenship to formerly enslaved people",
+        "14th Amendment — granted voting rights to Black men",
+        "15th Amendment — guaranteed equal protection of the laws",
+        "13th Amendment — abolished slavery throughout the United States"
+      ],
+      "answer": 3,
+      "explanation": "The 13th Amendment (1865) abolished slavery. The 14th (1868) granted citizenship and equal protection. The 15th (1870) prohibited denying the vote based on race — together they represent the constitutional transformation of Reconstruction."
+    },
+    {
+      "id": 98,
+      "period": "1844-1877",
+      "topic": "Sharecropping",
+      "difficulty": "medium",
+      "question": "The sharecropping system that emerged in the post-Civil War South primarily served to",
+      "options": [
+        "provide formerly enslaved people with a path to land ownership",
+        "keep Black agricultural workers in a cycle of debt and economic dependence that resembled slavery",
+        "distribute confiscated plantation land among freedpeople",
+        "create a prosperous class of small Black farmers in the South"
+      ],
+      "answer": 1,
+      "explanation": "Sharecropping trapped Black families in debt peonage: they farmed land for a share of the crop, but the landlord controlled prices, supplies, and accounts. Chronic indebtedness prevented leaving, creating economic conditions that replicated many aspects of slavery."
+    },
+    {
+      "id": 99,
+      "period": "1844-1877",
+      "topic": "Compromise of 1877",
+      "difficulty": "hard",
+      "question": "The Compromise of 1877 ended Reconstruction primarily by",
+      "options": [
+        "passing legislation that guaranteed equal rights for Black Southerners",
+        "resulting in the withdrawal of federal troops from the South, allowing Southern Democrats to regain control and dismantle Reconstruction governments",
+        "establishing a biracial coalition government in the South",
+        "granting land to formerly enslaved people in exchange for Republican support"
+      ],
+      "answer": 1,
+      "explanation": "In exchange for Southern Democratic acceptance of Hayes's disputed presidential victory, Republicans agreed to withdraw federal troops from the South. Without military protection, Reconstruction governments collapsed, and Southern states began systematically stripping Black Americans of their rights."
+    },
+    {
+      "id": 100,
+      "period": "1865-1898",
+      "topic": "Gilded Age Industrialization",
+      "difficulty": "medium",
+      "question": "The rapid industrialization of the United States after the Civil War was most directly accelerated by",
+      "options": [
+        "government ownership of major industries",
+        "abundant natural resources, a large immigrant labor force, technological innovation, and favorable government policies",
+        "strict regulation of business practices by the federal government",
+        "equal distribution of profits among workers and owners"
+      ],
+      "answer": 1,
+      "explanation": "Post-Civil War industrialization was driven by massive coal and iron deposits, millions of immigrant workers willing to accept low wages, inventions like the Bessemer steel process and electricity, and a government that provided land grants, tariff protection, and minimal regulation."
+    },
+    {
+      "id": 101,
+      "period": "1865-1898",
+      "topic": "Robber Barons",
+      "difficulty": "medium",
+      "question": "The business practices of Gilded Age industrialists like John D. Rockefeller and Andrew Carnegie were criticized primarily for",
+      "options": [
+        "refusing to adopt new technologies",
+        "using trusts, vertical integration, and cutthroat competition to monopolize industries and eliminate competition",
+        "paying workers wages that were too high to remain competitive",
+        "investing too heavily in foreign markets instead of domestic ones"
+      ],
+      "answer": 1,
+      "explanation": "Rockefeller's Standard Oil and Carnegie's steel empire used horizontal and vertical integration, secret railroad rebates, and predatory pricing to crush competitors and create near-monopolies — concentrating enormous wealth while workers toiled in dangerous conditions for low pay."
+    },
+    {
+      "id": 102,
+      "period": "1865-1898",
+      "topic": "Labor Movement",
+      "difficulty": "medium",
+      "question": "The Pullman Strike of 1894 was significant primarily because",
+      "options": [
+        "it successfully won an 8-hour workday for railroad workers nationwide",
+        "President Cleveland used a federal injunction to break the strike, establishing a precedent for government intervention against labor",
+        "it led to the immediate passage of the Sherman Antitrust Act",
+        "the strike successfully organized all railroad workers into a single union"
+      ],
+      "answer": 1,
+      "explanation": "Cleveland's use of a federal injunction and troops to crush the Pullman Strike — over the objection of Illinois Governor Altgeld — set a powerful precedent for government intervention on the side of business and against organized labor."
+    },
+    {
+      "id": 103,
+      "period": "1865-1898",
+      "topic": "Populist Movement",
+      "difficulty": "medium",
+      "question": "The Populist Party of the 1890s primarily represented the interests of",
+      "options": [
+        "industrial workers in northeastern cities",
+        "indebted farmers who sought government regulation of railroads and expansion of the money supply",
+        "small business owners opposed to corporate monopolies",
+        "recent immigrants seeking citizenship rights and labor protections"
+      ],
+      "answer": 1,
+      "explanation": "The People's (Populist) Party arose from the Farmers' Alliance to address agrarian grievances: falling crop prices, high railroad freight rates, and deflation that made debts harder to pay. They called for a graduated income tax, direct election of senators, and free silver coinage."
+    },
+    {
+      "id": 104,
+      "period": "1865-1898",
+      "topic": "Plessy v. Ferguson",
+      "difficulty": "easy",
+      "question": "The Supreme Court's ruling in Plessy v. Ferguson (1896) upheld the constitutionality of",
+      "options": [
+        "literacy tests as requirements for voting",
+        "racial segregation under the 'separate but equal' doctrine",
+        "the poll tax as a prerequisite for voting",
+        "the grandfather clause exempting whites from literacy requirements"
+      ],
+      "answer": 1,
+      "explanation": "Plessy v. Ferguson ruled that 'separate but equal' facilities for Black and white Americans satisfied the 14th Amendment's equal protection clause, providing constitutional backing for Jim Crow segregation that lasted until Brown v. Board of Education (1954)."
+    },
+    {
+      "id": 105,
+      "period": "1865-1898",
+      "topic": "New Immigration",
+      "difficulty": "medium",
+      "question": "The 'New Immigration' of the 1880s–1910s differed from earlier immigration primarily in that",
+      "options": [
+        "new immigrants came primarily from Northern and Western Europe",
+        "new immigrants came primarily from Southern and Eastern Europe and faced greater hostility and discrimination",
+        "new immigrants were predominantly skilled workers and professionals",
+        "new immigrants settled primarily in rural areas rather than cities"
+      ],
+      "answer": 1,
+      "explanation": "Earlier (Old) immigrants came mainly from Northern and Western Europe (British, German, Scandinavian). New Immigrants came from Southern and Eastern Europe (Italian, Polish, Russian Jewish, Greek) and faced intense nativist prejudice, restrictive legislation, and cramped urban poverty."
+    },
+    {
+      "id": 106,
+      "period": "1865-1898",
+      "topic": "Dawes Act",
+      "difficulty": "hard",
+      "question": "The Dawes Severalty Act (1887) was primarily intended to",
+      "options": [
+        "restore Native American lands taken during the Indian Wars",
+        "assimilate Native Americans by breaking up tribal land ownership and allotting individual plots to Native families",
+        "create a separate nation within the United States governed by Native Americans",
+        "grant citizenship and voting rights to all Native Americans"
+      ],
+      "answer": 1,
+      "explanation": "The Dawes Act aimed to destroy tribal culture by allotting 160 acres to individual Native families, with 'surplus' land sold to white settlers. It reduced Native American landholdings by roughly 90 million acres, while forced assimilation policies attacked languages, religions, and cultural practices."
+    },
+    {
+      "id": 107,
+      "period": "1865-1898",
+      "topic": "Spanish-American War",
+      "difficulty": "medium",
+      "question": "The Spanish-American War of 1898 marked a turning point in American foreign policy primarily because",
+      "options": [
+        "it ended all European colonialism in the Western Hemisphere",
+        "it transformed the United States into an imperial power with overseas territories including Puerto Rico, Guam, and the Philippines",
+        "it established the United States as the dominant military power in Europe",
+        "it created a permanent military alliance between the United States and Cuba"
+      ],
+      "answer": 1,
+      "explanation": "Victory over Spain gave the United States an overseas empire — Puerto Rico, Guam, and the Philippines — and signaled America's emergence as a world power willing to project military force beyond its borders, marking a decisive departure from the Monroe Doctrine's defensive posture."
+    },
+    {
+      "id": 108,
+      "period": "1890-1945",
+      "topic": "Progressive Reforms",
+      "difficulty": "medium",
+      "question": "Muckrakers such as Upton Sinclair and Ida Tarbell contributed to the Progressive movement primarily by",
+      "options": [
+        "running for political office to directly challenge corrupt officials",
+        "using journalism and literature to expose corporate abuses and corrupt political machines, creating public pressure for reform",
+        "organizing labor strikes against industrial corporations",
+        "drafting model legislation for state governments to adopt"
+      ],
+      "answer": 1,
+      "explanation": "Muckrakers used investigative journalism to expose the underbelly of industrial America — Sinclair's 'The Jungle' revealed meatpacking horrors, Tarbell exposed Standard Oil's monopolistic practices — generating public outrage that gave Progressive politicians the mandate to reform."
+    },
+    {
+      "id": 109,
+      "period": "1890-1945",
+      "topic": "16th and 17th Amendments",
+      "difficulty": "medium",
+      "question": "The 16th and 17th Amendments, ratified during the Progressive Era, respectively",
+      "options": [
+        "banned alcohol and granted women the right to vote",
+        "established a graduated income tax and provided for direct election of U.S. senators",
+        "created the Federal Reserve and established the 8-hour workday",
+        "granted citizenship to all people born in the United States and prohibited child labor"
+      ],
+      "answer": 1,
+      "explanation": "The 16th Amendment (1913) authorized a federal income tax, enabling the government to fund Progressive programs. The 17th Amendment (1913) provided for direct election of senators (previously chosen by state legislatures), making government more democratically responsive."
+    },
+    {
+      "id": 110,
+      "period": "1890-1945",
+      "topic": "World War I Homefront",
+      "difficulty": "medium",
+      "question": "The Espionage Act (1917) and Sedition Act (1918) during World War I were significant because they",
+      "options": [
+        "successfully prevented German espionage within the United States",
+        "severely restricted free speech and were used to imprison anti-war activists, raising lasting questions about civil liberties in wartime",
+        "established the modern American intelligence community",
+        "created a system of military tribunals for trying enemy combatants"
+      ],
+      "answer": 1,
+      "explanation": "These acts made it illegal to criticize the war, the draft, or the government — socialist Eugene Debs was imprisoned for an anti-war speech. The Supreme Court upheld them in Schenck v. United States, but the tension between national security and civil liberties remains a defining American debate."
+    },
+    {
+      "id": 111,
+      "period": "1890-1945",
+      "topic": "Great Migration",
+      "difficulty": "medium",
+      "question": "The Great Migration of African Americans from the South to northern cities between 1910 and 1970 was primarily driven by",
+      "options": [
+        "federal programs encouraging Black Americans to move north for industrial jobs",
+        "a combination of pushing factors (Jim Crow laws, racial violence, agricultural decline) and pulling factors (industrial jobs, higher wages, less formal segregation)",
+        "the relocation programs of the NAACP and Urban League",
+        "mandatory resettlement programs enacted by northern states"
+      ],
+      "answer": 1,
+      "explanation": "The Great Migration was driven by both push factors (Jim Crow oppression, lynching, boll weevil devastation of cotton, low wages) and pull factors (World War I industrial jobs, higher northern wages, reduced (though not absent) formal segregation in northern cities)."
+    },
+    {
+      "id": 112,
+      "period": "1890-1945",
+      "topic": "New Deal",
+      "difficulty": "medium",
+      "question": "Franklin Roosevelt's New Deal was most significant in the long term because it",
+      "options": [
+        "permanently ended the Great Depression by restoring full employment",
+        "dramatically expanded the role of the federal government in the economy and established the foundations of the American welfare state",
+        "proved that free market capitalism could solve any economic crisis without government intervention",
+        "transferred control of major industries from private owners to the federal government"
+      ],
+      "answer": 1,
+      "explanation": "The New Deal did not end the Depression (WWII did that), but it transformed American government — Social Security, banking regulation, labor rights, agricultural support, and relief programs created a permanent safety net and established the expectation that government would protect citizens from economic catastrophe."
+    },
+    {
+      "id": 113,
+      "period": "1890-1945",
+      "topic": "Isolationism vs Interventionism",
+      "difficulty": "medium",
+      "question": "The Neutrality Acts of the 1930s reflected American foreign policy goals of",
+      "options": [
+        "preparing for inevitable involvement in European conflicts",
+        "avoiding entanglement in foreign wars by restricting arms sales and loans to belligerents",
+        "building military alliances with democratic nations against fascism",
+        "maintaining American trading rights with all nations regardless of political system"
+      ],
+      "answer": 1,
+      "explanation": "The Neutrality Acts were driven by the conviction that American entry into WWI had been a mistake caused by arms merchants and bank loans to the Allies. By restricting these, Congress hoped to keep America out of Europe's conflicts — a policy that constrained Roosevelt's ability to aid Britain against Hitler."
+    },
+    {
+      "id": 114,
+      "period": "1890-1945",
+      "topic": "Manhattan Project",
+      "difficulty": "medium",
+      "question": "The decision to use atomic bombs on Hiroshima and Nagasaki in August 1945 remains historically controversial primarily because",
+      "options": [
+        "the bombs failed to cause Japan's surrender, which came only after a Soviet declaration of war",
+        "historians debate whether the bombs were militarily necessary to end the war or whether alternatives existed, and whether the use was racially motivated",
+        "Japan had already offered unconditional surrender before the bombs were dropped",
+        "the bombs caused fewer casualties than a conventional bombing campaign would have"
+      ],
+      "answer": 1,
+      "explanation": "Historians continue to debate: Was an invasion of Japan (projected to cost hundreds of thousands of casualties) the only alternative? Did the bombs shorten the war or was Japan already near surrender? Did racial attitudes toward Japan play a role? These questions make the atomic bombings among the most contested decisions in American history."
+    },
+    {
+      "id": 115,
+      "period": "1890-1945",
+      "topic": "Harlem Renaissance",
+      "difficulty": "medium",
+      "question": "The Harlem Renaissance of the 1920s was significant primarily because it",
+      "options": [
+        "resulted in the legal desegregation of New York City",
+        "produced a flowering of African American art, literature, and music that challenged racist stereotypes and asserted Black cultural identity",
+        "led directly to the passage of federal anti-lynching legislation",
+        "created the first racially integrated neighborhoods in a major American city"
+      ],
+      "answer": 1,
+      "explanation": "The Harlem Renaissance produced works by Langston Hughes, Zora Neale Hurston, Duke Ellington, and others that celebrated Black culture and challenged the racial assumptions of white America. It contributed to the 'New Negro' movement and the foundations of the Civil Rights movement."
+    },
+    {
+      "id": 116,
+      "period": "1890-1945",
+      "topic": "Women's Suffrage",
+      "difficulty": "easy",
+      "question": "The 19th Amendment (1920), granting women the right to vote, was the culmination of a movement that had begun with",
+      "options": [
+        "the founding of the NAACP in 1909",
+        "the Seneca Falls Convention of 1848 and over 70 years of organized activism",
+        "Woodrow Wilson's support for women's suffrage during World War I",
+        "a Supreme Court ruling that the 14th Amendment required women's voting rights"
+      ],
+      "answer": 1,
+      "explanation": "The women's suffrage movement dated back to Seneca Falls (1848) and involved decades of state-by-state campaigns, demonstrations, civil disobedience (including hunger strikes by imprisoned suffragists), and lobbying before the 19th Amendment was ratified in 1920."
+    },
+    {
+      "id": 117,
+      "period": "1945-1980",
+      "topic": "Truman Doctrine",
+      "difficulty": "medium",
+      "question": "The Truman Doctrine (1947) committed the United States to",
+      "options": [
+        "providing military aid exclusively to nations directly attacked by the Soviet Union",
+        "supporting free peoples who were resisting subjugation by armed minorities or outside pressures, establishing a broad commitment to resist Soviet expansion",
+        "withdrawing American forces from Europe after World War II",
+        "forming a permanent military alliance with Western European nations"
+      ],
+      "answer": 1,
+      "explanation": "The Truman Doctrine, initially applied to Greece and Turkey, committed the United States to supporting any free nation threatened by communism — a sweeping statement that became the philosophical foundation for Cold War interventionism from Korea to Vietnam."
+    },
+    {
+      "id": 118,
+      "period": "1945-1980",
+      "topic": "McCarthyism",
+      "difficulty": "medium",
+      "question": "McCarthyism in the early 1950s demonstrated that",
+      "options": [
+        "Soviet espionage had successfully infiltrated the highest levels of American government",
+        "fear of communist subversion could be used to suppress civil liberties and destroy careers through unsubstantiated accusations",
+        "the FBI had successfully identified and removed all Soviet spies from the United States",
+        "anticommunist sentiment unified Americans across party lines"
+      ],
+      "answer": 1,
+      "explanation": "Senator McCarthy's campaign of unsubstantiated accusations destroyed careers and created a climate of fear — the term 'McCarthyism' entered the language as a synonym for political persecution through guilt by association and baseless charges. His downfall came when televised Army-McCarthy hearings exposed his methods."
+    },
+    {
+      "id": 119,
+      "period": "1945-1980",
+      "topic": "Brown v. Board",
+      "difficulty": "easy",
+      "question": "Brown v. Board of Education (1954) overturned Plessy v. Ferguson by ruling that",
+      "options": [
+        "segregation was constitutional only in higher education",
+        "racially segregated public schools were inherently unequal and violated the 14th Amendment's equal protection clause",
+        "states could maintain segregated schools if they provided truly equal facilities",
+        "the federal government had no authority over public school policy"
+      ],
+      "answer": 1,
+      "explanation": "Chief Justice Warren's unanimous ruling declared that 'separate educational facilities are inherently unequal' — rejecting the 'separate but equal' doctrine of Plessy v. Ferguson and launching the modern Civil Rights movement by making school desegregation a constitutional mandate."
+    },
+    {
+      "id": 120,
+      "period": "1945-1980",
+      "topic": "Montgomery Bus Boycott",
+      "difficulty": "easy",
+      "question": "The Montgomery Bus Boycott (1955–1956) was significant as a Civil Rights strategy primarily because",
+      "options": [
+        "it immediately desegregated all public transportation in Alabama",
+        "it demonstrated the effectiveness of nonviolent economic pressure as a tactic and launched Martin Luther King Jr. as a national leader",
+        "it led Congress to pass the Civil Rights Act of 1957",
+        "it was the first organized protest against segregation in the Deep South"
+      ],
+      "answer": 1,
+      "explanation": "The 381-day boycott succeeded in desegregating Montgomery's buses (upheld by the Supreme Court) and proved that organized economic pressure through nonviolent resistance could defeat segregation. It launched King as the movement's spokesman and became a model for future protests."
+    },
+    {
+      "id": 121,
+      "period": "1945-1980",
+      "topic": "Civil Rights Act 1964",
+      "difficulty": "medium",
+      "question": "The Civil Rights Act of 1964 was most significant because it",
+      "options": [
+        "granted voting rights to African Americans for the first time since Reconstruction",
+        "prohibited discrimination based on race, color, religion, sex, or national origin in employment and public accommodations, giving the federal government enforcement power",
+        "desegregated the U.S. military",
+        "established affirmative action programs for minority groups"
+      ],
+      "answer": 1,
+      "explanation": "The Civil Rights Act of 1964 was the most comprehensive civil rights legislation since Reconstruction — banning discrimination in hotels, restaurants, and workplaces, creating the EEOC, and giving the federal government tools to enforce equality. Combined with the Voting Rights Act (1965), it dismantled the legal structure of Jim Crow."
+    },
+    {
+      "id": 122,
+      "period": "1945-1980",
+      "topic": "Vietnam War Opposition",
+      "difficulty": "medium",
+      "question": "The Tet Offensive of 1968 was a turning point in American public opinion on Vietnam primarily because",
+      "options": [
+        "it was a massive military defeat for American forces",
+        "it demonstrated that despite official optimism about winning the war, the Viet Cong could launch major attacks throughout South Vietnam, undermining government credibility",
+        "it led Congress to formally declare war on North Vietnam",
+        "it caused heavy American casualties that turned most Americans against the draft"
+      ],
+      "answer": 1,
+      "explanation": "Though militarily defeated, the Tet Offensive shocked Americans who had been told the war was nearly won. The contrast between government optimism (the 'credibility gap') and images of fighting in the U.S. embassy compound caused Walter Cronkite and millions of Americans to conclude the war could not be won."
+    },
+    {
+      "id": 123,
+      "period": "1945-1980",
+      "topic": "Nixon and Détente",
+      "difficulty": "hard",
+      "question": "Nixon's policy of détente with the Soviet Union and China in the early 1970s was significant because it",
+      "options": [
+        "ended the Cold War by creating permanent peace between the superpowers",
+        "reduced Cold War tensions through diplomacy and arms limitation agreements, while recognizing that ideological conflict would continue",
+        "resulted in the Soviet Union abandoning its communist system",
+        "established a permanent military alliance between the United States, China, and the Soviet Union"
+      ],
+      "answer": 1,
+      "explanation": "Détente reduced dangerous Cold War tensions through SALT I arms limitations and Nixon's opening to China, which gave the U.S. a strategic advantage by splitting the communist bloc. It acknowledged that ideological competition would continue but that direct confrontation and arms races were dangerous and expensive."
+    },
+    {
+      "id": 124,
+      "period": "1945-1980",
+      "topic": "Watergate",
+      "difficulty": "medium",
+      "question": "The Watergate scandal's most lasting impact on American politics was",
+      "options": [
+        "the permanent weakening of the executive branch relative to Congress",
+        "a dramatic decline in public trust in government that persisted for decades",
+        "the imprisonment of most of Nixon's cabinet and senior staff",
+        "the passage of constitutional amendments limiting presidential power"
+      ],
+      "answer": 1,
+      "explanation": "Watergate's revelation of White House criminality and Nixon's cover-up created a lasting cynicism about government that transformed American political culture. Trust in government, already weakened by Vietnam, plummeted and never fully recovered — reshaping how Americans view political institutions."
+    },
+    {
+      "id": 125,
+      "period": "1945-1980",
+      "topic": "Women's Liberation Movement",
+      "difficulty": "medium",
+      "question": "The feminist movement of the 1960s and 1970s differed from the earlier suffrage movement primarily by",
+      "options": [
+        "focusing solely on legal equality in the workplace",
+        "addressing a broader range of issues including reproductive rights, domestic violence, workplace discrimination, and cultural attitudes toward women",
+        "focusing exclusively on passing the Equal Rights Amendment",
+        "limiting membership to college-educated professional women"
+      ],
+      "answer": 1,
+      "explanation": "Second-wave feminism expanded beyond voting rights to challenge all forms of gender inequality — workplace discrimination, reproductive autonomy (Roe v. Wade, 1973), sexual harassment, domestic violence, and cultural stereotypes — reflecting Betty Friedan's critique of the 'feminine mystique' that confined women to domestic roles."
+    },
+    {
+      "id": 126,
+      "period": "1980-Present",
+      "topic": "Reagan Revolution",
+      "difficulty": "medium",
+      "question": "Reagan's 'supply-side' economic program (Reaganomics) was based on the theory that",
+      "options": [
+        "government spending on social programs would stimulate economic growth",
+        "cutting taxes for businesses and the wealthy would stimulate investment and economic growth that would 'trickle down' to all Americans",
+        "raising the minimum wage would increase consumer spending and revive the economy",
+        "nationalizing key industries would make the economy more efficient"
+      ],
+      "answer": 1,
+      "explanation": "Supply-side economics (critics called it 'trickle-down') argued that tax cuts for the wealthy and businesses would stimulate investment, create jobs, and generate growth that would benefit everyone. Reagan cut top income tax rates from 70% to 28%, deregulated industries, and dramatically increased defense spending."
+    },
+    {
+      "id": 127,
+      "period": "1980-Present",
+      "topic": "End of Cold War",
+      "difficulty": "medium",
+      "question": "The Cold War ended primarily because",
+      "options": [
+        "the United States won the Vietnam War and demonstrated military superiority",
+        "the Soviet Union collapsed due to internal economic failures, the costs of the arms race, and nationalist movements in Soviet republics — accelerated by Gorbachev's reforms",
+        "NATO invaded and dismantled the Soviet military",
+        "Ronald Reagan negotiated a formal peace treaty with Mikhail Gorbachev"
+      ],
+      "answer": 1,
+      "explanation": "The Soviet collapse resulted from decades of economic stagnation, the unwinnable arms race, the military quagmire in Afghanistan, and nationalist movements in Soviet republics — all accelerated by Gorbachev's glasnost and perestroika reforms that inadvertently unleashed forces the system could not contain."
+    },
+    {
+      "id": 128,
+      "period": "1980-Present",
+      "topic": "Gulf War",
+      "difficulty": "medium",
+      "question": "The Persian Gulf War of 1990–1991 established an important precedent in American foreign policy by",
+      "options": [
+        "demonstrating that the United States could defeat any military force without allied support",
+        "demonstrating the effectiveness of multilateral military coalitions authorized by the United Nations",
+        "permanently stabilizing the Middle East under American-backed governments",
+        "establishing American control over Iraqi oil fields"
+      ],
+      "answer": 1,
+      "explanation": "Operation Desert Storm demonstrated that post-Cold War America could lead a broad international coalition (34 nations) authorized by the UN to reverse Iraq's invasion of Kuwait — establishing a model for multilateral intervention that contrasted sharply with the unilateral approach of the later Iraq War."
+    },
+    {
+      "id": 129,
+      "period": "1980-Present",
+      "topic": "Clinton Impeachment",
+      "difficulty": "medium",
+      "question": "President Clinton's impeachment in 1998 was significant primarily because",
+      "options": [
+        "it resulted in Clinton's removal from office",
+        "it reflected the intense partisan polarization of American politics in the 1990s and raised questions about the limits of impeachment",
+        "it exposed widespread corruption throughout the Clinton administration",
+        "it led to significant reforms in presidential ethics laws"
+      ],
+      "answer": 1,
+      "explanation": "Clinton's impeachment (on charges of perjury and obstruction related to the Monica Lewinsky affair) by the Republican House, followed by acquittal in the Democratic-leaning Senate, illustrated the deepening partisan divisions in American politics and the potential weaponization of the impeachment process."
+    },
+    {
+      "id": 130,
+      "period": "1980-Present",
+      "topic": "9/11 and War on Terror",
+      "difficulty": "medium",
+      "question": "The September 11, 2001 terrorist attacks most significantly transformed American domestic policy by",
+      "options": [
+        "leading to the elimination of the CIA and FBI in favor of a unified intelligence agency",
+        "resulting in the creation of the Department of Homeland Security and the PATRIOT Act, dramatically expanding government surveillance powers",
+        "causing the United States to withdraw from all international organizations",
+        "leading Congress to formally declare war for the first time since World War II"
+      ],
+      "answer": 1,
+      "explanation": "9/11 led to the most significant reorganization of American government since WWII — creating the Department of Homeland Security, passing the PATRIOT Act (expanding surveillance), launching the NSA's mass surveillance programs, and creating a permanent 'War on Terror' that reshaped civil liberties debates."
+    },
+    {
+      "id": 131,
+      "period": "1980-Present",
+      "topic": "Iraq War",
+      "difficulty": "medium",
+      "question": "The Iraq War of 2003 was controversial primarily because",
+      "options": [
+        "Congress refused to authorize the use of military force",
+        "the invasion proceeded without UN authorization based on intelligence about weapons of mass destruction that proved to be inaccurate",
+        "the war was unpopular with the American military establishment",
+        "Iraq had not been involved in the September 11 attacks and posed no proven threat"
+      ],
+      "answer": 2,
+      "explanation": "The Iraq War bypassed the UN, was based on claims of WMDs that were never found, and the claim of links between Saddam Hussein and Al-Qaeda proved unfounded. The resulting insurgency, hundreds of thousands of deaths, trillions in cost, and regional destabilization made it one of the most debated foreign policy decisions in American history."
+    },
+    {
+      "id": 132,
+      "period": "1980-Present",
+      "topic": "Great Recession",
+      "difficulty": "medium",
+      "question": "The financial crisis of 2008 was primarily caused by",
+      "options": [
+        "excessive government spending on social programs that crowded out private investment",
+        "the collapse of a housing bubble inflated by risky mortgage-backed securities, insufficient financial regulation, and reckless behavior by major financial institutions",
+        "foreign competition that destroyed American manufacturing jobs",
+        "a sudden spike in oil prices that halted economic growth"
+      ],
+      "answer": 1,
+      "explanation": "The 2008 crisis resulted from deregulated financial institutions creating complex mortgage-backed securities filled with subprime loans, credit rating agencies failing to properly assess risk, and a housing bubble that when it burst nearly collapsed the global financial system — requiring massive government bailouts."
+    },
+    {
+      "id": 133,
+      "period": "1980-Present",
+      "topic": "Obama Presidency",
+      "difficulty": "medium",
+      "question": "The Affordable Care Act (2010) was historically significant primarily because",
+      "options": [
+        "it established a single-payer government health insurance system for all Americans",
+        "it was the most significant expansion of the American healthcare system since Medicare and Medicaid, extending coverage to millions of previously uninsured Americans",
+        "it eliminated all private health insurance in favor of government-provided care",
+        "it granted universal healthcare coverage to all legal residents of the United States"
+      ],
+      "answer": 1,
+      "explanation": "The ACA ('Obamacare') was the most significant healthcare legislation since LBJ's Medicare/Medicaid (1965) — extending coverage through Medicaid expansion, insurance exchanges, and requirements like coverage of pre-existing conditions, reducing the uninsured rate significantly while preserving the private insurance system."
+    },
+    {
+      "id": 134,
+      "period": "1754-1800",
+      "topic": "Declaration of Independence",
+      "difficulty": "easy",
+      "question": "The Declaration of Independence's assertion that 'all men are created equal' was considered contradictory primarily because",
+      "options": [
+        "Jefferson borrowed the phrase from French philosophers without credit",
+        "the Declaration was signed by slaveholders who had no intention of applying its principles to enslaved people or women",
+        "the phrase had no legal meaning and was included only for rhetorical effect",
+        "most American colonists did not believe in human equality"
+      ],
+      "answer": 1,
+      "explanation": "The Declaration's Enlightenment ideals of equality and natural rights were written by slaveholders (Jefferson enslaved over 600 people) and explicitly excluded women, enslaved people, and others — a contradiction that abolitionists like Frederick Douglass and later civil rights leaders would use to challenge American hypocrisy."
+    },
+    {
+      "id": 135,
+      "period": "1800-1848",
+      "topic": "Industrial Revolution USA",
+      "difficulty": "medium",
+      "question": "The Lowell System of the early American Industrial Revolution was notable for",
+      "options": [
+        "relying primarily on enslaved African American labor in northern factories",
+        "recruiting young New England farm women as factory workers and housing them in company boardinghouses",
+        "importing skilled workers from England to operate textile machinery",
+        "producing primarily for the domestic market with no connection to the international cotton trade"
+      ],
+      "answer": 1,
+      "explanation": "The Lowell System recruited young New England women (farm daughters) who lived in supervised company boardinghouses. It became a model for early American industrialization and these 'mill girls' were among the first industrial workers in America, later organizing some of the earliest labor protests."
+    },
+    {
+      "id": 136,
+      "period": "1865-1898",
+      "topic": "Transcontinental Railroad",
+      "difficulty": "medium",
+      "question": "The completion of the transcontinental railroad in 1869 most significantly contributed to",
+      "options": [
+        "ending conflicts between the United States and Native American nations on the Great Plains",
+        "accelerating the settlement of the West, the destruction of the buffalo herds, and the final displacement of Native Americans from the Great Plains",
+        "creating equal economic opportunities for Chinese and Irish immigrants who built the railroad",
+        "establishing the federal government's power to regulate interstate commerce"
+      ],
+      "answer": 1,
+      "explanation": "The transcontinental railroad opened the Great Plains to mass settlement and commercial agriculture, brought commercial hunters who slaughtered the buffalo herds that Plains Indians depended on, and accelerated the military campaigns that confined Native Americans to reservations — completing their displacement from ancestral lands."
+    },
+    {
+      "id": 137,
+      "period": "1890-1945",
+      "topic": "Wilson's 14 Points",
+      "difficulty": "medium",
+      "question": "The Senate's rejection of the Treaty of Versailles was primarily due to opposition to",
+      "options": [
+        "the harsh reparations imposed on Germany",
+        "Article X of the League of Nations Covenant, which senators feared would commit the United States to military involvement in foreign conflicts without congressional approval",
+        "Wilson's refusal to negotiate with Senate Republicans",
+        "the treaty's failure to create an independent Poland"
+      ],
+      "answer": 1,
+      "explanation": "Republican 'Reservationists' led by Senator Lodge opposed Article X, which committed League members to protect the territorial integrity of all members — they feared it would drag the U.S. into wars without Congress declaring them. Wilson refused compromise, and the Senate twice rejected the treaty."
+    },
+    {
+      "id": 138,
+      "period": "1945-1980",
+      "topic": "Korean War",
+      "difficulty": "medium",
+      "question": "President Truman's decision to fire General MacArthur during the Korean War established the important precedent of",
+      "options": [
+        "the president's right to use nuclear weapons without congressional approval",
+        "civilian control of the military and the constitutional principle that military commanders are subordinate to elected civilian leadership",
+        "Congress's power to override presidential military decisions",
+        "the right of military officers to publicly criticize government foreign policy"
+      ],
+      "answer": 1,
+      "explanation": "Truman fired MacArthur for insubordination after MacArthur publicly undermined the president's strategy. The politically unpopular decision reaffirmed the constitutional principle of civilian control of the military — that generals implement policy rather than make it."
+    },
+    {
+      "id": 139,
+      "period": "1890-1945",
+      "topic": "New Deal Coalition",
+      "difficulty": "hard",
+      "question": "The New Deal coalition that kept Democrats dominant in national politics from 1932 through the 1960s was primarily composed of",
+      "options": [
+        "northern industrial workers, white southerners, ethnic minorities, and progressive reformers",
+        "wealthy business owners, conservative farmers, and Protestant ministers",
+        "western ranchers, small business owners, and recent immigrants",
+        "college-educated professionals, civil rights activists, and environmental reformers"
+      ],
+      "answer": 0,
+      "explanation": "FDR's coalition united northern urban workers (organized by the CIO), white Southern Democrats (who supported New Deal economic programs while maintaining segregation), Catholic and Jewish immigrants, and Black voters in northern cities — a coalition that held despite its internal tensions until the Civil Rights era fractured it."
+    },
+    {
+      "id": 140,
+      "period": "1945-1980",
+      "topic": "Space Race",
+      "difficulty": "easy",
+      "question": "The Soviet launch of Sputnik in 1957 most immediately affected American domestic policy by",
+      "options": [
+        "convincing Congress to dramatically increase military spending",
+        "leading to massive federal investment in science education and the creation of NASA",
+        "causing Eisenhower to withdraw American military forces from Europe",
+        "resulting in a congressional investigation of communist infiltration of American universities"
+      ],
+      "answer": 1,
+      "explanation": "Sputnik shocked Americans who believed they led the world in technology. Congress responded with the National Defense Education Act (1958) providing federal funding for science, math, and foreign language education — one of the first major federal investments in education — and created NASA the same year."
+    },
+    {
+      "id": 141,
+      "period": "1800-1848",
+      "topic": "Abolitionism",
+      "difficulty": "medium",
+      "question": "Frederick Douglass was most effective as an abolitionist primarily because",
+      "options": [
+        "he organized armed slave rebellions throughout the South",
+        "his personal narrative and oratory provided powerful firsthand testimony against slavery that was difficult to dismiss",
+        "he successfully lobbied Congress to pass anti-slavery legislation",
+        "he formed a third political party dedicated solely to abolition"
+      ],
+      "answer": 1,
+      "explanation": "Douglass's 'Narrative' (1845) and his eloquent speeches provided undeniable first-person evidence of slavery's brutality and the full humanity of enslaved people — countering pro-slavery arguments that Black people were suited for or content with bondage."
+    },
+    {
+      "id": 142,
+      "period": "1890-1945",
+      "topic": "Prohibition",
+      "difficulty": "medium",
+      "question": "Prohibition (18th Amendment, 1919) ultimately failed primarily because",
+      "options": [
+        "the amendment was ruled unconstitutional by the Supreme Court",
+        "it created a massive black market for alcohol, fueled the rise of organized crime, and proved impossible to enforce",
+        "most Americans supported repeal before it was even implemented",
+        "the federal government refused to spend money on enforcement"
+      ],
+      "answer": 1,
+      "explanation": "Prohibition created enormous profit opportunities for bootleggers like Al Capone, whose organizations built the modern American mafia. Speakeasies proliferated, corruption spread to police and politicians, and the impossibility of enforcement — combined with the Depression's need for tax revenue — led to repeal in 1933."
+    },
+    {
+      "id": 143,
+      "period": "1945-1980",
+      "topic": "Great Society",
+      "difficulty": "medium",
+      "question": "Lyndon Johnson's Great Society programs of the mid-1960s represented the most significant expansion of federal social programs since",
+      "options": [
+        "the Progressive Era reforms of Theodore Roosevelt",
+        "the New Deal programs of Franklin Roosevelt",
+        "the Reconstruction amendments following the Civil War",
+        "Harry Truman's Fair Deal proposals"
+      ],
+      "answer": 1,
+      "explanation": "The Great Society — Medicare, Medicaid, the Civil Rights and Voting Rights Acts, federal education funding, immigration reform, and antipoverty programs — represented the most ambitious expansion of the federal government's social role since FDR's New Deal, fundamentally reshaping American social policy."
+    },
+    {
+      "id": 144,
+      "period": "1865-1898",
+      "topic": "Gilded Age Politics",
+      "difficulty": "hard",
+      "question": "The term 'Gilded Age,' coined by Mark Twain, referred to",
+      "options": [
+        "the genuine prosperity that the industrial revolution brought to all Americans",
+        "a surface appearance of prosperity and progress that concealed deep social problems, corruption, and inequality underneath",
+        "the golden era of American democracy when all citizens actively participated in government",
+        "the period when American foreign policy was focused on acquiring gold-producing colonies"
+      ],
+      "answer": 1,
+      "explanation": "Twain's ironic title captured the era's paradox: a glittering surface of industrial wealth and material progress that concealed political corruption (spoils system, boss politics), brutal labor exploitation, severe inequality, racial violence, and the crushing of agricultural populations."
+    },
+    {
+      "id": 145,
+      "period": "1890-1945",
+      "topic": "Social Darwinism",
+      "difficulty": "hard",
+      "question": "Social Darwinism, as applied to American society in the Gilded Age, was used primarily to",
+      "options": [
+        "justify government intervention to help the poor",
+        "argue that the wealthy had achieved their position through natural superiority and that government programs to help the poor interfered with natural selection",
+        "promote racial equality by arguing that all humans had evolved from common ancestors",
+        "support labor unions as the natural evolution of worker organization"
+      ],
+      "answer": 1,
+      "explanation": "Social Darwinism (associated with Herbert Spencer and William Graham Sumner) applied 'survival of the fittest' to human society, arguing that the wealthy had naturally risen through superior qualities. This provided ideological justification for laissez-faire economics and opposition to government aid to the poor as 'unnatural interference.'"
+    },
+    {
+      "id": 146,
+      "period": "1945-1980",
+      "topic": "Counterculture",
+      "difficulty": "medium",
+      "question": "The counterculture movement of the 1960s challenged mainstream American society primarily by",
+      "options": [
+        "organizing a third political party to challenge Democrats and Republicans",
+        "rejecting materialist consumer culture, traditional moral codes, and the Vietnam War, influencing music, art, and lasting changes in social attitudes",
+        "successfully ending racial segregation through nonviolent protest",
+        "creating new economic alternatives to capitalism through commune-based living"
+      ],
+      "answer": 1,
+      "explanation": "The 1960s counterculture — hippies, psychedelics, Woodstock, anti-war protest — challenged Cold War conformism, consumer materialism, sexual conservatism, and the military-industrial complex. While communes faded, its influence on personal freedom, environmentalism, feminism, and social attitudes had lasting cultural impact."
+    },
+    {
+      "id": 147,
+      "period": "1980-Present",
+      "topic": "Immigration Reform",
+      "difficulty": "medium",
+      "question": "The Immigration Reform and Control Act of 1986 attempted to address undocumented immigration by",
+      "options": [
+        "completely closing the U.S.-Mexico border to all immigration",
+        "granting amnesty to undocumented immigrants already in the country while imposing penalties on employers who hired undocumented workers",
+        "deporting all undocumented immigrants regardless of family ties",
+        "creating a guest worker program for seasonal agricultural workers"
+      ],
+      "answer": 1,
+      "explanation": "The 1986 Act granted amnesty to approximately 3 million undocumented immigrants who had been in the U.S. since 1982, while implementing employer sanctions. Critics argue employer enforcement was weak from the start, failing to deter future undocumented immigration."
+    },
+    {
+      "id": 148,
+      "period": "1890-1945",
+      "topic": "Theodore Roosevelt",
+      "difficulty": "medium",
+      "question": "Theodore Roosevelt's 'Square Deal' domestic program was most notable for",
+      "options": [
+        "ending all government regulation of business in favor of free market competition",
+        "using the power of the federal government to regulate big business, protect consumers, and conserve natural resources",
+        "establishing a system of government ownership of major railroads and steel companies",
+        "creating the Federal Reserve System to regulate banking"
+      ],
+      "answer": 1,
+      "explanation": "Roosevelt's Square Deal used executive power aggressively — busting trusts (Northern Securities), mediating the 1902 coal strike, passing the Pure Food and Drug Act and Meat Inspection Act, and setting aside 230 million acres for conservation — establishing the model for activist Progressive government."
+    },
+    {
+      "id": 149,
+      "period": "1945-1980",
+      "topic": "Environmental Movement",
+      "difficulty": "medium",
+      "question": "The environmental movement of the 1960s–1970s most directly resulted in",
+      "options": [
+        "the nationalization of natural resources and public lands",
+        "landmark legislation including the Clean Air Act, Clean Water Act, and the creation of the EPA, establishing federal responsibility for environmental protection",
+        "the end of all nuclear power development in the United States",
+        "a constitutional amendment establishing the right to a clean environment"
+      ],
+      "answer": 1,
+      "explanation": "Rachel Carson's 'Silent Spring' (1962) and events like the Cuyahoga River fire (1969) and Santa Barbara oil spill mobilized public opinion. The result was the first Earth Day (1970), the creation of the EPA, the Clean Air Act, Clean Water Act, and Endangered Species Act — fundamentally expanding federal environmental responsibility."
+    },
+    {
+      "id": 150,
+      "period": "1800-1848",
+      "topic": "Market Revolution",
+      "difficulty": "hard",
+      "question": "The Market Revolution of the early 19th century transformed American society most significantly by",
+      "options": [
+        "creating a fully industrialized economy by 1840",
+        "shifting the economy from local subsistence farming toward commercial production for distant markets, creating a national market economy and wage labor class",
+        "ending the reliance on enslaved labor in the southern states",
+        "creating a middle class of independent craftsmen and artisans in every region"
+      ],
+      "answer": 1,
+      "explanation": "The Market Revolution — driven by canals, railroads, and new manufacturing — transformed Americans from largely self-sufficient farmers into participants in a national cash economy. It created a middle class, an industrial working class, and deepened regional specialization (northern manufacturing, southern cotton, western grain) that sharpened sectional tensions."
+    },
+    {
+      "id": 151,
+      "period": "1890-1945",
+      "topic": "Open Door Policy",
+      "difficulty": "medium",
+      "question": "The Open Door Policy in China (1899–1900) reflected American foreign policy goals of",
+      "options": [
+        "establishing a military alliance with China against Japan",
+        "ensuring equal trading access to China for all major powers rather than allowing European nations and Japan to carve China into exclusive colonial spheres",
+        "creating an American colonial protectorate over China",
+        "supporting Chinese nationalist movements against imperial rule"
+      ],
+      "answer": 1,
+      "explanation": "Secretary of State Hay's Open Door Notes called for equal trading rights for all nations in China, preventing any single power from monopolizing access. It reflected American commercial interests (access to Chinese markets) while presenting itself as defending Chinese sovereignty — a hallmark of American economic imperialism."
+    },
+    {
+      "id": 152,
+      "period": "1754-1800",
+      "topic": "Federalist Papers",
+      "difficulty": "medium",
+      "question": "Federalist No. 51, authored by James Madison, argued that the Constitution would prevent tyranny primarily through",
+      "options": [
+        "a strong Bill of Rights listing all individual freedoms",
+        "separating governmental powers and creating a system of checks and balances where ambition counteracts ambition",
+        "a powerful judiciary that could strike down unconstitutional laws",
+        "frequent elections that would keep officials accountable to voters"
+      ],
+      "answer": 1,
+      "explanation": "Federalist 51 argued that the Constitution's separation of powers — giving each branch tools to check the others — would prevent any branch from accumulating too much power. Madison's famous line: 'ambition must be made to counteract ambition' — human nature itself would protect liberty through institutional design."
+    },
+    {
+      "id": 153,
+      "period": "1890-1945",
+      "topic": "Progressivism and Race",
+      "difficulty": "hard",
+      "question": "A significant limitation of the Progressive movement was that",
+      "options": [
+        "Progressives opposed all government regulation of business",
+        "most Progressive reformers ignored or actively supported racial segregation, focusing on reforms that primarily benefited white Americans",
+        "Progressives failed to achieve any significant legislative victories at the state or federal level",
+        "Progressive leaders rejected democracy in favor of technocratic government by experts"
+      ],
+      "answer": 1,
+      "explanation": "Despite their social justice rhetoric, most Progressives accepted or promoted racial segregation. Wilson resegregated the federal workforce. Progressive-era 'reforms' often excluded Black workers and immigrants. The movement's failure to challenge white supremacy represents a fundamental contradiction in its democratic ideals."
+    },
+    {
+      "id": 154,
+      "period": "1945-1980",
+      "topic": "OPEC Oil Embargo",
+      "difficulty": "medium",
+      "question": "The OPEC oil embargo of 1973–1974 had the most significant long-term impact on American society by",
+      "options": [
+        "causing the United States to invade the Middle East to secure oil supplies",
+        "revealing American dependence on foreign oil, triggering inflation, and spurring the first serious interest in energy conservation and alternative energy",
+        "permanently ending American economic growth and prosperity",
+        "causing the United States to adopt a policy of complete energy self-sufficiency"
+      ],
+      "answer": 1,
+      "explanation": "The oil embargo quadrupled gas prices, created long lines at gas stations, triggered stagflation, and revealed the vulnerability of the American economy to foreign oil supplies — contributing to Carter's emphasis on conservation and beginning a debate about energy independence that continues today."
+    },
+    {
+      "id": 155,
+      "period": "1607-1754",
+      "topic": "Halfway Covenant",
+      "difficulty": "hard",
+      "question": "The Halfway Covenant of 1662 in Puritan New England was adopted primarily because",
+      "options": [
+        "it allowed non-Puritans to join Puritan congregations without conversion",
+        "declining church membership threatened Puritan social cohesion, so partial membership was offered to the children of baptized but unconverted church members",
+        "it was required by the English Crown as a condition of continued colonial charters",
+        "it represented Puritan acceptance of religious toleration as a governing principle"
+      ],
+      "answer": 1,
+      "explanation": "As second-generation Puritans who hadn't experienced dramatic conversion sought membership, the Halfway Covenant allowed them partial church membership (baptism but not communion or voting) — reflecting the tension between maintaining religious rigor and preserving the Puritan community's coherence."
+    },
+    {
+      "id": 156,
+      "period": "1844-1877",
+      "topic": "Freedmen's Bureau",
+      "difficulty": "medium",
+      "question": "The Freedmen's Bureau (1865–1872) was significant during Reconstruction primarily because it",
+      "options": [
+        "successfully distributed '40 acres and a mule' to most formerly enslaved families",
+        "established schools, negotiated labor contracts, and provided relief to formerly enslaved people, though limited resources and white resistance curtailed its effectiveness",
+        "granted full citizenship rights to all formerly enslaved people in the South",
+        "created a system of Black-owned land banks that funded African American economic development"
+      ],
+      "answer": 1,
+      "explanation": "The Freedmen's Bureau established over 1,000 schools (helping create historically Black colleges), negotiated labor contracts, and provided food and medical care — but was chronically underfunded, undermined by Johnson's pardons of Confederates, and ultimately unable to prevent the reestablishment of white supremacy."
+    },
+    {
+      "id": 157,
+      "period": "1890-1945",
+      "topic": "Immigration Restriction",
+      "difficulty": "medium",
+      "question": "The Immigration Act of 1924 (Johnson-Reed Act) was significant because it",
+      "options": [
+        "opened American borders to all European immigrants regardless of national origin",
+        "established national origins quotas that severely restricted immigration from Southern and Eastern Europe and completely banned Asian immigration",
+        "created a guest worker program for Mexican agricultural workers",
+        "required immigrants to pass literacy and citizenship tests before entry"
+      ],
+      "answer": 1,
+      "explanation": "The 1924 Act established quotas based on the 1890 census (before the New Immigration wave), severely limiting Italian, Polish, and Russian Jewish immigration. It completely excluded Asian immigrants. These quotas — reflecting nativist and eugenic ideas — shaped American demographics until the Immigration Act of 1965."
+    },
+    {
+      "id": 158,
+      "period": "1945-1980",
+      "topic": "Civil Rights Voting Rights",
+      "difficulty": "medium",
+      "question": "The Voting Rights Act of 1965 was more effective than previous civil rights legislation in securing Black voting rights because",
+      "options": [
+        "it imposed criminal penalties on any individual who interfered with Black voters",
+        "it authorized direct federal oversight and intervention in states and counties with histories of voting discrimination, eliminating the need to fight discrimination case by case",
+        "it permanently stationed federal marshals at all polling places in the South",
+        "it transferred all voting administration from states to the federal government"
+      ],
+      "answer": 1,
+      "explanation": "Previous laws required individual lawsuits that were slow and easily obstructed. The VRA's Section 5 'preclearance' requirement made covered jurisdictions get federal approval before changing voting rules, and federal examiners could directly register voters — dismantling the bureaucratic barriers that had kept Black Southerners from voting."
+    },
+    {
+      "id": 159,
+      "period": "1607-1754",
+      "topic": "Colonial Religion",
+      "difficulty": "medium",
+      "question": "Roger Williams and Anne Hutchinson were expelled from Massachusetts Bay Colony primarily because",
+      "options": [
+        "they encouraged armed rebellion against the colonial government",
+        "they challenged the authority of Puritan ministers and advocated for separation of church and state and freedom of conscience",
+        "they organized trade with Native Americans without authorization",
+        "they refused to pay colonial taxes imposed by the General Court"
+      ],
+      "answer": 1,
+      "explanation": "Williams challenged Puritan orthodoxy by arguing the state had no authority over religious conscience and that Native American lands couldn't be claimed by royal charter. Hutchinson's antinomian teachings undermined ministerial authority. Both threatened the Puritan vision of a unified godly community — the 'city upon a hill.'"
+    },
+    {
+      "id": 160,
+      "period": "1980-Present",
+      "topic": "Culture Wars",
+      "difficulty": "medium",
+      "question": "The 'culture wars' of the 1980s and 1990s in American politics were primarily characterized by",
+      "options": [
+        "economic debates over taxation and government spending",
+        "intense conflict over social and moral issues including abortion, gay rights, school prayer, and multiculturalism, reflecting deep divisions over American values and identity",
+        "foreign policy debates between interventionists and isolationists",
+        "conflicts between labor unions and corporations over wages and working conditions"
+      ],
+      "answer": 1,
+      "explanation": "The culture wars reflected the political mobilization of religious conservatives (Moral Majority) against the social changes of the 1960s-70s — abortion rights (Roe v. Wade), gay rights, feminism, and multicultural education. These conflicts reshaped the Republican Party and created the 'values voter' as a political force."
     }
   ]
 }
