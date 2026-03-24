@@ -1377,10 +1377,11 @@ function normalizeQuestion(q, newId) {
     choices,
     correctAnswer,
     explanation: q.explanation || '',
-    // preserve extra fields
     period: q.period,
     topic: q.topic,
     difficulty: q.difficulty,
+    stimulus: q.stimulus || null,
+    stimulusSetId: q.stimulusSetId || null,
   };
 }
 
@@ -1431,21 +1432,33 @@ async function generateMcq() {
 }
 
 function renderMcq() {
-  document.getElementById('mcq-list').innerHTML = mcqData.map((q,i)=>`
+  // Track which stimulus sets have already been shown
+  const shownStimuli = new Set();
+  document.getElementById('mcq-list').innerHTML = mcqData.map((q,i) => {
+    const letters = ['A','B','C','D'];
+    // Show stimulus block only for first question in a set
+    let stimulusHtml = '';
+    if (q.stimulus && (!q.stimulusSetId || !shownStimuli.has(q.stimulusSetId))) {
+      if (q.stimulusSetId) shownStimuli.add(q.stimulusSetId);
+      stimulusHtml = `<div style="background:var(--surface2);border-left:3px solid var(--gold);border-radius:0 7px 7px 0;padding:0.9rem 1rem;margin-bottom:1rem;font-size:0.85rem;line-height:1.8;color:var(--muted);font-style:italic;white-space:pre-line;">${q.stimulus}</div>`;
+    }
+    return `
     <div class="mcq-question" id="mcq-${q.id}">
+      ${stimulusHtml}
       <div class="mcq-num" style="display:flex;justify-content:space-between;align-items:center;">
         <span>Question ${i+1} of ${mcqData.length}</span>
         ${q.period ? `<span style="font-size:0.72rem;color:var(--gold);font-family:'DM Mono',monospace;">${q.period}${q.topic ? ' - '+q.topic : ''}</span>` : ''}
       </div>
       <div class="mcq-text">${q.question}</div>
       <div class="mcq-choices">
-        ${['A','B','C','D'].filter(l=>q.choices[l]).map(l=>`
+        ${letters.filter(l=>q.choices[l]).map(l=>`
           <div class="mcq-choice" id="mc-${q.id}-${l}" onclick="selectMcq(${q.id},'${l}','${q.correctAnswer}')">
             <span class="letter">${l}</span><span>${q.choices[l]}</span>
           </div>`).join('')}
       </div>
       <div class="mcq-explanation" id="exp-${q.id}">${q.explanation}</div>
-    </div>`).join('');
+    </div>`;
+  }).join('');
 }
 
 function selectMcq(id, chosen, correct) {
