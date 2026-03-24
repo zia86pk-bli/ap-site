@@ -1,6 +1,941 @@
 {
   "questions": [
     {
+      "id": 1001,
+      "period": "1491-1607",
+      "topic": "Columbian Exchange",
+      "difficulty": "hard",
+      "stimulus": "\"The Indians of Cuba told me that to the south and southwest of Cuba there was a land without limit, abounding in gold... They described the inhabitants as having the faces of dogs, and one eye, and others with faces of horses... I was told that there existed a province which was called Cibao, abounding in gold.\"\n— Christopher Columbus, Letter to the Spanish Crown, 1493",
+      "stimulusSetId": "S1",
+      "question": "Columbus's letter best illustrates which of the following motivations behind Spanish exploration of the Americas?",
+      "options": [
+        "A desire to establish democratic governance in the New World",
+        "The search for wealth and resources to benefit the Spanish Crown",
+        "A purely religious mission to convert Native Americans to Christianity",
+        "An interest in establishing permanent agricultural settlements"
+      ],
+      "answer": 1,
+      "explanation": "Columbus's repeated emphasis on gold and riches reflects the primary economic motivation of Spanish exploration -- the search for wealth to benefit the Crown, consistent with mercantilist theory."
+    },
+    {
+      "id": 1002,
+      "period": "1491-1607",
+      "topic": "Columbian Exchange",
+      "difficulty": "hard",
+      "stimulus": "\"The Indians of Cuba told me that to the south and southwest of Cuba there was a land without limit, abounding in gold... They described the inhabitants as having the faces of dogs, and one eye, and others with faces of horses... I was told that there existed a province which was called Cibao, abounding in gold.\"\n— Christopher Columbus, Letter to the Spanish Crown, 1493",
+      "stimulusSetId": "S1",
+      "question": "Columbus's description of Native peoples as having 'faces of dogs' most directly reflects which of the following?",
+      "options": [
+        "Accurate ethnographic reporting based on direct observation",
+        "European ethnocentrism and the tendency to dehumanize non-European peoples",
+        "Native American oral traditions Columbus had carefully studied",
+        "Scientific classification methods common in the 15th century"
+      ],
+      "answer": 1,
+      "explanation": "Columbus's fantastical descriptions of Native peoples reflect European ethnocentrism -- the tendency to view non-European peoples as fundamentally different and inferior, which would later be used to justify conquest and enslavement."
+    },
+    {
+      "id": 1003,
+      "period": "1491-1607",
+      "topic": "Columbian Exchange",
+      "difficulty": "hard",
+      "stimulus": "\"The Indians of Cuba told me that to the south and southwest of Cuba there was a land without limit, abounding in gold... They described the inhabitants as having the faces of dogs, and one eye, and others with faces of horses... I was told that there existed a province which was called Cibao, abounding in gold.\"\n— Christopher Columbus, Letter to the Spanish Crown, 1493",
+      "stimulusSetId": "S1",
+      "question": "The exchange of peoples, goods, and diseases described in Columbus's letters most directly contributed to which of the following long-term developments?",
+      "options": [
+        "The immediate political unification of the Americas under Spanish rule",
+        "A catastrophic decline in Native American populations due to European diseases",
+        "The peaceful integration of European and Native American cultures",
+        "The rapid industrialization of the Caribbean islands"
+      ],
+      "answer": 1,
+      "explanation": "Contact initiated by Columbus's voyages set off the Columbian Exchange, most devastatingly through the transmission of Old World diseases like smallpox to which Native Americans had no immunity, killing an estimated 50-90% of indigenous populations within a century."
+    },
+    {
+      "id": 1004,
+      "period": "1491-1607",
+      "topic": "Spanish Colonization and Native Resistance",
+      "difficulty": "hard",
+      "stimulus": "\"They [the Spanish] forced their way into native settlements, slaughtering everyone they found there, including small children, old men, pregnant women, and even women who had just given birth... They hacked them to pieces, slicing open their bellies with their swords as though they were so many sheep herded into a pen.\"\n— Bartolome de las Casas, A Short Account of the Destruction of the Indies, 1542",
+      "stimulusSetId": "S2",
+      "question": "Las Casas's account is best understood in the context of which of the following debates taking place in 16th-century Spain?",
+      "options": [
+        "Whether Spain should establish permanent settlements in North America",
+        "The moral and legal justification for the Spanish conquest and enslavement of Native Americans",
+        "The proper method for converting Native Americans to Protestantism",
+        "Whether the encomienda system generated sufficient revenue for the Crown"
+      ],
+      "answer": 1,
+      "explanation": "Las Casas wrote to the Spanish Crown to condemn the treatment of Native Americans and spark the Valladolid Debate (1550-51) over the morality and legality of Spanish conquest -- he advocated for Native rights and was instrumental in the passage of the New Laws of 1542."
+    },
+    {
+      "id": 1005,
+      "period": "1491-1607",
+      "topic": "Spanish Colonization and Native Resistance",
+      "difficulty": "hard",
+      "stimulus": "\"They [the Spanish] forced their way into native settlements, slaughtering everyone they found there, including small children, old men, pregnant women, and even women who had just given birth... They hacked them to pieces, slicing open their bellies with their swords as though they were so many sheep herded into a pen.\"\n— Bartolome de las Casas, A Short Account of the Destruction of the Indies, 1542",
+      "stimulusSetId": "S2",
+      "question": "Which of the following best represents a historian's critique of using Las Casas's account as a historical source?",
+      "options": [
+        "Las Casas was not present for the events he described and therefore had no credibility",
+        "As an advocate with a specific political goal, his account may exaggerate atrocities to make a moral argument",
+        "Spanish colonial records contradict every claim Las Casas made",
+        "Las Casas supported Native American slavery, making his account biased in favor of colonizers"
+      ],
+      "answer": 1,
+      "explanation": "Historians must evaluate sources for bias and purpose. Las Casas, though a genuine advocate for Native rights, was writing explicitly to persuade the Spanish Crown to change policy -- his graphic descriptions, while based in reality, may be exaggerated for rhetorical effect."
+    },
+    {
+      "id": 1006,
+      "period": "1491-1607",
+      "topic": "Spanish Colonization and Native Resistance",
+      "difficulty": "hard",
+      "stimulus": "\"They [the Spanish] forced their way into native settlements, slaughtering everyone they found there, including small children, old men, pregnant women, and even women who had just given birth... They hacked them to pieces, slicing open their bellies with their swords as though they were so many sheep herded into a pen.\"\n— Bartolome de las Casas, A Short Account of the Destruction of the Indies, 1542",
+      "stimulusSetId": "S2",
+      "question": "The conditions described by Las Casas most directly led to which of the following developments?",
+      "options": [
+        "Spain withdrawing entirely from the Americas by 1600",
+        "The increased importation of enslaved Africans as Native American populations collapsed",
+        "The immediate abolition of the encomienda system throughout Spanish America",
+        "A successful armed rebellion that drove Spanish colonizers from the Caribbean"
+      ],
+      "answer": 1,
+      "explanation": "As Native populations collapsed under disease and brutal labor conditions, Spanish colonizers increasingly turned to the forced importation of enslaved Africans to supply labor for plantations and mines -- directly connecting the destruction of Native peoples to the expansion of the African slave trade."
+    },
+    {
+      "id": 1007,
+      "period": "1607-1754",
+      "topic": "Puritan Society and Religious Dissent",
+      "difficulty": "hard",
+      "stimulus": "\"We must consider that we shall be as a city upon a hill. The eyes of all people are upon us, so that if we shall deal falsely with our God in this work we have undertaken, and so cause Him to withdraw His present help from us, we shall be made a story and a byword through the world.\"\n— John Winthrop, A Model of Christian Charity, 1630",
+      "stimulusSetId": "S3",
+      "question": "Winthrop's 'city upon a hill' sermon most directly reflects which of the following Puritan beliefs?",
+      "options": [
+        "That New England colonists should remain entirely separate from English society",
+        "That the Puritan community had a special covenant with God and a mission to serve as a model Christian society",
+        "That religious freedom should be extended to all settlers regardless of faith",
+        "That the Massachusetts Bay Colony should seek political independence from England"
+      ],
+      "answer": 1,
+      "explanation": "Winthrop's sermon articulated the Puritan belief in a special covenant with God -- that their community was chosen to demonstrate what a truly godly society looked like, watched by the entire world. This sense of divine mission became deeply embedded in American political culture."
+    },
+    {
+      "id": 1008,
+      "period": "1607-1754",
+      "topic": "Puritan Society and Religious Dissent",
+      "difficulty": "hard",
+      "stimulus": "\"We must consider that we shall be as a city upon a hill. The eyes of all people are upon us, so that if we shall deal falsely with our God in this work we have undertaken, and so cause Him to withdraw His present help from us, we shall be made a story and a byword through the world.\"\n— John Winthrop, A Model of Christian Charity, 1630",
+      "stimulusSetId": "S3",
+      "question": "The ideas expressed in Winthrop's sermon most directly contributed to which of the following tensions within Puritan New England?",
+      "options": [
+        "Conflict between Puritan settlers and Dutch traders over fur trade routes",
+        "The expulsion of dissenters like Roger Williams and Anne Hutchinson who challenged Puritan orthodoxy",
+        "Disputes between Massachusetts Bay and Virginia over tobacco trade regulations",
+        "The Salem witch trials of 1692"
+      ],
+      "answer": 1,
+      "explanation": "The Puritan emphasis on maintaining a holy community created intense pressure for religious conformity. Those like Roger Williams (who challenged church-state unity) and Anne Hutchinson (whose antinomian teachings undermined ministerial authority) were expelled for threatening the community's covenant with God."
+    },
+    {
+      "id": 1009,
+      "period": "1607-1754",
+      "topic": "Puritan Society and Religious Dissent",
+      "difficulty": "hard",
+      "stimulus": "\"We must consider that we shall be as a city upon a hill. The eyes of all people are upon us, so that if we shall deal falsely with our God in this work we have undertaken, and so cause Him to withdraw His present help from us, we shall be made a story and a byword through the world.\"\n— John Winthrop, A Model of Christian Charity, 1630",
+      "stimulusSetId": "S3",
+      "question": "Historians have argued that Winthrop's 'city upon a hill' concept had the most lasting impact on which of the following aspects of American history?",
+      "options": [
+        "The development of the American economic system based on free trade",
+        "The American sense of exceptionalism and the belief that the United States has a special mission in the world",
+        "The constitutional separation of church and state in the First Amendment",
+        "The tradition of democratic self-governance in New England town meetings"
+      ],
+      "answer": 1,
+      "explanation": "Ronald Reagan famously invoked Winthrop's 'city upon a hill' in his 1989 farewell address. The concept of American exceptionalism -- the belief that the United States has a unique, divinely-ordained mission to serve as a model for the world -- traces directly to Puritan theology."
+    },
+    {
+      "id": 1010,
+      "period": "1607-1754",
+      "topic": "Colonial Slavery",
+      "difficulty": "hard",
+      "stimulus": "\"Be it enacted... That all servants imported and brought into the Country... who were not Christians in their native Country... shall be accounted and be slaves. And as also every person who shall be a Child of a Woman Slave... shall be Bond or Free only according to the Condition of their Mother.\"\n— Virginia Slave Code, 1705",
+      "stimulusSetId": "S4",
+      "question": "The Virginia Slave Code of 1705 represented a significant departure from earlier colonial labor practices primarily because it",
+      "options": [
+        "Ended the use of indentured servants in Virginia entirely",
+        "Made enslaved status permanent, hereditary through the mother, and defined along racial lines",
+        "Extended rights to enslaved people who converted to Christianity",
+        "Required slaveholders to free enslaved people after a fixed term of service"
+      ],
+      "answer": 1,
+      "explanation": "Earlier in the 17th century, the legal status of Africans in Virginia was ambiguous -- some gained freedom, some had contracts. The 1705 code codified racial slavery as permanent and inherited through the mother (partus sequitur ventrem), creating a self-reproducing enslaved population defined by race."
+    },
+    {
+      "id": 1011,
+      "period": "1607-1754",
+      "topic": "Colonial Slavery",
+      "difficulty": "hard",
+      "stimulus": "\"Be it enacted... That all servants imported and brought into the Country... who were not Christians in their native Country... shall be accounted and be slaves. And as also every person who shall be a Child of a Woman Slave... shall be Bond or Free only according to the Condition of their Mother.\"\n— Virginia Slave Code, 1705",
+      "stimulusSetId": "S4",
+      "question": "The provision that enslaved status follows 'the Condition of their Mother' was most advantageous to slaveholders primarily because",
+      "options": [
+        "It prevented enslaved fathers from claiming legal rights over their children",
+        "It meant children born to enslaved women -- regardless of the father's status -- were automatically enslaved, expanding the enslaved labor force",
+        "It allowed free Black women to pass freedom to their children",
+        "It gave legal recognition to African family structures"
+      ],
+      "answer": 1,
+      "explanation": "By making status hereditary through the mother, slaveholders ensured that children born to enslaved women (including those fathered by white men, sometimes slaveholders themselves) were automatically enslaved -- dramatically expanding the enslaved workforce without purchasing additional slaves."
+    },
+    {
+      "id": 1012,
+      "period": "1607-1754",
+      "topic": "Colonial Slavery",
+      "difficulty": "hard",
+      "stimulus": "\"Be it enacted... That all servants imported and brought into the Country... who were not Christians in their native Country... shall be accounted and be slaves. And as also every person who shall be a Child of a Woman Slave... shall be Bond or Free only according to the Condition of their Mother.\"\n— Virginia Slave Code, 1705",
+      "stimulusSetId": "S4",
+      "question": "The Virginia Slave Code is best understood as a response to which of the following developments in the late 17th century?",
+      "options": [
+        "The arrival of large numbers of free Black settlers from Africa",
+        "Bacon's Rebellion (1676), which revealed the danger of a large class of discontented poor white and Black laborers",
+        "A series of successful slave revolts that threatened the plantation system",
+        "English royal pressure to standardize labor laws across the colonies"
+      ],
+      "answer": 1,
+      "explanation": "Bacon's Rebellion united poor white indentured servants and Black enslaved and free people against the planter class. This alliance terrified Virginia's elite. The Slave Codes created a rigid racial hierarchy that gave poor whites privileges over Black people, dividing potential alliances and replacing the volatile indentured servant system."
+    },
+    {
+      "id": 1013,
+      "period": "1754-1800",
+      "topic": "Revolutionary Ideology",
+      "difficulty": "hard",
+      "stimulus": "\"We hold these truths to be self-evident, that all men are created equal, that they are endowed by their Creator with certain unalienable Rights, that among these are Life, Liberty and the pursuit of Happiness. That to secure these rights, Governments are instituted among Men, deriving their just powers from the consent of the governed.\"\n— Thomas Jefferson, Declaration of Independence, 1776",
+      "stimulusSetId": "S5",
+      "question": "The philosophical foundation of the Declaration of Independence was most directly drawn from which of the following intellectual traditions?",
+      "options": [
+        "Puritan covenant theology and biblical law",
+        "Enlightenment natural rights philosophy, particularly the ideas of John Locke",
+        "The English common law tradition dating to the Magna Carta",
+        "Ancient Greek democratic theory as practiced in Athens"
+      ],
+      "answer": 1,
+      "explanation": "Jefferson drew heavily on John Locke's Second Treatise of Government (1689), which argued that government derives authority from the consent of the governed and that people possess natural rights to life, liberty, and property (Jefferson changed 'property' to 'pursuit of happiness'). The Declaration is a quintessential Enlightenment document."
+    },
+    {
+      "id": 1014,
+      "period": "1754-1800",
+      "topic": "Revolutionary Ideology",
+      "difficulty": "hard",
+      "stimulus": "\"We hold these truths to be self-evident, that all men are created equal, that they are endowed by their Creator with certain unalienable Rights, that among these are Life, Liberty and the pursuit of Happiness. That to secure these rights, Governments are instituted among Men, deriving their just powers from the consent of the governed.\"\n— Thomas Jefferson, Declaration of Independence, 1776",
+      "stimulusSetId": "S5",
+      "question": "The Declaration's assertion that 'all men are created equal' was most immediately contradicted by which of the following realities of 1776?",
+      "options": [
+        "The existence of property qualifications for voting in all thirteen colonies",
+        "The fact that Jefferson and many other signers were slaveholders, and slavery was protected throughout the colonies",
+        "The exclusion of recent immigrants from the rights described",
+        "The ongoing war with Britain, which prevented the principles from being implemented"
+      ],
+      "answer": 1,
+      "explanation": "Jefferson enslaved over 600 people during his lifetime and owned slaves while writing that 'all men are created equal.' The Declaration's universalist language was in direct contradiction with the institution of slavery, a tension that abolitionists like Frederick Douglass would powerfully exploit and that drove America toward Civil War."
+    },
+    {
+      "id": 1015,
+      "period": "1754-1800",
+      "topic": "Revolutionary Ideology",
+      "difficulty": "hard",
+      "stimulus": "\"We hold these truths to be self-evident, that all men are created equal, that they are endowed by their Creator with certain unalienable Rights, that among these are Life, Liberty and the pursuit of Happiness. That to secure these rights, Governments are instituted among Men, deriving their just powers from the consent of the governed.\"\n— Thomas Jefferson, Declaration of Independence, 1776",
+      "stimulusSetId": "S5",
+      "question": "Which of the following groups most effectively used the language of the Declaration of Independence to advance their own claims to equality in the following decades?",
+      "options": [
+        "British loyalists who sought reconciliation with the Crown",
+        "Advocates for the rights of women and enslaved people, who pointed to the Declaration's universal language",
+        "Native American nations who sought formal treaty recognition",
+        "Federalists who sought a stronger central government"
+      ],
+      "answer": 1,
+      "explanation": "The Declaration's universal language became a powerful tool for marginalized groups. The Seneca Falls Declaration of Sentiments (1848) deliberately echoed its structure to demand women's rights. Frederick Douglass used it to condemn slavery. Abolitionists argued that the Declaration's principles demanded the end of slavery."
+    },
+    {
+      "id": 1016,
+      "period": "1754-1800",
+      "topic": "Revolutionary Ideology",
+      "difficulty": "hard",
+      "stimulus": "\"We hold these truths to be self-evident, that all men are created equal, that they are endowed by their Creator with certain unalienable Rights, that among these are Life, Liberty and the pursuit of Happiness. That to secure these rights, Governments are instituted among Men, deriving their just powers from the consent of the governed.\"\n— Thomas Jefferson, Declaration of Independence, 1776",
+      "stimulusSetId": "S5",
+      "question": "The phrase 'deriving their just powers from the consent of the governed' most directly challenged which of the following British arguments about the colonies?",
+      "options": [
+        "That Parliament had the right to tax the colonies because they were 'virtually represented'",
+        "That the king had divine right to rule and could not be questioned",
+        "That colonial assemblies had no legal standing under English law",
+        "That the Navigation Acts were necessary for British economic security"
+      ],
+      "answer": 0,
+      "explanation": "Britain argued that colonists were 'virtually represented' in Parliament even without direct representation. The Declaration's consent-of-the-governed principle directly rejected this -- if the colonists hadn't consented to Parliamentary taxation, it was illegitimate regardless of the theory of virtual representation."
+    },
+    {
+      "id": 1017,
+      "period": "1754-1800",
+      "topic": "Federalism and the Constitution",
+      "difficulty": "hard",
+      "stimulus": "\"If men were angels, no government would be necessary. If angels were to govern men, neither external nor internal controls on government would be necessary. In framing a government which is to be administered by men over men, the great difficulty lies in this: you must first enable the government to control the governed; and in the next place oblige it to control itself.\"\n— James Madison, Federalist No. 51, 1788",
+      "stimulusSetId": "S6",
+      "question": "Madison's argument in Federalist No. 51 was primarily written to address which of the following concerns?",
+      "options": [
+        "Anti-Federalist fears that the Constitution would create a tyrannical central government",
+        "Concerns that the new government would be too weak to collect taxes and regulate trade",
+        "Arguments that the president should have more power than Congress",
+        "Debates over the proper role of the judiciary in American government"
+      ],
+      "answer": 0,
+      "explanation": "The Federalist Papers were written to persuade New York to ratify the Constitution. Madison's No. 51 addressed Anti-Federalist fears about tyranny by explaining how the Constitution's separation of powers and checks and balances would prevent any branch from accumulating excessive power."
+    },
+    {
+      "id": 1018,
+      "period": "1754-1800",
+      "topic": "Federalism and the Constitution",
+      "difficulty": "hard",
+      "stimulus": "\"If men were angels, no government would be necessary. If angels were to govern men, neither external nor internal controls on government would be necessary. In framing a government which is to be administered by men over men, the great difficulty lies in this: you must first enable the government to control the governed; and in the next place oblige it to control itself.\"\n— James Madison, Federalist No. 51, 1788",
+      "stimulusSetId": "S6",
+      "question": "Which constitutional mechanism most directly embodies Madison's principle that government must 'oblige itself to control itself'?",
+      "options": [
+        "The Electoral College system for selecting the president",
+        "The system of checks and balances giving each branch tools to limit the others",
+        "The Bill of Rights listing specific individual freedoms",
+        "The amendment process requiring supermajority approval"
+      ],
+      "answer": 1,
+      "explanation": "Madison's solution to the problem of self-government was structural: give each branch constitutional tools to check the ambitions of the others. The president can veto Congress; Congress can override vetoes and remove the president; courts can strike down unconstitutional laws -- 'ambition must be made to counteract ambition.'"
+    },
+    {
+      "id": 1019,
+      "period": "1754-1800",
+      "topic": "Federalism and the Constitution",
+      "difficulty": "hard",
+      "stimulus": "\"If men were angels, no government would be necessary. If angels were to govern men, neither external nor internal controls on government would be necessary. In framing a government which is to be administered by men over men, the great difficulty lies in this: you must first enable the government to control the governed; and in the next place oblige it to control itself.\"\n— James Madison, Federalist No. 51, 1788",
+      "stimulusSetId": "S6",
+      "question": "Madison's realistic view of human nature expressed in this passage most directly reflects which of the following intellectual influences?",
+      "options": [
+        "Rousseau's belief in the natural goodness of humanity",
+        "Enlightenment republicanism tempered by a realistic (some say Calvinist) view of human self-interest and the capacity for corruption",
+        "Puritan theology emphasizing predestination and human depravity",
+        "Classical Greek philosophy emphasizing virtue as the foundation of good government"
+      ],
+      "answer": 1,
+      "explanation": "Madison's statement that men are not angels reflects Enlightenment realism about human nature -- government must be designed assuming that people will act in self-interest and seek power. This contrasts with Rousseau's optimism and reflects the Founders' concern with structural safeguards rather than relying on the virtue of rulers."
+    },
+    {
+      "id": 1020,
+      "period": "1800-1848",
+      "topic": "Jacksonian Democracy and Indian Removal",
+      "difficulty": "hard",
+      "stimulus": "\"What good man would prefer a country covered with forests and ranged by a few thousand savages to our extensive Republic, studded with cities, towns, and prosperous farms, embellished with all the improvements which art can devise or industry execute?\"\n— Andrew Jackson, Second Annual Message to Congress, 1830",
+      "stimulusSetId": "S7",
+      "question": "Jackson's message to Congress was delivered in the context of Congressional debate over which of the following?",
+      "options": [
+        "The annexation of Texas from Mexico",
+        "The Indian Removal Act of 1830, which authorized the forced relocation of Native American nations east of the Mississippi",
+        "The rechartering of the Second Bank of the United States",
+        "The nullification of the Tariff of 1828 by South Carolina"
+      ],
+      "answer": 1,
+      "explanation": "Jackson delivered this message to build support for the Indian Removal Act of 1830, which authorized him to negotiate removal treaties with Native nations east of the Mississippi. The Act passed and led directly to forced relocations including the Cherokee Trail of Tears (1838-39)."
+    },
+    {
+      "id": 1021,
+      "period": "1800-1848",
+      "topic": "Jacksonian Democracy and Indian Removal",
+      "difficulty": "hard",
+      "stimulus": "\"What good man would prefer a country covered with forests and ranged by a few thousand savages to our extensive Republic, studded with cities, towns, and prosperous farms, embellished with all the improvements which art can devise or industry execute?\"\n— Andrew Jackson, Second Annual Message to Congress, 1830",
+      "stimulusSetId": "S7",
+      "question": "Jackson's description of Native Americans as 'a few thousand savages' most directly reflects which of the following justifications for Indian removal?",
+      "options": [
+        "The argument that Native Americans had voluntarily agreed to move westward",
+        "The idea that Native peoples were racially inferior and incapable of civilization, making their land claims illegitimate",
+        "A legal argument based on Supreme Court precedents recognizing Native sovereignty",
+        "The economic argument that removal would benefit both settlers and Native peoples"
+      ],
+      "answer": 1,
+      "explanation": "Jackson's language reflects the racist ideology that Native Americans were 'savages' who could not be civilized and thus had no legitimate claim to land -- a view that directly contradicted the cultural achievements of the Cherokee, who had developed written language, a constitution, and farming communities."
+    },
+    {
+      "id": 1022,
+      "period": "1800-1848",
+      "topic": "Jacksonian Democracy and Indian Removal",
+      "difficulty": "hard",
+      "stimulus": "\"What good man would prefer a country covered with forests and ranged by a few thousand savages to our extensive Republic, studded with cities, towns, and prosperous farms, embellished with all the improvements which art can devise or industry execute?\"\n— Andrew Jackson, Second Annual Message to Congress, 1830",
+      "stimulusSetId": "S7",
+      "question": "Which of the following best represents a continuity in American policy toward Native Americans from the colonial era through the Jackson presidency?",
+      "options": [
+        "The recognition of Native American political sovereignty and land rights under federal law",
+        "The consistent prioritization of white settlement over Native land claims, regardless of legal or treaty obligations",
+        "A commitment to peaceful negotiation rather than forced displacement",
+        "Federal protection of Native communities from encroachment by state governments"
+      ],
+      "answer": 1,
+      "explanation": "From the earliest colonial period through Jackson's presidency and beyond, American policy consistently prioritized white expansion over Native land rights -- whether through wars, fraudulent treaties, or outright forced removal. Jackson's Indian Removal Act represented a more explicit and systematic version of this longstanding pattern."
+    },
+    {
+      "id": 1023,
+      "period": "1800-1848",
+      "topic": "Antebellum Reform and Abolitionism",
+      "difficulty": "hard",
+      "stimulus": "\"What, to the American slave, is your 4th of July? I answer: a day that reveals to him, more than all other days in the year, the gross injustice and cruelty to which he is the constant victim. To him, your celebration is a sham; your boasted liberty, an unholy license; your national greatness, swelling vanity.\"\n— Frederick Douglass, Speech at Rochester, New York, July 5, 1852",
+      "stimulusSetId": "S8",
+      "question": "Douglass's speech most directly challenges which of the following aspects of American political culture in the 1850s?",
+      "options": [
+        "The growing movement to extend voting rights to recent immigrants",
+        "The contradiction between American ideals of liberty and the reality of slavery, exposing national hypocrisy",
+        "The constitutional protections for freedom of speech and the press",
+        "The Mexican-American War and the expansion of American territory"
+      ],
+      "answer": 1,
+      "explanation": "Douglass uses the Fourth of July -- America's most patriotic celebration -- to expose the fundamental hypocrisy of a nation that celebrated liberty while enslaving four million people. This rhetorical strategy, turning American ideals against American practice, was one of the most powerful abolitionist arguments."
+    },
+    {
+      "id": 1024,
+      "period": "1800-1848",
+      "topic": "Antebellum Reform and Abolitionism",
+      "difficulty": "hard",
+      "stimulus": "\"What, to the American slave, is your 4th of July? I answer: a day that reveals to him, more than all other days in the year, the gross injustice and cruelty to which he is the constant victim. To him, your celebration is a sham; your boasted liberty, an unholy license; your national greatness, swelling vanity.\"\n— Frederick Douglass, Speech at Rochester, New York, July 5, 1852",
+      "stimulusSetId": "S8",
+      "question": "Douglass's rhetorical strategy of invoking the Declaration of Independence to condemn slavery most directly reflects which of the following approaches to abolitionism?",
+      "options": [
+        "William Lloyd Garrison's argument that the Constitution was a pro-slavery document that abolitionists should reject",
+        "The argument that America should be held to its own stated ideals -- that slavery violated the foundational principles of the republic",
+        "The colonization movement's proposal to resettle freed Black Americans in Africa",
+        "John Brown's argument that only armed violence could end slavery"
+      ],
+      "answer": 1,
+      "explanation": "Douglass used the Declaration's universal language -- 'all men are created equal' -- as a moral indictment of slavery, arguing that America must live up to its own founding principles. This approach differed from Garrison's rejection of the Constitution as a pro-slavery compact."
+    },
+    {
+      "id": 1025,
+      "period": "1800-1848",
+      "topic": "Antebellum Reform and Abolitionism",
+      "difficulty": "hard",
+      "stimulus": "\"What, to the American slave, is your 4th of July? I answer: a day that reveals to him, more than all other days in the year, the gross injustice and cruelty to which he is the constant victim. To him, your celebration is a sham; your boasted liberty, an unholy license; your national greatness, swelling vanity.\"\n— Frederick Douglass, Speech at Rochester, New York, July 5, 1852",
+      "stimulusSetId": "S8",
+      "question": "The immediate historical context for Douglass's 1852 speech included which of the following recent developments?",
+      "options": [
+        "The passage of the Kansas-Nebraska Act reopening the question of slavery in the territories",
+        "The passage of the Fugitive Slave Act of 1850, which required Northern citizens to assist in capturing escaped slaves",
+        "The Dred Scott decision ruling that Black Americans had no constitutional rights",
+        "John Brown's raid on Harpers Ferry"
+      ],
+      "answer": 1,
+      "explanation": "The Fugitive Slave Act of 1850 -- which made Northern citizens legally obligated to assist in capturing escaped slaves and return them to bondage -- radicalized Northern opinion and gave abolitionists like Douglass powerful new evidence of slavery's reach into supposedly free states."
+    },
+    {
+      "id": 1026,
+      "period": "1844-1877",
+      "topic": "Causes of the Civil War",
+      "difficulty": "hard",
+      "stimulus": "\"Our new government is founded upon exactly the opposite idea; its foundations are laid, its cornerstone rests, upon the great truth that the negro is not equal to the white man; that slavery -- subordination to the superior race -- is his natural and normal condition. This, our new government, is the first, in the history of the world, based upon this great physical, philosophical, and moral truth.\"\n— Alexander Stephens, Vice President of the Confederacy, Cornerstone Speech, March 1861",
+      "stimulusSetId": "S9",
+      "question": "Stephens's 'Cornerstone Speech' most directly refutes which of the following arguments sometimes made about the Civil War?",
+      "options": [
+        "That the war was caused by economic differences between the industrializing North and agrarian South",
+        "That the Confederacy fought primarily over states' rights rather than the preservation of slavery",
+        "That Southern secession was a constitutional and legal act under the compact theory of government",
+        "That Abraham Lincoln's election posed an immediate threat to Southern security"
+      ],
+      "answer": 1,
+      "explanation": "Stephens explicitly states that slavery and white supremacy -- not states' rights or tariffs -- were the cornerstone of the Confederacy. This primary source directly contradicts the 'Lost Cause' narrative that the Civil War was about states' rights, demonstrating that Confederate leaders themselves said it was about preserving slavery."
+    },
+    {
+      "id": 1027,
+      "period": "1844-1877",
+      "topic": "Causes of the Civil War",
+      "difficulty": "hard",
+      "stimulus": "\"Our new government is founded upon exactly the opposite idea; its foundations are laid, its cornerstone rests, upon the great truth that the negro is not equal to the white man; that slavery -- subordination to the superior race -- is his natural and normal condition. This, our new government, is the first, in the history of the world, based upon this great physical, philosophical, and moral truth.\"\n— Alexander Stephens, Vice President of the Confederacy, Cornerstone Speech, March 1861",
+      "stimulusSetId": "S9",
+      "question": "Stephens's claim that the Confederacy was 'the first' government based on racial inequality most directly contradicts which document's stated principles?",
+      "options": [
+        "The United States Constitution of 1787",
+        "The Declaration of Independence's assertion that 'all men are created equal'",
+        "The Missouri Compromise of 1820",
+        "The Northwest Ordinance of 1787"
+      ],
+      "answer": 1,
+      "explanation": "Stephens explicitly contrasts the Confederacy with the Declaration of Independence, which he says was 'fundamentally wrong' in asserting equality. He is positioning the Confederacy as a deliberate rejection of the Declaration's universalist principles in favor of a government explicitly founded on racial hierarchy."
+    },
+    {
+      "id": 1028,
+      "period": "1844-1877",
+      "topic": "Causes of the Civil War",
+      "difficulty": "hard",
+      "stimulus": "\"Our new government is founded upon exactly the opposite idea; its foundations are laid, its cornerstone rests, upon the great truth that the negro is not equal to the white man; that slavery -- subordination to the superior race -- is his natural and normal condition. This, our new government, is the first, in the history of the world, based upon this great physical, philosophical, and moral truth.\"\n— Alexander Stephens, Vice President of the Confederacy, Cornerstone Speech, March 1861",
+      "stimulusSetId": "S9",
+      "question": "Which of the following developments in the 1850s most directly created the conditions that led to the secession Stephens is defending?",
+      "options": [
+        "The Compromise of 1850 and the Fugitive Slave Act",
+        "Abraham Lincoln's election in 1860 without a single Southern electoral vote, demonstrating that the South had lost political power in the federal government",
+        "The publication of Uncle Tom's Cabin and its impact on Northern public opinion",
+        "John Brown's raid on Harpers Ferry in 1859"
+      ],
+      "answer": 1,
+      "explanation": "Lincoln's election without winning a single Southern state demonstrated to Southern leaders that they had permanently lost majority control of the federal government. The South could no longer protect slavery through normal political processes -- secession seemed to them the only remaining option."
+    },
+    {
+      "id": 1029,
+      "period": "1844-1877",
+      "topic": "Reconstruction",
+      "difficulty": "hard",
+      "stimulus": "\"We want the Freedmen's Bureau kept alive until we are strong enough to stand on our own; we ask for our share of public lands; we ask that colored men shall not be tried except by colored jurors; we ask to be allowed to testify against white men as well as against black men... We simply ask to be allowed to live, to breathe, to work.\"\n— Petition from a Freedmen's Convention, South Carolina, 1865",
+      "stimulusSetId": "S10",
+      "question": "The demands expressed in this petition most directly reflect which of the following goals of formerly enslaved people during Reconstruction?",
+      "options": [
+        "Immediate social integration with white Southerners through intermarriage",
+        "Full political, economic, and legal equality -- land, civil rights, and equal justice under the law",
+        "The resettlement of freed people in northern cities away from the South",
+        "The prosecution and imprisonment of all former Confederate leaders"
+      ],
+      "answer": 1,
+      "explanation": "The petition reflects the core Reconstruction-era aspirations of freed people: land (economic independence), legal equality (equal testimony, jury service), and governmental protection (Freedmen's Bureau). These were the fundamental conditions necessary for freedom to be meaningful."
+    },
+    {
+      "id": 1030,
+      "period": "1844-1877",
+      "topic": "Reconstruction",
+      "difficulty": "hard",
+      "stimulus": "\"We want the Freedmen's Bureau kept alive until we are strong enough to stand on our own; we ask for our share of public lands; we ask that colored men shall not be tried except by colored jurors; we ask to be allowed to testify against white men as well as against black men... We simply ask to be allowed to live, to breathe, to work.\"\n— Petition from a Freedmen's Convention, South Carolina, 1865",
+      "stimulusSetId": "S10",
+      "question": "The petition's request for land ('our share of public lands') most directly relates to which of the following unfulfilled Reconstruction promises?",
+      "options": [
+        "The 13th Amendment's abolition of slavery",
+        "General Sherman's Field Order No. 15 (40 acres and a mule), which was reversed by President Johnson",
+        "The 14th Amendment's guarantee of equal protection under the law",
+        "The Civil Rights Act of 1866"
+      ],
+      "answer": 1,
+      "explanation": "Sherman's Field Order No. 15 redistributed approximately 400,000 acres of confiscated Confederate land to freed families. President Johnson reversed this order and returned land to pardoned Confederate owners -- denying freed people the economic foundation that would have made political rights meaningful."
+    },
+    {
+      "id": 1031,
+      "period": "1844-1877",
+      "topic": "Reconstruction",
+      "difficulty": "hard",
+      "stimulus": "\"We want the Freedmen's Bureau kept alive until we are strong enough to stand on our own; we ask for our share of public lands; we ask that colored men shall not be tried except by colored jurors; we ask to be allowed to testify against white men as well as against black men... We simply ask to be allowed to live, to breathe, to work.\"\n— Petition from a Freedmen's Convention, South Carolina, 1865",
+      "stimulusSetId": "S10",
+      "question": "The Reconstruction-era demands expressed in this petition were most directly undermined by which of the following developments?",
+      "options": [
+        "The passage of the 15th Amendment, which overreached and alienated Northern supporters",
+        "The Compromise of 1877, which ended federal enforcement of Reconstruction and allowed Southern states to strip Black citizens of their rights",
+        "The Supreme Court's ruling that the 14th Amendment did not apply to private discrimination",
+        "The failure of Congress to pass the Civil Rights Act of 1875"
+      ],
+      "answer": 1,
+      "explanation": "The Compromise of 1877 ended Reconstruction by withdrawing federal troops from the South. Without federal enforcement, Southern states used violence, Black Codes, poll taxes, and literacy tests to systematically deny Black citizens the rights the petition demanded -- the 'Redeemer' governments systematically dismantled everything Reconstruction had built."
+    },
+    {
+      "id": 1032,
+      "period": "1865-1898",
+      "topic": "Gilded Age Industrial Labor",
+      "difficulty": "hard",
+      "stimulus": "\"The large majority of laborers in steel and iron and glass works are compelled to work twelve hours a day and seven days a week. Even Sundays are not exempt... Is this freedom? Is this the land of liberty and equal rights? The steel workers of Pittsburgh are practically serfs.\"\n— Pittsburgh Post-Gazette, describing Carnegie Steel workers, 1892",
+      "stimulusSetId": "S11",
+      "question": "The working conditions described in this passage most directly resulted from which of the following developments in the late 19th century?",
+      "options": [
+        "Congressional legislation that intentionally increased working hours to boost industrial output",
+        "The concentration of industrial power in large corporations that could dictate terms to workers lacking effective union protection",
+        "A shortage of immigrant workers that gave corporations justification for long hours",
+        "Supreme Court decisions that explicitly authorized unlimited working hours in industrial settings"
+      ],
+      "answer": 1,
+      "explanation": "The Gilded Age industrial corporation -- particularly Carnegie's vertically integrated steel empire -- held enormous power over workers. Without effective union protections and with abundant immigrant labor available, corporations could impose brutal conditions: 12-hour days, 7-day weeks, dangerous environments, and low wages."
+    },
+    {
+      "id": 1033,
+      "period": "1865-1898",
+      "topic": "Gilded Age Industrial Labor",
+      "difficulty": "hard",
+      "stimulus": "\"The large majority of laborers in steel and iron and glass works are compelled to work twelve hours a day and seven days a week. Even Sundays are not exempt... Is this freedom? Is this the land of liberty and equal rights? The steel workers of Pittsburgh are practically serfs.\"\n— Pittsburgh Post-Gazette, describing Carnegie Steel workers, 1892",
+      "stimulusSetId": "S11",
+      "question": "The reference to workers as 'practically serfs' most directly echoes which of the following contemporary debates?",
+      "options": [
+        "The debate over Chinese immigration and the Chinese Exclusion Act",
+        "The 'wage slavery' argument made by labor reformers who contended that industrial capitalism had created a new form of bondage",
+        "The Populist argument that railroad monopolies were destroying American farming",
+        "The Social Darwinist argument that poverty resulted from individual moral failure"
+      ],
+      "answer": 1,
+      "explanation": "Labor reformers and the Knights of Labor frequently used the language of 'wage slavery' -- arguing that industrial capitalism, though technically 'free labor,' had created conditions of dependency and exploitation that resembled chattel slavery. The Pittsburgh article's 'serf' comparison reflects this discourse."
+    },
+    {
+      "id": 1034,
+      "period": "1865-1898",
+      "topic": "Gilded Age Industrial Labor",
+      "difficulty": "hard",
+      "stimulus": "\"The large majority of laborers in steel and iron and glass works are compelled to work twelve hours a day and seven days a week. Even Sundays are not exempt... Is this freedom? Is this the land of liberty and equal rights? The steel workers of Pittsburgh are practically serfs.\"\n— Pittsburgh Post-Gazette, describing Carnegie Steel workers, 1892",
+      "stimulusSetId": "S11",
+      "question": "The conditions described in this article most directly contributed to which of the following events?",
+      "options": [
+        "The founding of the American Federation of Labor under Samuel Gompers",
+        "The Homestead Strike of 1892, when Carnegie Steel workers struck against wage cuts and were defeated by Pinkerton agents and state militia",
+        "The passage of the Sherman Antitrust Act of 1890",
+        "The Pullman Strike of 1894 and President Cleveland's use of federal troops"
+      ],
+      "answer": 1,
+      "explanation": "The Homestead Strike of 1892 at Carnegie Steel erupted specifically over wage cuts and the destruction of the Amalgamated Association union. Carnegie's partner Henry Clay Frick locked out workers and brought in 300 Pinkerton detectives, resulting in a violent battle. The state militia ultimately crushed the strike, destroying the union."
+    },
+    {
+      "id": 1035,
+      "period": "1865-1898",
+      "topic": "Jim Crow and Segregation",
+      "difficulty": "hard",
+      "stimulus": "\"We consider the underlying fallacy of the plaintiff's argument to consist in the assumption that the enforced separation of the two races stamps the colored race with a badge of inferiority. If this be so, it is not by reason of anything found in the act, but solely because the colored race chooses to put that construction upon it.\"\n— Justice Henry Billings Brown, majority opinion, Plessy v. Ferguson, 1896",
+      "stimulusSetId": "S12",
+      "question": "The Supreme Court's reasoning in Plessy v. Ferguson most directly established which of the following legal doctrines?",
+      "options": [
+        "That racial segregation violated the 14th Amendment's equal protection clause",
+        "That 'separate but equal' facilities were constitutional under the 14th Amendment, providing legal backing for Jim Crow segregation",
+        "That states could not regulate racial classification on railroads",
+        "That Congress had the power to mandate racial integration in public transportation"
+      ],
+      "answer": 1,
+      "explanation": "Plessy established the 'separate but equal' doctrine that would provide the constitutional framework for Jim Crow segregation for the next 58 years, until Brown v. Board of Education (1954) overturned it. The ruling allowed states throughout the South to legally mandate racial segregation in all public facilities."
+    },
+    {
+      "id": 1036,
+      "period": "1865-1898",
+      "topic": "Jim Crow and Segregation",
+      "difficulty": "hard",
+      "stimulus": "\"We consider the underlying fallacy of the plaintiff's argument to consist in the assumption that the enforced separation of the two races stamps the colored race with a badge of inferiority. If this be so, it is not by reason of anything found in the act, but solely because the colored race chooses to put that construction upon it.\"\n— Justice Henry Billings Brown, majority opinion, Plessy v. Ferguson, 1896",
+      "stimulusSetId": "S12",
+      "question": "Justice John Marshall Harlan's famous dissent in Plessy argued that 'our Constitution is color-blind.' Harlan's dissent most directly anticipated which of the following later developments?",
+      "options": [
+        "The passage of the 19th Amendment granting women the right to vote",
+        "The Brown v. Board of Education ruling (1954) that declared racially segregated schools inherently unequal and unconstitutional",
+        "The Civil Rights Act of 1875 banning discrimination in public accommodations",
+        "The 15th Amendment's prohibition on racial discrimination in voting"
+      ],
+      "answer": 1,
+      "explanation": "Harlan's lone dissent -- arguing that the Constitution did not permit racial classifications and that the majority's reasoning would 'in time prove to be quite as pernicious as the decision made by this tribunal in the Dred Scott case' -- became the foundation of Brown v. Board of Education 58 years later."
+    },
+    {
+      "id": 1037,
+      "period": "1865-1898",
+      "topic": "Jim Crow and Segregation",
+      "difficulty": "hard",
+      "stimulus": "\"We consider the underlying fallacy of the plaintiff's argument to consist in the assumption that the enforced separation of the two races stamps the colored race with a badge of inferiority. If this be so, it is not by reason of anything found in the act, but solely because the colored race chooses to put that construction upon it.\"\n— Justice Henry Billings Brown, majority opinion, Plessy v. Ferguson, 1896",
+      "stimulusSetId": "S12",
+      "question": "The Court's assertion that segregation only creates 'inferiority' if 'the colored race chooses to put that construction upon it' was most directly refuted by which of the following arguments?",
+      "options": [
+        "The economic argument that segregation reduced business efficiency",
+        "The social science evidence presented in Brown v. Board that segregation caused measurable psychological harm to Black children, proving that separation was inherently unequal",
+        "The constitutional argument that the Civil Rights Act of 1866 had already banned all forms of racial discrimination",
+        "The international argument that American segregation undermined Cold War foreign policy"
+      ],
+      "answer": 1,
+      "explanation": "In Brown v. Board, Thurgood Marshall and the NAACP Legal Defense Fund presented Kenneth Clark's doll studies showing that Black children internalized racial inferiority from segregation. Chief Justice Warren cited social science evidence to conclude that 'separate educational facilities are inherently unequal' -- directly refuting the Plessy majority's claim."
+    },
+    {
+      "id": 1038,
+      "period": "1890-1945",
+      "topic": "Progressive Era Reform",
+      "difficulty": "hard",
+      "stimulus": "\"There was never the least attention paid to what was cut up for sausage; there would come all the way back from Europe old sausage that had been rejected, and that was moldy and white -- it would be dosed with borax and glycerine, and dumped into the hoppers, and made over again for home consumption. There would be meat that had tumbled out on the floor, in the dirt and sawdust, where the workers had tramped and spit... and all the rest of their trash of other men -- it would be shoveled into carts.\"\n— Upton Sinclair, The Jungle, 1906",
+      "stimulusSetId": "S13",
+      "question": "Upton Sinclair wrote The Jungle primarily to expose which of the following conditions?",
+      "options": [
+        "The unsanitary food preparation practices that endangered American consumers",
+        "The brutal exploitation of immigrant meatpacking workers in Chicago's stockyards",
+        "The corrupt political machine that controlled Chicago's city government",
+        "The monopolistic practices of the beef trust that drove up meat prices"
+      ],
+      "answer": 1,
+      "explanation": "Sinclair famously said: 'I aimed at the public's heart, and by accident I hit it in the stomach.' He intended to expose the exploitation of immigrant workers -- their dangerous conditions, poverty wages, and lack of rights. Instead, middle-class readers focused on the food safety revelations that affected them personally."
+    },
+    {
+      "id": 1039,
+      "period": "1890-1945",
+      "topic": "Progressive Era Reform",
+      "difficulty": "hard",
+      "stimulus": "\"There was never the least attention paid to what was cut up for sausage; there would come all the way back from Europe old sausage that had been rejected, and that was moldy and white -- it would be dosed with borax and glycerine, and dumped into the hoppers, and made over again for home consumption. There would be meat that had tumbled out on the floor, in the dirt and sawdust, where the workers had tramped and spit... and all the rest of their trash of other men -- it would be shoveled into carts.\"\n— Upton Sinclair, The Jungle, 1906",
+      "stimulusSetId": "S13",
+      "question": "The public reaction to The Jungle most directly contributed to which of the following legislative responses?",
+      "options": [
+        "The Sherman Antitrust Act breaking up the beef trust monopoly",
+        "The Pure Food and Drug Act and Meat Inspection Act of 1906, establishing federal food safety regulation",
+        "The creation of the Federal Trade Commission to regulate business practices",
+        "The passage of workers' compensation laws in industrial states"
+      ],
+      "answer": 1,
+      "explanation": "Public outrage over The Jungle's food safety revelations gave President Theodore Roosevelt the political momentum to push through the Pure Food and Drug Act and Meat Inspection Act of 1906 -- establishing the federal government's role in regulating food safety that continues today through the FDA and USDA."
+    },
+    {
+      "id": 1040,
+      "period": "1890-1945",
+      "topic": "Progressive Era Reform",
+      "difficulty": "hard",
+      "stimulus": "\"There was never the least attention paid to what was cut up for sausage; there would come all the way back from Europe old sausage that had been rejected, and that was moldy and white -- it would be dosed with borax and glycerine, and dumped into the hoppers, and made over again for home consumption. There would be meat that had tumbled out on the floor, in the dirt and sawdust, where the workers had tramped and spit... and all the rest of their trash of other men -- it would be shoveled into carts.\"\n— Upton Sinclair, The Jungle, 1906",
+      "stimulusSetId": "S13",
+      "question": "Sinclair's role as an investigative journalist muckraker is best understood as reflecting which of the following broader Progressive Era beliefs?",
+      "options": [
+        "That the free market would naturally correct abuses if consumers had accurate information",
+        "That exposing corporate and government abuses to public scrutiny would create pressure for reform through democratic processes",
+        "That violent revolution was necessary to achieve meaningful social change",
+        "That business self-regulation was sufficient to protect workers and consumers"
+      ],
+      "answer": 1,
+      "explanation": "Progressive Era muckrakers -- Sinclair, Ida Tarbell (Standard Oil), Lincoln Steffens (city corruption) -- believed that an informed public would demand reform. This reflected the Progressive faith that democracy could solve industrial capitalism's problems if citizens understood what was happening -- a form of investigative journalism as civic activism."
+    },
+    {
+      "id": 1041,
+      "period": "1890-1945",
+      "topic": "World War II and the Home Front",
+      "difficulty": "hard",
+      "stimulus": "\"Regardless of the true reason for General DeWitt's action, we must deny that petitioner was excluded from the Military Area because of hostility to him or his race. He was excluded because we are at war with the Japanese Empire... We cannot -- by availing ourselves of the calm perspective of hindsight -- now say that at that time these actions were unjustified.\"\n— Justice Hugo Black, majority opinion, Korematsu v. United States, 1944",
+      "stimulusSetId": "S14",
+      "question": "The Supreme Court's ruling in Korematsu v. United States upheld which of the following wartime policies?",
+      "options": [
+        "The military draft and mandatory service for all male citizens",
+        "The forced relocation and incarceration of Japanese Americans in internment camps under Executive Order 9066",
+        "Wartime censorship of newspapers that criticized the Roosevelt administration",
+        "The use of military tribunals for American citizens accused of espionage"
+      ],
+      "answer": 1,
+      "explanation": "Korematsu upheld Executive Order 9066, which authorized the forced removal of approximately 120,000 Japanese Americans -- two-thirds of whom were U.S. citizens -- from the West Coast to internment camps. The Court accepted the military's claim of 'military necessity' over individual constitutional rights."
+    },
+    {
+      "id": 1042,
+      "period": "1890-1945",
+      "topic": "World War II and the Home Front",
+      "difficulty": "hard",
+      "stimulus": "\"Regardless of the true reason for General DeWitt's action, we must deny that petitioner was excluded from the Military Area because of hostility to him or his race. He was excluded because we are at war with the Japanese Empire... We cannot -- by availing ourselves of the calm perspective of hindsight -- now say that at that time these actions were unjustified.\"\n— Justice Hugo Black, majority opinion, Korematsu v. United States, 1944",
+      "stimulusSetId": "S14",
+      "question": "Justice Frank Murphy's dissent in Korematsu argued that the decision 'falls into the ugly abyss of racism.' Murphy's dissent most directly pointed to which of the following flaws in the majority's reasoning?",
+      "options": [
+        "That the president lacked constitutional authority to issue executive orders affecting civilians",
+        "That the exclusion was based on racial prejudice rather than genuine military necessity, as no similar action was taken against German or Italian Americans",
+        "That Congress had not formally declared war against Japan, making military orders unconstitutional",
+        "That the internment violated the 5th Amendment's guarantee of due process"
+      ],
+      "answer": 1,
+      "explanation": "Murphy noted that German and Italian Americans -- whose countries were also at war with the United States -- faced no similar mass incarceration, suggesting that race rather than security drove the policy. No Japanese American was ever convicted of espionage or sabotage during the war."
+    },
+    {
+      "id": 1043,
+      "period": "1890-1945",
+      "topic": "World War II and the Home Front",
+      "difficulty": "hard",
+      "stimulus": "\"Regardless of the true reason for General DeWitt's action, we must deny that petitioner was excluded from the Military Area because of hostility to him or his race. He was excluded because we are at war with the Japanese Empire... We cannot -- by availing ourselves of the calm perspective of hindsight -- now say that at that time these actions were unjustified.\"\n— Justice Hugo Black, majority opinion, Korematsu v. United States, 1944",
+      "stimulusSetId": "S14",
+      "question": "The Korematsu decision was formally condemned by Congress through which of the following later actions?",
+      "options": [
+        "A constitutional amendment prohibiting racial discrimination in wartime",
+        "The Civil Liberties Act of 1988, which formally apologized and provided reparations of $20,000 to surviving internees",
+        "A Supreme Court ruling in 1983 that vacated the original conviction",
+        "Executive Order 9066 being declared unconstitutional by the Warren Court in 1965"
+      ],
+      "answer": 1,
+      "explanation": "Congress passed the Civil Liberties Act of 1988, formally acknowledging that the internment was 'a grave injustice' motivated by 'race prejudice, war hysteria, and a failure of political leadership.' President Reagan signed it into law and approximately 82,000 surviving internees received $20,000 in reparations."
+    },
+    {
+      "id": 1044,
+      "period": "1945-1980",
+      "topic": "Civil Rights Movement",
+      "difficulty": "hard",
+      "stimulus": "\"We know through painful experience that freedom is never voluntarily given by the oppressor; it must be demanded by the oppressed. Frankly, I have yet to engage in a direct action campaign that was 'well timed' in the view of those who have not suffered unduly from the disease of segregation. For years now I have heard the word 'Wait!' It has almost always meant 'Never.'\"\n— Martin Luther King Jr., Letter from Birmingham Jail, April 16, 1963",
+      "stimulusSetId": "S15",
+      "question": "King's Letter from Birmingham Jail was written primarily as a response to which of the following?",
+      "options": [
+        "Governor George Wallace's vow to maintain segregation in Alabama",
+        "A public statement by white moderate Birmingham clergymen calling the civil rights demonstrations 'unwise and untimely'",
+        "President Kennedy's hesitation to introduce civil rights legislation in Congress",
+        "The Supreme Court's refusal to overturn Birmingham's segregation ordinances"
+      ],
+      "answer": 1,
+      "explanation": "King wrote the letter in response to 'A Call for Unity' -- a public statement signed by eight white Alabama clergymen who agreed that segregation was wrong but criticized the timing and tactics of King's Birmingham campaign as provocative and counterproductive. King's letter systematically addressed each of their arguments."
+    },
+    {
+      "id": 1045,
+      "period": "1945-1980",
+      "topic": "Civil Rights Movement",
+      "difficulty": "hard",
+      "stimulus": "\"We know through painful experience that freedom is never voluntarily given by the oppressor; it must be demanded by the oppressed. Frankly, I have yet to engage in a direct action campaign that was 'well timed' in the view of those who have not suffered unduly from the disease of segregation. For years now I have heard the word 'Wait!' It has almost always meant 'Never.'\"\n— Martin Luther King Jr., Letter from Birmingham Jail, April 16, 1963",
+      "stimulusSetId": "S15",
+      "question": "King's argument that 'freedom is never voluntarily given by the oppressor' most directly reflects which of the following strategic positions within the Civil Rights movement?",
+      "options": [
+        "Booker T. Washington's accommodationist approach of gradual progress through economic self-improvement",
+        "The argument for direct nonviolent action -- sit-ins, marches, boycotts -- rather than waiting for white moderates or legal processes to deliver change",
+        "Malcolm X's argument that Black Americans should pursue self-defense and separatism",
+        "The NAACP Legal Defense Fund's strategy of challenging segregation exclusively through the courts"
+      ],
+      "answer": 1,
+      "explanation": "King was defending the strategy of nonviolent direct action -- deliberately creating 'creative tension' through sit-ins, marches, and demonstrations that forced confrontation with segregation. Against those who said 'wait,' King argued that direct action was the only thing that had ever produced real change."
+    },
+    {
+      "id": 1046,
+      "period": "1945-1980",
+      "topic": "Civil Rights Movement",
+      "difficulty": "hard",
+      "stimulus": "\"We know through painful experience that freedom is never voluntarily given by the oppressor; it must be demanded by the oppressed. Frankly, I have yet to engage in a direct action campaign that was 'well timed' in the view of those who have not suffered unduly from the disease of segregation. For years now I have heard the word 'Wait!' It has almost always meant 'Never.'\"\n— Martin Luther King Jr., Letter from Birmingham Jail, April 16, 1963",
+      "stimulusSetId": "S15",
+      "question": "The 'direct action campaigns' King references in this passage most directly contributed to which of the following legislative achievements?",
+      "options": [
+        "The Supreme Court's Brown v. Board of Education ruling desegregating public schools",
+        "The Civil Rights Act of 1964 and the Voting Rights Act of 1965, which together dismantled the legal structure of Jim Crow segregation",
+        "The desegregation of the United States military under President Truman's Executive Order 9981",
+        "The passage of the 24th Amendment abolishing the poll tax in federal elections"
+      ],
+      "answer": 1,
+      "explanation": "The Birmingham campaign in particular -- where Bull Connor's use of fire hoses and police dogs against peaceful demonstrators shocked the nation on television -- gave President Kennedy the political momentum to introduce comprehensive civil rights legislation, which became the Civil Rights Act of 1964 after his assassination."
+    },
+    {
+      "id": 1047,
+      "period": "1945-1980",
+      "topic": "Civil Rights Movement",
+      "difficulty": "hard",
+      "stimulus": "\"We know through painful experience that freedom is never voluntarily given by the oppressor; it must be demanded by the oppressed. Frankly, I have yet to engage in a direct action campaign that was 'well timed' in the view of those who have not suffered unduly from the disease of segregation. For years now I have heard the word 'Wait!' It has almost always meant 'Never.'\"\n— Martin Luther King Jr., Letter from Birmingham Jail, April 16, 1963",
+      "stimulusSetId": "S15",
+      "question": "King's concept of nonviolent direct action drew most directly on which of the following intellectual and practical influences?",
+      "options": [
+        "The American labor movement's history of strikes and collective bargaining",
+        "Mahatma Gandhi's successful use of nonviolent resistance (satyagraha) to achieve Indian independence from Britain",
+        "The tradition of armed self-defense practiced by Black communities throughout the South",
+        "The legal strategy developed by Thurgood Marshall and the NAACP Legal Defense Fund"
+      ],
+      "answer": 1,
+      "explanation": "King studied Gandhi deeply and traveled to India in 1959. He adapted Gandhi's philosophy of satyagraha (truth-force or soul-force) -- the belief that nonviolent resistance could expose the moral bankruptcy of oppression, transform oppressors, and win the sympathy of neutral observers -- to the American civil rights context."
+    },
+    {
+      "id": 1048,
+      "period": "1945-1980",
+      "topic": "Cold War and Vietnam",
+      "difficulty": "hard",
+      "stimulus": "\"We are now faced with the fact that tomorrow is today. We are confronted with the fierce urgency of now... We still have a choice today: nonviolent coexistence or violent co-annihilation. We must move past indecision to action... If we do not act, we shall surely be dragged down the long, dark, and shameful corridors of time reserved for those who possess power without compassion, might without morality, and strength without sight.\"\n— Martin Luther King Jr., 'Beyond Vietnam: A Time to Break Silence,' April 4, 1967",
+      "stimulusSetId": "S16",
+      "question": "King's 1967 speech broke with many civil rights allies primarily because it",
+      "options": [
+        "Endorsed the Black Power movement's call for racial separatism",
+        "Publicly opposed the Vietnam War and linked militarism to racism and poverty in America",
+        "Criticized the Johnson administration's Great Society programs as insufficient",
+        "Called for an economic boycott of corporations that supported the war effort"
+      ],
+      "answer": 1,
+      "explanation": "King's speech explicitly connecting the Vietnam War to racism and economic injustice alienated many civil rights supporters including President Johnson and moderate NAACP leadership, who feared that opposing the war would jeopardize civil rights progress. Major newspapers like the New York Times criticized the speech as damaging to King's credibility."
+    },
+    {
+      "id": 1049,
+      "period": "1945-1980",
+      "topic": "Cold War and Vietnam",
+      "difficulty": "hard",
+      "stimulus": "\"We are now faced with the fact that tomorrow is today. We are confronted with the fierce urgency of now... We still have a choice today: nonviolent coexistence or violent co-annihilation. We must move past indecision to action... If we do not act, we shall surely be dragged down the long, dark, and shameful corridors of time reserved for those who possess power without compassion, might without morality, and strength without sight.\"\n— Martin Luther King Jr., 'Beyond Vietnam: A Time to Break Silence,' April 4, 1967",
+      "stimulusSetId": "S16",
+      "question": "King's reference to 'nonviolent coexistence or violent co-annihilation' most directly reflects which of the following Cold War realities?",
+      "options": [
+        "The conventional military balance between NATO and Warsaw Pact forces in Europe",
+        "The nuclear arms race between the United States and Soviet Union, which had created the possibility of mutual assured destruction",
+        "The proxy wars in Korea and Vietnam that avoided direct superpower conflict",
+        "The space race competition between American and Soviet technological programs"
+      ],
+      "answer": 1,
+      "explanation": "By 1967, both superpowers possessed thousands of nuclear weapons. 'Co-annihilation' was not rhetorical -- it was a literal possibility. King was arguing that the logic of violence that drove both the Vietnam War and the arms race could lead to humanity's destruction, and that the only alternative was nonviolent coexistence."
+    },
+    {
+      "id": 1050,
+      "period": "1980-Present",
+      "topic": "Reagan Revolution and Conservatism",
+      "difficulty": "hard",
+      "stimulus": "\"In this present crisis, government is not the solution to our problem; government is the problem. From time to time we've been tempted to believe that society has become too complex to be managed by self-rule, that government by an elite group is superior to government for, by, and of the people. Well, if no one among us is capable of governing himself, then who among us has the capacity to govern someone else?\"\n— Ronald Reagan, First Inaugural Address, January 20, 1981",
+      "stimulusSetId": "S17",
+      "question": "Reagan's statement that 'government is the problem' most directly represented a rejection of which of the following earlier political traditions?",
+      "options": [
+        "The New Deal and Great Society programs that had expanded the federal government's role in addressing economic and social problems since the 1930s",
+        "The Nixon administration's policy of detente with the Soviet Union and China",
+        "The Progressive Era belief in government regulation of big business",
+        "Eisenhower's warning about the military-industrial complex"
+      ],
+      "answer": 0,
+      "explanation": "Reagan explicitly positioned his administration as a reversal of the New Deal consensus -- the belief, dominant since FDR, that the federal government had responsibility for the economic welfare of citizens. Reagan's supply-side economics, deregulation, and cuts to social programs represented a fundamental shift in the role of government."
+    },
+    {
+      "id": 1051,
+      "period": "1980-Present",
+      "topic": "Reagan Revolution and Conservatism",
+      "difficulty": "hard",
+      "stimulus": "\"In this present crisis, government is not the solution to our problem; government is the problem. From time to time we've been tempted to believe that society has become too complex to be managed by self-rule, that government by an elite group is superior to government for, by, and of the people. Well, if no one among us is capable of governing himself, then who among us has the capacity to govern someone else?\"\n— Ronald Reagan, First Inaugural Address, January 20, 1981",
+      "stimulusSetId": "S17",
+      "question": "Reagan's rhetorical question -- 'who among us has the capacity to govern someone else?' -- most directly reflects which of the following philosophical traditions?",
+      "options": [
+        "Lockean liberalism emphasizing individual natural rights against government power",
+        "Classical conservatism emphasizing order, tradition, and authority",
+        "Progressive faith in expert governance and scientific management of social problems",
+        "Neoconservative belief in American military power to spread democracy globally"
+      ],
+      "answer": 0,
+      "explanation": "Reagan's rhetoric drew on classical liberalism (in the American sense, libertarianism) -- the Jeffersonian tradition that the best government governs least, that individual self-governance is superior to government management, and that liberty is threatened by expanding state power. This connected his movement to American founding-era ideals."
+    },
+    {
+      "id": 1052,
+      "period": "1980-Present",
+      "topic": "Reagan Revolution and Conservatism",
+      "difficulty": "hard",
+      "stimulus": "\"In this present crisis, government is not the solution to our problem; government is the problem. From time to time we've been tempted to believe that society has become too complex to be managed by self-rule, that government by an elite group is superior to government for, by, and of the people. Well, if no one among us is capable of governing himself, then who among us has the capacity to govern someone else?\"\n— Ronald Reagan, First Inaugural Address, January 20, 1981",
+      "stimulusSetId": "S17",
+      "question": "The economic policies Reagan implemented based on these principles most directly resulted in which of the following long-term developments?",
+      "options": [
+        "The elimination of the national debt through reduced government spending",
+        "Significant reductions in the top marginal income tax rates and an increase in economic inequality as wealth became more concentrated",
+        "The dismantling of Social Security and Medicare as unsustainable government programs",
+        "A permanent reduction in the size of the federal government as a share of GDP"
+      ],
+      "answer": 1,
+      "explanation": "Reagan cut the top marginal income tax rate from 70% to 28%. While economic growth followed, critics argue that 'trickle-down' benefits did not reach the poor and working class equally. Wealth concentration increased significantly, beginning a trend of rising inequality that has continued to the present day."
+    },
+    {
+      "id": 1053,
+      "period": "1980-Present",
+      "topic": "September 11 and the War on Terror",
+      "difficulty": "hard",
+      "stimulus": "\"Our war on terror begins with al Qaeda, but it does not end there. It will not end until every terrorist group of global reach has been found, stopped and defeated... Every nation, in every region, now has a decision to make. Either you are with us, or you are with the terrorists. From this day forward, any nation that continues to harbor or support terrorism will be regarded by the United States as a hostile regime.\"\n— President George W. Bush, Address to a Joint Session of Congress, September 20, 2001",
+      "stimulusSetId": "S18",
+      "question": "Bush's 'either you are with us, or you are with the terrorists' ultimatum most directly reflected which of the following foreign policy approaches?",
+      "options": [
+        "The multilateralist tradition of building broad international coalitions through the United Nations",
+        "A unilateral approach that demanded unconditional allegiance and rejected neutrality, signaling a departure from Cold War containment strategy",
+        "Nixon's policy of detente, which sought to reduce tensions through diplomacy",
+        "The Monroe Doctrine's tradition of limiting American engagement to the Western Hemisphere"
+      ],
+      "answer": 1,
+      "explanation": "Bush's 'with us or against us' ultimatum rejected the neutral stance many nations wanted to maintain. It signaled a departure from Cold War containment -- the new doctrine (the Bush Doctrine) would include preemptive military action and regime change, not just containing existing threats."
+    },
+    {
+      "id": 1054,
+      "period": "1980-Present",
+      "topic": "September 11 and the War on Terror",
+      "difficulty": "hard",
+      "stimulus": "\"Our war on terror begins with al Qaeda, but it does not end there. It will not end until every terrorist group of global reach has been found, stopped and defeated... Every nation, in every region, now has a decision to make. Either you are with us, or you are with the terrorists. From this day forward, any nation that continues to harbor or support terrorism will be regarded by the United States as a hostile regime.\"\n— President George W. Bush, Address to a Joint Session of Congress, September 20, 2001",
+      "stimulusSetId": "S18",
+      "question": "The policy framework outlined in Bush's speech most directly led to which of the following controversial later actions?",
+      "options": [
+        "The creation of the Department of Homeland Security and passage of the PATRIOT Act",
+        "The 2003 invasion of Iraq, justified partly on the grounds that Saddam Hussein's regime might support terrorism",
+        "The withdrawal of American forces from Afghanistan",
+        "The use of drone strikes against al Qaeda leaders in Pakistan and Yemen"
+      ],
+      "answer": 1,
+      "explanation": "The Bush Doctrine's logic -- that any nation harboring terrorists was a hostile regime -- provided the rhetorical framework for the 2003 Iraq War, despite the absence of proven links between Saddam Hussein and al Qaeda. The invasion, which began without UN authorization, remains one of the most debated foreign policy decisions in American history."
+    },
+    {
+      "id": 1055,
+      "period": "1980-Present",
+      "topic": "September 11 and the War on Terror",
+      "difficulty": "hard",
+      "stimulus": "\"Our war on terror begins with al Qaeda, but it does not end there. It will not end until every terrorist group of global reach has been found, stopped and defeated... Every nation, in every region, now has a decision to make. Either you are with us, or you are with the terrorists. From this day forward, any nation that continues to harbor or support terrorism will be regarded by the United States as a hostile regime.\"\n— President George W. Bush, Address to a Joint Session of Congress, September 20, 2001",
+      "stimulusSetId": "S18",
+      "question": "Bush's speech reflected a significant continuity with which of the following earlier American foreign policy traditions?",
+      "options": [
+        "The isolationist tradition of avoiding entanglement in foreign conflicts",
+        "The Truman Doctrine's commitment to using American power to counter threats to freedom anywhere in the world",
+        "Nixon's policy of opening relations with communist China to balance against the Soviet Union",
+        "Wilson's Fourteen Points and the ideal of national self-determination"
+      ],
+      "answer": 1,
+      "explanation": "The Truman Doctrine (1947) committed the United States to supporting 'free peoples' against threats anywhere in the world -- an open-ended commitment that Bush echoed when he vowed to pursue terrorist groups globally. Both doctrines reflect the American belief in a universal mission to defend freedom."
+    },
+    {
       "id": 1,
       "period": "1491-1607",
       "topic": "Native societies",
