@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -535,7 +534,7 @@ label {
   <div class="nav-tab active" onclick="showPage('home',this)" id="nav-home">Home</div>
   <div class="nav-tab" onclick="showPage('exam',this)" id="nav-exam">Practice Exam</div>
   <div class="nav-tab" onclick="showPage('unit',this)" id="nav-unit">Practice by Unit</div>
-  <div class="nav-tab" onclick="openDashboard()" id="nav-dashboard" style="display:none;">📊 Dashboard</div>
+  <!-- Dashboard hidden from nav -- teacher types "teacher" in student name field to access -->
   <div class="student-badge" id="student-badge" style="display:none;">
     <span class="name" id="badge-name"></span>
     <span class="period" id="badge-period"></span>
@@ -553,7 +552,7 @@ label {
       <input type="text" id="modal-name" placeholder="First Last" autocomplete="name"/>
     </div>
     <div class="modal-field">
-      <label>Class Period</label>
+      <label>Class Period <span style="font-weight:400;color:var(--muted);font-size:0.75rem;">(optional)</span></label>
       <select id="modal-period">
         <option value="">Select period…</option>
         <option value="Period 1">Period 1</option>
@@ -569,11 +568,6 @@ label {
     <button class="btn btn-primary" onclick="submitStudentInfo()" style="width:100%;margin-top:0.5rem;justify-content:center;">
       Start Practicing ->
     </button>
-    <div style="margin-top:1.2rem;padding-top:1rem;border-top:1px solid var(--border);text-align:center;">
-      <button onclick="teacherBypass()" style="background:none;border:none;color:var(--muted);font-size:0.8rem;cursor:pointer;text-decoration:underline;">
-        I'm a teacher -- go to dashboard
-      </button>
-    </div>
   </div>
 </div>
 
@@ -838,8 +832,8 @@ label {
     <div>
       <div style="font-family:'Bebas Neue',sans-serif;font-size:1rem;letter-spacing:1.5px;color:var(--muted);margin-bottom:0.5rem;text-transform:uppercase;">About This Site</div>
       <p style="font-size:0.9rem;line-height:1.7;color:var(--text);margin:0;">
-  My name is <strong>Muhammad Zaid</strong> -- a 9th grader at <strong>North Point High School</strong>
-        who got tired of not having enough APUSH study tools and decided to build one. I designed and
+        My name is <strong>Muhammad Zaid</strong> -- a 9th grader at <strong>North Point High School</strong>
+        who got tired of boring APUSH study tools and decided to build a better one. I designed and
         developed this entire platform using <strong>Claude AI</strong> as my coding partner, shipping
         everything from AI-graded essays to a live teacher dashboard. If you have feedback or want
         to connect, hit the button.
@@ -1069,7 +1063,6 @@ const SUPABASE_URL = "https://rcydbwejxxwzhtqjtfpy.supabase.co";
 const SUPABASE_ANON_KEY = "sb_publishable_u9aRe-IrDN3C5KTweTyvMw_MMKREoxT";
 const TEACHER_PASSWORD = "Teacher_Password"; // Change this to your own password
 
-
 // -- STUDENT STATE -------------------------------------------------------------
 let studentName = null;
 let studentPeriod = null;
@@ -1078,15 +1071,24 @@ function submitStudentInfo() {
   const name = document.getElementById('modal-name').value.trim();
   const period = document.getElementById('modal-period').value;
   const err = document.getElementById('modal-error');
-  if (!name || !period) { err.classList.add('show'); return; }
+
+  // Secret teacher access -- type "teacher" in name field
+  if (name.toLowerCase() === 'teacher') {
+    document.getElementById('student-modal').classList.add('hidden');
+    teacherBypass();
+    return;
+  }
+
+  if (!name) { err.textContent = 'Please enter your name.'; err.classList.add('show'); return; }
   err.classList.remove('show');
   studentName = name;
-  studentPeriod = period;
+  // Period is optional for public users
+  studentPeriod = period || 'Public';
   sessionStorage.setItem('apush_name', name);
-  sessionStorage.setItem('apush_period', period);
+  sessionStorage.setItem('apush_period', studentPeriod);
   document.getElementById('student-modal').classList.add('hidden');
   document.getElementById('badge-name').textContent = name;
-  document.getElementById('badge-period').textContent = period;
+  document.getElementById('badge-period').textContent = studentPeriod !== 'Public' ? studentPeriod : '';
   document.getElementById('student-badge').style.display = 'flex';
 }
 
@@ -1126,7 +1128,7 @@ window.addEventListener('DOMContentLoaded', () => {
     document.getElementById('student-modal').classList.add('hidden');
   }
   // Show dashboard link always (teacher can find it)
-  document.getElementById('nav-dashboard').style.display = 'flex';
+  // Dashboard hidden -- accessible via typing 'teacher' in name field
 });
 
 // -- SUPABASE TRACKING ---------------------------------------------------------
