@@ -1193,9 +1193,8 @@ Student Response: ${studentResponse}`;
 }
 function saqGradingPrompt(saqAnswers) {
   const items = saqAnswers.map((item,idx)=>`SAQ ${idx+1}\nStimulus: ${item.stimulus||"None"}\nPart A: ${item.a}\nStudent A: ${item.responseA||""}\nPart B: ${item.b}\nStudent B: ${item.responseB||""}\nPart C: ${item.c}\nStudent C: ${item.responseC||""}`).join("\n\n");
-  return `You are a strict AP US History SAQ grader. Each part is worth 0 or 1. Return a JSON object with this exact structure:
-{"totalScore":0,"maxScore":${saqAnswers.length*3},"results":[{"id":1,"score":0,"maxScore":3,"feedback":"...","strengths":["..."],"improvements":["..."]}]}
-Grade these responses. Return only the JSON object, no markdown.\n\n${items}`;
+  const saqMax = saqAnswers.length * 3;
+  return `You are a strict AP US History SAQ grader. CRITICAL RULES: Each part (A, B, C) is worth EXACTLY 0 or 1 only -- no decimals, no values above 1. Each SAQ has 3 parts so maxScore per SAQ is 3. totalScore must equal the sum of all individual part scores and CANNOT exceed ${saqMax}. Return ONLY valid JSON, no markdown:\n{"totalScore":0,"maxScore":${saqMax},"results":[{"id":1,"score":0,"maxScore":3,"feedback":"...","strengths":["..."],"improvements":["..."]}]}\n\n${items}`;
 }
 
 // -- SUPABASE CONFIG ----------------------------------------------------------
@@ -1891,6 +1890,16 @@ async function submitSaq() {
       userPrompt:saqGradingPrompt(answers),
     });
     saqGraded=true;
+    // Cap scores to prevent AI from exceeding maxScore
+    const saqMax = answers.length * 3;
+    if (result.results) {
+      result.results.forEach(r => {
+        r.score = Math.min(Math.max(parseInt(r.score)||0, 0), r.maxScore||3);
+      });
+      result.totalScore = result.results.reduce((s,r)=>s+r.score,0);
+    }
+    result.totalScore = Math.min(Math.max(parseInt(result.totalScore)||0, 0), saqMax);
+    result.maxScore = saqMax;
     renderSaqResults(result,answers);
     btn.textContent='OK Graded';
     saveScore({ type:'SAQ', score:result.totalScore, maxScore:result.maxScore });
